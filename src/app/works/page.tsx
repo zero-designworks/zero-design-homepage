@@ -131,10 +131,10 @@ export default function WorksPage() {
         </div>
       </section>
 
-      {/* YouTube動画（data/videos.ts に追加すると自動表示） */}
+      {/* クラウドファンディングPR動画（data/videos.ts に追加すると自動表示） */}
       <section className="py-8 md:py-12">
         <div className="container-brand">
-          <h2 className="mb-8 font-serif text-xl text-sumi md:text-2xl">YouTube動画</h2>
+          <h2 className="mb-8 font-serif text-xl text-sumi md:text-2xl">クラウドファンディングPR動画</h2>
           {videos.length === 0 ? (
             <div className="rounded-brand border border-dashed border-sumi/20 bg-kinari/30 p-10 text-center text-sm text-sumi-soft">
               動画実績は近日公開予定です。
@@ -148,21 +148,25 @@ export default function WorksPage() {
               {videos.map((v) => {
                 const id = youtubeId(v.youtubeUrl);
                 return (
-                  <article key={v.id} className="overflow-hidden rounded-brand border border-sumi/10 bg-white">
-                    <div className="relative aspect-video bg-sumi">
+                  <article key={v.id} className="flex flex-col overflow-hidden rounded-brand border border-sumi/10 bg-white">
+                    <div
+                      className={`relative w-full bg-sumi ${
+                        v.vertical ? "mx-auto aspect-[9/16] max-w-[300px]" : "aspect-video"
+                      }`}
+                    >
                       {id && (
                         <iframe
                           className="absolute inset-0 h-full w-full"
-                          src={`https://www.youtube.com/embed/${id}`}
+                          src={`https://www.youtube-nocookie.com/embed/${id}`}
                           title={v.title}
                           loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
                         />
                       )}
                     </div>
                     <div className="p-5">
-                      <span className="text-xs font-semibold text-kin">{v.category}</span>
+                      <span className="text-xs font-semibold text-kin">{v.client ?? v.category}</span>
                       <h3 className="mt-1 text-base text-sumi">{v.title}</h3>
                       {v.description && <p className="mt-2 text-sm text-sumi-soft">{v.description}</p>}
                     </div>

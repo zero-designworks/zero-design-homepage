@@ -3,27 +3,49 @@ export type Video = {
   id: string;
   title: string;
   youtubeUrl: string;
-  category: "YouTube動画" | "SNSショート動画" | "AI動画";
+  category:
+    | "クラウドファンディングPR動画"
+    | "YouTube動画"
+    | "SNSショート動画"
+    | "AI動画";
   client?: string;
   role?: string[];
   description?: string;
   result?: string;
   publishedAt?: string;
+  vertical?: boolean; // YouTube Shorts など縦型動画
 };
 
-// 例（サンプル）。実際のURLに差し替えてください。
 export const videos: Video[] = [
-  // {
-  //   id: "work-001",
-  //   title: "企業PR動画",
-  //   youtubeUrl: "https://www.youtube.com/watch?v=xxxxxxxx",
-  //   category: "YouTube動画",
-  //   client: "クライアント名",
-  //   role: ["企画", "構成", "編集"],
-  //   description: "動画の概要",
-  //   result: "成果や反響",
-  //   publishedAt: "2026-01-01",
-  // },
+  {
+    id: "cf-pr-courage-anime",
+    title: "クラージュデザイン株式会社様　AIアニメストーリー動画",
+    youtubeUrl: "https://www.youtube.com/watch?v=2CNthQ-K52c",
+    category: "クラウドファンディングPR動画",
+    client: "クラージュデザイン株式会社様",
+  },
+  {
+    id: "cf-pr-kodaniji-interview1",
+    title: "小谷寺様　安田住職インタビュー動画①",
+    youtubeUrl: "https://youtu.be/HMgFuCOXQNA",
+    category: "クラウドファンディングPR動画",
+    client: "小谷寺様",
+  },
+  {
+    id: "cf-pr-kodaniji-history-oichi",
+    title: "小谷寺様　歴史PR動画（お市の方様）",
+    youtubeUrl: "https://youtu.be/0WZN2Ob8USQ",
+    category: "クラウドファンディングPR動画",
+    client: "小谷寺様",
+  },
+  {
+    id: "cf-pr-kodaniji-return",
+    title: "小谷寺様　リターン品紹介動画",
+    youtubeUrl: "https://youtube.com/shorts/VKBgjPVEkJU",
+    category: "クラウドファンディングPR動画",
+    client: "小谷寺様",
+    vertical: true,
+  },
 ];
 
 // YouTube URL から動画IDを取り出すヘルパー
