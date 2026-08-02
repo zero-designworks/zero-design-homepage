@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 const categories = [
   "すべて",
-  "クラウドファンディング",
-  "YouTube動画",
-  "SNSショート動画",
-  "AI動画",
+  "クラウドファンディングPR動画",
+  "SNS運用",
+  "広告動画",
+  "プロモーション動画",
+  "自己PR動画",
   "デザイン",
-  "Web・LP",
 ];
 
 export default function WorksPage() {
