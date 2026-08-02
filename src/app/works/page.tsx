@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { Arrow } from "@/components/Button";
@@ -58,7 +59,36 @@ export default function WorksPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {works.map((w, i) => (
               <Reveal key={w.id} delay={(i % 2) * 100}>
-                <article className="flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-7 md:p-8">
+                <article className="flex h-full flex-col overflow-hidden rounded-brand border border-sumi/10 bg-white">
+                  {w.image &&
+                    (w.href ? (
+                      <a
+                        href={w.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${w.title}のプロジェクトページを見る`}
+                        className="group relative block aspect-[3/2] w-full overflow-hidden bg-kinari"
+                      >
+                        <Image
+                          src={w.image}
+                          alt={w.title}
+                          fill
+                          sizes="(max-width: 768px) 92vw, 45vw"
+                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                        />
+                      </a>
+                    ) : (
+                      <div className="relative aspect-[3/2] w-full overflow-hidden bg-kinari">
+                        <Image
+                          src={w.image}
+                          alt={w.title}
+                          fill
+                          sizes="(max-width: 768px) 92vw, 45vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    ))}
+                  <div className="flex flex-1 flex-col p-7 md:p-8">
                   <span className="inline-flex w-fit items-center rounded-full bg-aka/10 px-3 py-1 text-xs font-semibold text-aka">
                     {w.category}
                   </span>
@@ -92,6 +122,7 @@ export default function WorksPage() {
                       <Arrow />
                     </a>
                   )}
+                  </div>
                 </article>
               </Reveal>
             ))}

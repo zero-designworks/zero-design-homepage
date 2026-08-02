@@ -24,6 +24,7 @@ export const works: Work[] = [
       "頼れる檀家もなく、知名度もゼロからのスタート。歴史の重みと未来へのビジョンを丁寧に言語化し、AIアニメーションで「かつての姿」を再現して発信しました。",
     result: "目標を大幅に超える 736万円 の支援を達成。",
     href: crowdfundingProjects[0].href,
+    image: "/images/works/cf-kodaniji.png",
   },
   {
     id: "cf-courage",
@@ -32,5 +33,6 @@ export const works: Work[] = [
     role: ["企画", "ページ制作", "広報支援"],
     description: "事業の挑戦を伝わる形へ整え、プロジェクトを支援しました。",
     href: crowdfundingProjects[1].href,
+    image: "/images/works/cf-courage.jpg",
   },
 ];
