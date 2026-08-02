@@ -13,6 +13,14 @@ export type PostBlock =
 
 export type RelatedLink = { label: string; href: string };
 
+export type PostAuthor = {
+  name: string;
+  title: string;
+  photo: string;
+  bio: string;
+  href?: string; // プロフィール詳細ページ
+};
+
 export type Post = {
   slug: string;
   category: PostCategory;
@@ -24,6 +32,7 @@ export type Post = {
   blocks: PostBlock[];
   externalLinks?: RelatedLink[];
   relatedPages?: RelatedLink[];
+  author?: PostAuthor;
 };
 
 export const categoryMeta: Record<
@@ -206,6 +215,13 @@ export const posts: Post[] = [
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
     ],
+    author: {
+      name: "浅見 和貴",
+      title: "ZEROデザイン代表・CAMPFIRE公式パートナー（クラウドファンディング・キュレーター）",
+      photo: "/images/profile/asami.jpg",
+      bio: "Web制作・動画・デザイン・SNS発信を通じて、企業や地域の魅力を伝える仕事に携わる。CAMPFIRE公式パートナーのクラウドファンディング・キュレーターとして、滋賀県長浜市「小谷寺 本堂再建プロジェクト」で目標を大幅に超える736万円の支援を達成。「想いが本物であれば、伝え方次第で必ず人は動く」を信条に、クラウドファンディング・映像・デザイン・AIを掛け合わせ、ゼロからの挑戦に全力で伴走する。",
+      href: "/profile",
+    },
   },
   {
     slug: "shrine-temple-crowdfunding-cases",

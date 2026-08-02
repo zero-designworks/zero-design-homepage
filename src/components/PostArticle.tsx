@@ -139,6 +139,36 @@ export function PostArticle({ post }: { post: Post }) {
             })}
           </div>
 
+          {/* 著者プロフィール */}
+          {post.author && (
+            <div className="mt-12 flex flex-col gap-5 rounded-brand border border-sumi/10 bg-kinari/40 p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
+              <div className="relative mx-auto h-28 w-28 shrink-0 overflow-hidden rounded-full ring-1 ring-sumi/10 sm:mx-0">
+                <Image
+                  src={post.author.photo}
+                  alt={`${post.author.name}のプロフィール写真`}
+                  fill
+                  sizes="112px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-xs font-semibold text-aka">この記事を書いた人</p>
+                <h2 className="mt-1.5 font-serif text-xl text-sumi">{post.author.name}</h2>
+                <p className="mt-1 text-xs leading-relaxed text-sumi-soft">{post.author.title}</p>
+                <p className="mt-4 text-sm leading-relaxed text-sumi-soft">{post.author.bio}</p>
+                {post.author.href && (
+                  <Link
+                    href={post.author.href}
+                    className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-aka hover:text-aka/80"
+                  >
+                    プロフィール詳細を見る
+                    <Arrow />
+                  </Link>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* 外部リンク */}
           {post.externalLinks && post.externalLinks.length > 0 && (
             <div className="mt-10 rounded-brand border border-sumi/10 bg-kinari/40 p-6">
