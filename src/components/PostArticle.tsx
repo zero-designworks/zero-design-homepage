@@ -72,6 +72,26 @@ export function PostArticle({ post }: { post: Post }) {
                   </ul>
                 );
               }
+              if (b.type === "img") {
+                return (
+                  <figure key={i} className="pt-2">
+                    <div className="relative aspect-[3/2] w-full overflow-hidden rounded-brand border border-sumi/10 bg-kinari">
+                      <Image
+                        src={b.src}
+                        alt={b.alt}
+                        fill
+                        sizes="(max-width: 768px) 92vw, 768px"
+                        className="object-cover"
+                      />
+                    </div>
+                    {b.caption && (
+                      <figcaption className="mt-2 text-center text-xs text-sumi-soft/70">
+                        {b.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
               if (b.type === "callout") {
                 return (
                   <div
