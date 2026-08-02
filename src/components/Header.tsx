@@ -23,6 +23,7 @@ export function Header() {
   }, [open]);
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
@@ -83,8 +84,11 @@ export function Header() {
           />
         </button>
       </div>
+    </header>
 
-      {/* Mobile menu */}
+      {/* Mobile menu：headerの外に配置する。
+          header の backdrop-blur(=backdrop-filter) が fixed 要素の基準（含有ブロック）に
+          なるため、header内に置くとメニューがヘッダー高さに潰れて先頭項目しか表示されない。 */}
       <div
         className={`fixed inset-0 z-40 origin-top bg-kinari transition-all duration-300 xl:hidden ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
@@ -123,6 +127,6 @@ export function Header() {
           <p className="mt-6 text-xs text-sumi-soft/70">{siteConfig.location}</p>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
