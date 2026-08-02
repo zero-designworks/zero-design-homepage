@@ -38,16 +38,18 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-6 lg:flex">
-          {navItems.slice(0, 7).map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm text-sumi-soft transition-colors hover:text-aka"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-5 xl:flex">
+          {navItems
+            .filter((item) => item.href !== "/contact")
+            .map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm text-sumi-soft transition-colors hover:text-aka"
+              >
+                {item.short ?? item.label}
+              </Link>
+            ))}
           <Link
             href="/contact"
             className="rounded-brand bg-aka px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-aka-deep"
@@ -62,7 +64,7 @@ export function Header() {
           aria-label={open ? "メニューを閉じる" : "メニューを開く"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-[5px] lg:hidden"
+          className="relative z-50 flex h-11 w-11 flex-col items-center justify-center gap-[5px] xl:hidden"
         >
           <span
             className={`h-[2px] w-6 bg-sumi transition-all duration-300 ${
@@ -84,25 +86,25 @@ export function Header() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 origin-top bg-kinari transition-all duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 origin-top bg-kinari transition-all duration-300 xl:hidden ${
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        <nav className="container-brand flex h-full flex-col justify-center gap-1 pt-16">
+        <nav className="container-brand flex h-full flex-col justify-start gap-0.5 overflow-y-auto pt-20 pb-10">
           {navItems.map((item, i) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="border-b border-sumi/10 py-4 font-serif text-lg text-sumi transition-colors hover:text-aka"
+              className="border-b border-sumi/10 py-3.5 font-serif text-lg text-sumi transition-colors hover:text-aka"
               style={{
-                transitionDelay: open ? `${i * 40}ms` : "0ms",
+                transitionDelay: open ? `${i * 35}ms` : "0ms",
               }}
             >
               {item.label}
             </Link>
           ))}
-          <div className="mt-8 grid grid-cols-2 gap-3">
+          <div className="mt-6 grid grid-cols-2 gap-3">
             <Link
               href="/contact"
               onClick={() => setOpen(false)}

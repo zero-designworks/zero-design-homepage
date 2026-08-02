@@ -22,14 +22,17 @@ export const siteConfig = {
   googleSiteVerification: "",
 } as const;
 
-export type NavItem = { label: string; href: string };
+// short: PC横並びナビでの短縮表示（省略時は label をそのまま使用）
+export type NavItem = { label: string; href: string; short?: string };
 
 export const navItems: NavItem[] = [
-  { label: "ZEROデザインについて", href: "/about" },
-  { label: "クラウドファンディングとは", href: "/crowdfunding" },
+  { label: "ZEROデザインについて", href: "/about", short: "ZEROについて" },
+  { label: "クラウドファンディングとは", href: "/crowdfunding", short: "クラファンとは" },
   { label: "活用法", href: "/crowdfunding-uses" },
   { label: "サービス", href: "/services" },
   { label: "実績", href: "/works" },
+  { label: "コラム", href: "/column" },
+  { label: "お知らせ", href: "/news" },
   { label: "プロフィール", href: "/profile" },
   { label: "料金", href: "/pricing" },
   { label: "お問い合わせ", href: "/contact" },
