@@ -1,0 +1,5 @@
+# 改行コードを正規化（Vercel等のLinux環境での差分ノイズを防ぐ）
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary

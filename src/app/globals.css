@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+/* =========================================================
+   ZEROデザイン デザインシステム
+   メインカラー: 白 / 墨色 / 深い赤 / 金
+   サブカラー: 生成り / 濃紺 / 淡いグレー
+   ========================================================= */
+@theme {
+  /* Base */
+  --color-white: #ffffff;
+  --color-kinari: #f6f1e7; /* 生成り */
+  --color-kinari-deep: #efe7d6;
+  --color-sumi: #1c1a17; /* 墨色 */
+  --color-sumi-soft: #33302b;
+  --color-gray-soft: #e7e3da; /* 淡いグレー */
+
+  /* Accents */
+  --color-aka: #9c2724; /* 深い赤 */
+  --color-aka-deep: #7f1d1b;
+  --color-kin: #b8945a; /* 金 */
+  --color-kin-light: #cdaf74;
+  --color-kon: #1e2a44; /* 濃紺 */
+
+  /* Semantic */
+  --color-ink: var(--color-sumi);
+  --color-paper: var(--color-kinari);
+
+  /* Fonts (wired via next/font variables) */
+  --font-sans: var(--font-noto-sans), "Hiragino Kaku Gothic ProN", "Meiryo", system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), "Hiragino Mincho ProN", "Yu Mincho", serif;
+
+  /* Radius */
+  --radius-brand: 0.5rem;
+
+  /* Container */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-sumi);
+  font-family: var(--font-sans);
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  font-feature-settings: "palt";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+}
+
+/* Reusable primitives ------------------------------------------------ */
+@layer components {
+  .container-brand {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-brand { padding-inline: 2rem; }
+  }
+  .container-narrow {
+    width: 100%;
+    max-width: 48rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  /* Section eyebrow label */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
+    font-weight: 600;
+    color: var(--color-aka);
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 1.75rem;
+    height: 1px;
+    background: currentColor;
+  }
+}
+
+/* Thin gold hairline divider */
+.hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-kin), transparent);
+  opacity: 0.5;
+}
+
+/* subtle washi paper texture using layered gradients */
+.paper-texture {
+  background-color: var(--color-kinari);
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(184, 148, 90, 0.04) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(156, 39, 36, 0.03) 0, transparent 40%);
+}
+
+/* fade-up reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
