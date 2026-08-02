@@ -1,72 +1,14 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
-import { Arrow } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
-import { works } from "@/data/works";
-import { videos, youtubeId, instagramEmbedUrl, type Video } from "@/data/videos";
-
-function VideoCard({ v }: { v: Video }) {
-  const igUrl = instagramEmbedUrl(v.youtubeUrl);
-  const ytId = youtubeId(v.youtubeUrl);
-  return (
-    <article className="flex flex-col overflow-hidden rounded-brand border border-sumi/10 bg-white">
-      {igUrl ? (
-        <div className="mx-auto w-full max-w-[360px] bg-white">
-          <iframe
-            src={igUrl}
-            title={v.title}
-            loading="lazy"
-            scrolling="no"
-            allowFullScreen
-            className="h-[640px] w-full"
-          />
-        </div>
-      ) : (
-        <div
-          className={`relative w-full bg-sumi ${
-            v.vertical ? "mx-auto aspect-[9/16] max-w-[300px]" : "aspect-video"
-          }`}
-        >
-          {ytId && (
-            <iframe
-              className="absolute inset-0 h-full w-full"
-              src={`https://www.youtube-nocookie.com/embed/${ytId}`}
-              title={v.title}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          )}
-        </div>
-      )}
-      <div className="p-5">
-        <span className="text-xs font-semibold text-kin">{v.client ?? v.category}</span>
-        <h3 className="mt-1 text-base text-sumi">{v.title}</h3>
-        {v.description && <p className="mt-2 text-sm text-sumi-soft">{v.description}</p>}
-      </div>
-    </article>
-  );
-}
+import { WorksExplorer } from "@/components/WorksExplorer";
 
 export const metadata: Metadata = {
   title: "制作・支援実績",
   description:
-    "ZEROデザインのクラウドファンディング支援・YouTube動画・SNSショート動画・AI動画・デザイン・Web制作の実績をご紹介します。",
+    "ZEROデザインのクラウドファンディング支援・PR動画・広告動画・プロモーション動画・自己PR動画・デザインの実績をご紹介します。",
   alternates: { canonical: "/works" },
 };
-
-const categories = [
-  "すべて",
-  "クラウドファンディング支援",
-  "クラウドファンディングPR動画",
-  "SNS運用",
-  "広告動画",
-  "プロモーション動画",
-  "自己PR動画",
-  "デザイン",
-];
 
 export default function WorksPage() {
   return (
@@ -77,127 +19,7 @@ export default function WorksPage() {
         lead="ゼロから伴走したプロジェクトの一部をご紹介します。実績は随時追加していきます。"
       />
 
-      <section className="pb-8">
-        <div className="container-brand">
-          <div className="flex flex-wrap gap-2.5">
-            {categories.map((c, i) => (
-              <span
-                key={c}
-                className={`rounded-full border px-4 py-2 text-sm ${
-                  i === 0
-                    ? "border-aka bg-aka text-white"
-                    : "border-sumi/15 text-sumi-soft"
-                }`}
-              >
-                {c}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* クラウドファンディング実績 */}
-      <section className="py-8 md:py-12">
-        <div className="container-brand">
-          <h2 className="mb-8 font-serif text-xl text-sumi md:text-2xl">クラウドファンディング</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {works.map((w, i) => (
-              <Reveal key={w.id} delay={(i % 2) * 100}>
-                <article className="flex h-full flex-col overflow-hidden rounded-brand border border-sumi/10 bg-white">
-                  {w.image &&
-                    (w.href ? (
-                      <a
-                        href={w.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${w.title}のプロジェクトページを見る`}
-                        className="group relative block aspect-[3/2] w-full overflow-hidden bg-kinari"
-                      >
-                        <Image
-                          src={w.image}
-                          alt={w.title}
-                          fill
-                          sizes="(max-width: 768px) 92vw, 45vw"
-                          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        />
-                      </a>
-                    ) : (
-                      <div className="relative aspect-[3/2] w-full overflow-hidden bg-kinari">
-                        <Image
-                          src={w.image}
-                          alt={w.title}
-                          fill
-                          sizes="(max-width: 768px) 92vw, 45vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    ))}
-                  <div className="flex flex-1 flex-col p-7 md:p-8">
-                  <span className="inline-flex w-fit items-center rounded-full bg-aka/10 px-3 py-1 text-xs font-semibold text-aka">
-                    {w.category}
-                  </span>
-                  <h3 className="mt-4 font-serif text-xl text-sumi">{w.title}</h3>
-                  {w.client && <p className="mt-1 text-sm text-sumi-soft">{w.client}</p>}
-                  {w.description && (
-                    <p className="mt-4 flex-1 text-sm leading-relaxed text-sumi-soft">{w.description}</p>
-                  )}
-                  {w.role && (
-                    <div className="mt-5 flex flex-wrap gap-2">
-                      {w.role.map((r) => (
-                        <span key={r} className="rounded border border-sumi/15 px-2.5 py-1 text-xs text-sumi-soft">
-                          {r}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  {w.result && (
-                    <p className="mt-5 rounded-brand bg-kinari/60 px-4 py-3 text-sm font-semibold text-aka">
-                      {w.result}
-                    </p>
-                  )}
-                  {w.href && (
-                    <a
-                      href={w.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-aka"
-                    >
-                      プロジェクトを見る
-                      <Arrow />
-                    </a>
-                  )}
-                  </div>
-                </article>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 動画実績（data/videos.ts に追加するとカテゴリー別に自動表示） */}
-      {[
-        { heading: "クラウドファンディングPR動画", category: "クラウドファンディングPR動画" as const },
-        { heading: "広告動画", category: "広告動画" as const },
-        { heading: "プロモーション動画", category: "プロモーション動画" as const },
-        { heading: "自己PR動画", category: "自己PR動画" as const },
-      ].map(({ heading, category }) => {
-        const items = videos.filter((v) => v.category === category);
-        if (items.length === 0) return null;
-        return (
-          <section key={category} className="py-8 md:py-12">
-            <div className="container-brand">
-              <h2 className="mb-8 font-serif text-xl text-sumi md:text-2xl">{heading}</h2>
-              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {items.map((v) => (
-                  <Reveal key={v.id}>
-                    <VideoCard v={v} />
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </section>
-        );
-      })}
+      <WorksExplorer />
 
       <CtaBand title="あなたのプロジェクトも、実績のひとつに。" />
     </>
