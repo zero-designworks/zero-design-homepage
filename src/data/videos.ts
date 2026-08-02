@@ -5,6 +5,7 @@ export type Video = {
   youtubeUrl: string;
   category:
     | "クラウドファンディングPR動画"
+    | "広告動画"
     | "YouTube動画"
     | "SNSショート動画"
     | "AI動画";
@@ -46,6 +47,36 @@ export const videos: Video[] = [
     client: "小谷寺様",
     vertical: true,
   },
+
+  {
+    id: "ad-zero-pet-cremation",
+    title: "ペット火葬広告動画",
+    youtubeUrl: "https://www.instagram.com/p/DSB-NEQkrOY/",
+    category: "広告動画",
+    client: "株式会社ZERO様",
+  },
+  {
+    id: "ad-zero-pet-taxi",
+    title: "ペットタクシーZERO広告動画",
+    youtubeUrl: "https://www.instagram.com/p/DRTJ_qekllv/",
+    category: "広告動画",
+    client: "株式会社ZERO様",
+  },
+  {
+    id: "ad-zero-mv",
+    title: "MV風PR動画",
+    youtubeUrl: "https://www.instagram.com/reels/DbFO5aLSz5T/",
+    category: "広告動画",
+    client: "株式会社ZERO様",
+  },
+  {
+    id: "ad-pet-reien-story",
+    title: "ペット霊園様　ストーリー動画",
+    youtubeUrl: "https://youtube.com/shorts/xUESjuJdLVk",
+    category: "広告動画",
+    client: "ペット霊園様",
+    vertical: true,
+  },
 ];
 
 // YouTube URL から動画IDを取り出すヘルパー
@@ -54,4 +85,12 @@ export function youtubeId(url: string): string | null {
     /(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([\w-]{11})/
   );
   return m ? m[1] : null;
+}
+
+// Instagram の投稿/リールURLから埋め込みURLを生成するヘルパー
+export function instagramEmbedUrl(url: string): string | null {
+  const m = url.match(/instagram\.com\/(?:p|reel|reels|tv)\/([\w-]+)/);
+  if (!m) return null;
+  const isReel = /instagram\.com\/reels?\//.test(url);
+  return `https://www.instagram.com/${isReel ? "reel" : "p"}/${m[1]}/embed`;
 }

@@ -5,7 +5,50 @@ import { Reveal } from "@/components/Reveal";
 import { Arrow } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { works } from "@/data/works";
-import { videos, youtubeId } from "@/data/videos";
+import { videos, youtubeId, instagramEmbedUrl, type Video } from "@/data/videos";
+
+function VideoCard({ v }: { v: Video }) {
+  const igUrl = instagramEmbedUrl(v.youtubeUrl);
+  const ytId = youtubeId(v.youtubeUrl);
+  return (
+    <article className="flex flex-col overflow-hidden rounded-brand border border-sumi/10 bg-white">
+      {igUrl ? (
+        <div className="mx-auto w-full max-w-[360px] bg-white">
+          <iframe
+            src={igUrl}
+            title={v.title}
+            loading="lazy"
+            scrolling="no"
+            allowFullScreen
+            className="h-[640px] w-full"
+          />
+        </div>
+      ) : (
+        <div
+          className={`relative w-full bg-sumi ${
+            v.vertical ? "mx-auto aspect-[9/16] max-w-[300px]" : "aspect-video"
+          }`}
+        >
+          {ytId && (
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src={`https://www.youtube-nocookie.com/embed/${ytId}`}
+              title={v.title}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          )}
+        </div>
+      )}
+      <div className="p-5">
+        <span className="text-xs font-semibold text-kin">{v.client ?? v.category}</span>
+        <h3 className="mt-1 text-base text-sumi">{v.title}</h3>
+        {v.description && <p className="mt-2 text-sm text-sumi-soft">{v.description}</p>}
+      </div>
+    </article>
+  );
+}
 
 export const metadata: Metadata = {
   title: "制作・支援実績",
@@ -131,52 +174,28 @@ export default function WorksPage() {
         </div>
       </section>
 
-      {/* クラウドファンディングPR動画（data/videos.ts に追加すると自動表示） */}
-      <section className="py-8 md:py-12">
-        <div className="container-brand">
-          <h2 className="mb-8 font-serif text-xl text-sumi md:text-2xl">クラウドファンディングPR動画</h2>
-          {videos.length === 0 ? (
-            <div className="rounded-brand border border-dashed border-sumi/20 bg-kinari/30 p-10 text-center text-sm text-sumi-soft">
-              動画実績は近日公開予定です。
-              <br className="sm:hidden" />
-              <span className="text-sumi-soft/70">
-                （YouTube URL を <code className="rounded bg-white px-1.5 py-0.5">src/data/videos.ts</code> に追加すると、ここに自動で表示されます）
-              </span>
+      {/* 動画実績（data/videos.ts に追加するとカテゴリー別に自動表示） */}
+      {[
+        { heading: "クラウドファンディングPR動画", category: "クラウドファンディングPR動画" as const },
+        { heading: "広告動画", category: "広告動画" as const },
+      ].map(({ heading, category }) => {
+        const items = videos.filter((v) => v.category === category);
+        if (items.length === 0) return null;
+        return (
+          <section key={category} className="py-8 md:py-12">
+            <div className="container-brand">
+              <h2 className="mb-8 font-serif text-xl text-sumi md:text-2xl">{heading}</h2>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {items.map((v) => (
+                  <Reveal key={v.id}>
+                    <VideoCard v={v} />
+                  </Reveal>
+                ))}
+              </div>
             </div>
-          ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {videos.map((v) => {
-                const id = youtubeId(v.youtubeUrl);
-                return (
-                  <article key={v.id} className="flex flex-col overflow-hidden rounded-brand border border-sumi/10 bg-white">
-                    <div
-                      className={`relative w-full bg-sumi ${
-                        v.vertical ? "mx-auto aspect-[9/16] max-w-[300px]" : "aspect-video"
-                      }`}
-                    >
-                      {id && (
-                        <iframe
-                          className="absolute inset-0 h-full w-full"
-                          src={`https://www.youtube-nocookie.com/embed/${id}`}
-                          title={v.title}
-                          loading="lazy"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        />
-                      )}
-                    </div>
-                    <div className="p-5">
-                      <span className="text-xs font-semibold text-kin">{v.client ?? v.category}</span>
-                      <h3 className="mt-1 text-base text-sumi">{v.title}</h3>
-                      {v.description && <p className="mt-2 text-sm text-sumi-soft">{v.description}</p>}
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-          )}
-        </div>
-      </section>
+          </section>
+        );
+      })}
 
       <CtaBand title="あなたのプロジェクトも、実績のひとつに。" />
     </>
