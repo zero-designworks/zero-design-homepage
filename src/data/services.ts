@@ -72,31 +72,36 @@ export const services: Service[] = [
 ];
 
 // HOMEの「選ばれる理由」
-export const reasons: { title: string; label: string; body: string }[] = [
+export const reasons: { title: string; label: string; body: string; image: string }[] = [
   {
     label: "伴走力",
     title: "ゼロから企画を一緒に整理できる",
     body: "まだ形になっていないアイデアや想いを丁寧にヒアリングし、企画として整理します。",
+    image: "/images/reasons/rs-accompany.png",
   },
   {
     label: "総合力",
     title: "クラファン・動画・デザイン・SNSをワンストップ",
     body: "必要な支援を一つの窓口でまとめて。連携がスムーズで一貫した世界観を保てます。",
+    image: "/images/reasons/rs-onestop.png",
   },
   {
     label: "共感力",
     title: "オーナー側の不安や負担を深く理解している",
     body: "運営しながらの発信がいかに大変か。だからこそ、一番苦しい時期の右腕になります。",
+    image: "/images/reasons/rs-empathy.png",
   },
   {
     label: "技術力",
     title: "AIを活用し、全国対応と継続的な動画制作を実現",
     body: "最新のAI技術で、撮影なし・低コスト・高品質を両立。全国どこからでも依頼可能です。",
+    image: "/images/reasons/rs-tech.png",
   },
   {
     label: "表現力",
     title: "歴史や文化、地域の背景を大切にした表現",
     body: "その土地・その活動が積み重ねてきた物語を尊重し、伝わる形へ翻訳します。",
+    image: "/images/reasons/rs-expression.png",
   },
 ];
 
