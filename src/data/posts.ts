@@ -44,6 +44,52 @@ export const categoryMeta: Record<
 
 export const posts: Post[] = [
   {
+    slug: "fmotsu-give-part2-radio",
+    category: "news",
+    title: "FMおおつ『GIVEの流儀 Part2』に代表・浅見和貴が出演しました",
+    seoTitle:
+      "FMおおつ『GIVEの流儀 Part2』出演｜ZEROデザイン浅見和貴が小谷寺クラファン・長浜への想いを語る",
+    publishedAt: "2026-01-11",
+    excerpt:
+      "FMおおつのラジオ番組『GIVEの流儀 Part2』に、ZEROデザイン代表・浅見和貴が出演。小谷寺本堂再建クラウドファンディング（目標500万円に対し約736万円を達成）や、地元・長浜／湖北地域への想いを語りました。放送はApple Podcastsなどのアーカイブでもお聴きいただけます。",
+    eyecatch: "/images/posts/fmotsu-give-radio.png",
+    blocks: [
+      { type: "p", text: "ZEROデザイン代表の浅見和貴が、FMおおつ（79.1MHz）のラジオ番組『GIVEの流儀 Part2』にゲスト出演しました。" },
+      { type: "callout", label: "出演番組", text: "FMおおつ『GIVEの流儀 Part2』第22回" },
+      { type: "h", text: "番組『GIVEの流儀』について" },
+      { type: "p", text: "『GIVEの流儀 Part2』は、FMおおつ（79.1MHz／毎週日曜 22:00〜22:30）で放送されているトーク番組です。パーソナリティは、BNI滋賀西京都北のリージョンディレクターを務める古田誠さん。提供はBNI滋賀西京都北。地域で「与える（GIVE）」を体現しながら挑戦を続ける人にスポットを当て、その活動や想いを掘り下げていく番組です。" },
+      { type: "h", text: "放送で語った内容" },
+      { type: "p", text: "今回の放送では、パーソナリティの古田さんとの対話を通じて、浅見の歩みとクラウドファンディングへの想いをお話ししました。主なトピックは次のとおりです。" },
+      {
+        type: "ul",
+        items: [
+          "小谷寺（滋賀県長浜市）本堂再建クラウドファンディングの舞台裏",
+          "目標金額500万円に対し、全国の歴史ファンなどから約736万円の支援が集まった経緯",
+          "大阪・京橋出身、現在は長浜市・湖北地域で活動する立場から見た、地元への想い",
+          "「伝え方」で挑戦を後押しする、ZEROデザインの取り組み",
+        ],
+      },
+      { type: "p", text: "「想いが本物であれば、伝え方次第で必ず人は動く」。小谷寺プロジェクトで得たこの確信と、歴史・文化・地域を未来へつなぐことへの想いを、番組を通じてお伝えしました。" },
+      { type: "h", text: "アーカイブ配信でお聴きいただけます" },
+      { type: "p", text: "放送内容は、Apple Podcasts・Spotify・Amazon Musicなどのポッドキャストや、FMプラプラ（全国配信）のアーカイブでお聴きいただけます。下記「リンク」よりどうぞ。" },
+      { type: "p", text: "ZEROデザインは、クラウドファンディング・映像・デザイン・SNSの力で、ゼロからの挑戦を「伝わる形」へと整えます。取材・出演のご依頼、クラウドファンディングのご相談も、お気軽にお問い合わせください。" },
+    ],
+    externalLinks: [
+      {
+        label: "FMおおつ 番組紹介ページ（GIVEの流儀 Part2）",
+        href: "https://fmotsu.com/2026/01/11/give011126/",
+      },
+      {
+        label: "Apple Podcasts で第22回を聴く",
+        href: "https://podcasts.apple.com/jp/podcast/%E7%AC%AC22%E5%9B%9Egive%E3%81%AE%E6%B5%81%E5%84%80part-2-%E6%B5%85%E8%A6%8B%E5%92%8C%E8%B2%B4%E3%81%95%E3%82%93/id1845315341?i=1000748719333",
+      },
+    ],
+    relatedPages: [
+      { label: "代表プロフィール（浅見 和貴）", href: "/profile" },
+      { label: "クラウドファンディングとは？", href: "/crowdfunding" },
+    ],
+  },
+  {
     slug: "courage-design-crowdfunding-start",
     category: "news",
     title:
@@ -190,7 +236,7 @@ export const posts: Post[] = [
 ];
 
 // ---- ヘルパー ----
-const byDateDesc = (a: Post, b: Post) => (a.publishedAt < b.publishedAt ? 1 : -1);
+const byDateDesc = (a: Post, b: Post) => b.publishedAt.localeCompare(a.publishedAt);
 
 export const newsPosts = posts.filter((p) => p.category === "news").sort(byDateDesc);
 export const columnPosts = posts.filter((p) => p.category === "column").sort(byDateDesc);

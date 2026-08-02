@@ -32,7 +32,9 @@ export function PostList({ category }: { category: PostCategory }) {
                   <Reveal delay={(i % 4) * 60}>
                     <Link
                       href={`${cat.path}/${post.slug}`}
-                      className="group grid gap-5 p-6 transition-colors hover:bg-kinari/40 md:grid-cols-[16rem_1fr] md:items-center md:gap-7 md:p-8"
+                      className={`group grid gap-5 p-6 transition-colors hover:bg-kinari/40 md:items-center md:gap-7 md:p-8 ${
+                        post.eyecatch ? "md:grid-cols-[16rem_1fr]" : ""
+                      }`}
                     >
                       {post.eyecatch && (
                         <div className="relative aspect-[16/9] w-full overflow-hidden rounded-brand border border-sumi/10 bg-kinari">
