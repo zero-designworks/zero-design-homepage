@@ -178,6 +178,8 @@ export default function WorksPage() {
       {[
         { heading: "クラウドファンディングPR動画", category: "クラウドファンディングPR動画" as const },
         { heading: "広告動画", category: "広告動画" as const },
+        { heading: "プロモーション動画", category: "プロモーション動画" as const },
+        { heading: "自己PR動画", category: "自己PR動画" as const },
       ].map(({ heading, category }) => {
         const items = videos.filter((v) => v.category === category);
         if (items.length === 0) return null;

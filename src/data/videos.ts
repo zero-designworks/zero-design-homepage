@@ -6,6 +6,8 @@ export type Video = {
   category:
     | "クラウドファンディングPR動画"
     | "広告動画"
+    | "プロモーション動画"
+    | "自己PR動画"
     | "YouTube動画"
     | "SNSショート動画"
     | "AI動画";
@@ -75,6 +77,49 @@ export const videos: Video[] = [
     youtubeUrl: "https://youtube.com/shorts/xUESjuJdLVk",
     category: "広告動画",
     client: "ペット霊園様",
+    vertical: true,
+  },
+
+  {
+    id: "promo-zero-chapter-op",
+    title: "ZEROチャプター様　第二期オープニング動画",
+    youtubeUrl: "https://www.youtube.com/watch?v=1P_vben3LZ4",
+    category: "プロモーション動画",
+    client: "ZEROチャプター様",
+  },
+  {
+    id: "promo-big-business-meeting",
+    title: "BIG Business meeting プロモーション動画",
+    youtubeUrl: "https://www.youtube.com/watch?v=wKuOn042lCs",
+    category: "プロモーション動画",
+  },
+  {
+    id: "promo-tandem-design",
+    title: "タンデムデザイン様　PR動画",
+    youtubeUrl: "https://www.youtube.com/watch?v=s_WJVysuQM0",
+    category: "プロモーション動画",
+    client: "タンデムデザイン様",
+  },
+
+  {
+    id: "self-pr-bodyfight-uchiyama",
+    title: "プレゼンAIアニメ（ボディファイトジャパン 内山様）",
+    youtubeUrl: "https://youtu.be/hcB_VemqmN8",
+    category: "自己PR動画",
+    client: "ボディファイトジャパン 内山様",
+  },
+  {
+    id: "self-pr-tokiomarine-yoshikawa",
+    title: "プレゼンAIアニメ（東京海上日動火災保険 吉川様）",
+    youtubeUrl: "https://youtu.be/j4HvNVL3SRo",
+    category: "自己PR動画",
+    client: "東京海上日動火災保険 吉川様",
+  },
+  {
+    id: "self-pr-meishi-mv",
+    title: "MV風PR動画（名刺動画PR）",
+    youtubeUrl: "https://youtube.com/shorts/IEHLoY3Koi0",
+    category: "自己PR動画",
     vertical: true,
   },
 ];
