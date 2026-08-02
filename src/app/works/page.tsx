@@ -16,6 +16,7 @@ export const metadata: Metadata = {
 
 const categories = [
   "すべて",
+  "クラウドファンディング支援",
   "クラウドファンディングPR動画",
   "SNS運用",
   "広告動画",
