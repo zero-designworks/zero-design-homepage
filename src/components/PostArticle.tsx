@@ -92,6 +92,34 @@ export function PostArticle({ post }: { post: Post }) {
                   </figure>
                 );
               }
+              if (b.type === "video") {
+                return (
+                  <figure key={i} className="pt-2">
+                    {b.title && (
+                      <p className="mb-3 font-serif text-lg text-sumi">{b.title}</p>
+                    )}
+                    <div
+                      className={`relative mx-auto w-full overflow-hidden rounded-brand border border-sumi/10 bg-sumi ${
+                        b.vertical ? "aspect-[9/16] max-w-[360px]" : "aspect-video"
+                      }`}
+                    >
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${b.youtubeId}`}
+                        title={b.title}
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full"
+                      />
+                    </div>
+                    {b.caption && (
+                      <figcaption className="mt-2 text-center text-xs text-sumi-soft/70">
+                        {b.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
               if (b.type === "callout") {
                 return (
                   <div

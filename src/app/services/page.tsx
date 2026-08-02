@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CtaBand } from "@/components/CtaBand";
@@ -53,6 +54,17 @@ export default function ServicesPage() {
                       </li>
                     ))}
                   </ul>
+                  {s.articleLink && (
+                    <Link
+                      href={s.articleLink.href}
+                      className="group mt-7 inline-flex items-center gap-2 text-sm font-semibold text-aka hover:text-aka/80"
+                    >
+                      {s.articleLink.label}
+                      <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </Link>
+                  )}
                 </div>
               </div>
             </Reveal>

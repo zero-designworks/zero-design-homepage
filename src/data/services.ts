@@ -6,6 +6,7 @@ export type Service = {
   features: string[];
   image: string;
   href: string;
+  articleLink?: { label: string; href: string };
 };
 
 export const services: Service[] = [
@@ -53,6 +54,10 @@ export const services: Service[] = [
     ],
     image: "/images/generated/svc-ai-video.png",
     href: "/services#ai-video",
+    articleLink: {
+      label: "AI動画でクラウドファンディングを加速（成功報酬型・制作事例）",
+      href: "/news/ai-video-crowdfunding",
+    },
   },
   {
     id: "web-design",

@@ -8,7 +8,8 @@ export type PostBlock =
   | { type: "h"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "callout"; label: string; text: string }
-  | { type: "img"; src: string; alt: string; caption?: string };
+  | { type: "img"; src: string; alt: string; caption?: string }
+  | { type: "video"; youtubeId: string; title: string; caption?: string; vertical?: boolean };
 
 export type RelatedLink = { label: string; href: string };
 
@@ -44,6 +45,168 @@ export const categoryMeta: Record<
 };
 
 export const posts: Post[] = [
+  {
+    slug: "ai-video-crowdfunding",
+    category: "news",
+    title:
+      "AI動画でクラウドファンディングを加速｜公開前から“資産”になるSNS動画支援（成功報酬型）のご案内",
+    seoTitle:
+      "AI動画でクラウドファンディングを加速｜成功報酬型のSNS動画支援・制作事例のご紹介【ZEROデザイン】",
+    publishedAt: "2026-08-02",
+    excerpt:
+      "クラウドファンディングの成否を左右するSNS発信を、AI動画で支援します。公開前から週3本・合計約20本を制作し、終了後も“資産”として活用。費用はクラウドファンディング達成後の成功報酬10%で、先出しの負担がありません。AIアニメ・歴史ドラマ風・MV風など多彩な制作事例（動画）もご紹介します。",
+    eyecatch: "/images/posts/ai-video-cf-hero.png",
+    blocks: [
+      {
+        type: "p",
+        text: "ZEROデザインは、クラウドファンディングの成否を大きく左右する「SNSでの発信」を、AI動画の力で支援するサービスを強化しています。プロジェクト公開前から継続的に動画を届け、終了後も残り続ける“資産”をつくる——その仕組みと制作事例をご紹介します。",
+      },
+
+      { type: "h", text: "SNSでの拡散が、クラウドファンディング成功のカギ" },
+      {
+        type: "img",
+        src: "/images/posts/ai-video-cf-01.png",
+        alt: "スマートフォンから動画が拡散し、多くの人に想いが届く様子のイメージイラスト",
+        caption: "SNSでどれだけ共感を広げられるかが、支援額を左右します。",
+      },
+      {
+        type: "p",
+        text: "クラウドファンディングは、良いプロジェクトページを用意すれば自然に支援が集まるものではありません。実際には、SNSでどれだけ多くの人に想いを届け、共感を広げられるかが支援額を大きく左右します。特に公開前から情報を発信し、「応援したい」と思ってくれる人を増やしておくことが、スタートダッシュにつながります。",
+      },
+
+      { type: "h", text: "「頻繁な投稿はハードルが高い」「外注すると高額」という壁" },
+      {
+        type: "img",
+        src: "/images/posts/ai-video-cf-02.png",
+        alt: "SNS投稿の負担と外注費用の高さに悩む様子を表したイメージイラスト",
+        caption: "「大事なのは分かるけれど続けられない」という課題。",
+      },
+      {
+        type: "p",
+        text: "とはいえ、SNSを継続的に運用し続けるのは簡単ではありません。次のような理由から、「発信が大事なのは分かっているけれど続けられない」というプロジェクトは少なくありません。",
+      },
+      {
+        type: "ul",
+        items: [
+          "毎日の投稿を考える時間がない",
+          "動画の企画・撮影・編集まで手が回らない",
+          "制作を外注すると費用が高額になりやすい",
+          "本業やクラウドファンディングの準備で手一杯",
+        ],
+      },
+
+      { type: "h", text: "AI動画の自動化で、公開前から週3本・合計20本を制作" },
+      {
+        type: "img",
+        src: "/images/posts/ai-video-cf-03.png",
+        alt: "AIが動画を自動で量産し、カレンダーに沿って配信されるイメージイラスト",
+        caption: "公開前から計画的に、週3本・合計約20本をお届け。",
+      },
+      {
+        type: "p",
+        text: "ZEROデザインは、AIを活用した動画制作の自動化により、この課題を解決します。プロジェクト公開前から週に3本のペースで動画を制作・配信し、合計およそ20本の動画を計画的にお届けします。単なる告知ではなく、「なぜこの挑戦をするのか」という想いをストーリーとして伝えることで、見た人の共感を育てていきます。",
+      },
+      {
+        type: "callout",
+        label: "費用について",
+        text: "クラウドファンディング達成後の成功報酬10%／先出しの負担なし",
+      },
+
+      { type: "h", text: "完成した動画は、クラファン後も“資産”として生き続ける" },
+      {
+        type: "img",
+        src: "/images/posts/ai-video-cf-04.png",
+        alt: "制作した動画が積み重なり、宝物のように輝く資産となるイメージイラスト",
+        caption: "約20本の動画が、その後の集客や次の挑戦へつながります。",
+      },
+      {
+        type: "p",
+        text: "制作した約20本の動画は、クラウドファンディング期間中だけのものではありません。プロジェクト終了後も、事業や団体の魅力を伝え続ける“資産”として活用できます。一度つくった動画が、その後の集客・ファンづくり・次の挑戦へとつながっていきます。",
+      },
+
+      { type: "h", text: "Instagram・YouTube・TikTok・Xなど、あらゆる媒体で活用" },
+      {
+        type: "img",
+        src: "/images/posts/ai-video-cf-05.png",
+        alt: "InstagramやYouTube、TikTok、Xなど複数のSNS媒体で動画を活用するイメージイラスト",
+        caption: "媒体ごとの特性に合わせ、幅広い層へ届けます。",
+      },
+      {
+        type: "p",
+        text: "制作した動画は、Instagramリール、YouTube、YouTube Shorts、TikTok、Xなど、さまざまな媒体で活用できます。媒体ごとの特性に合わせて発信することで、より幅広い層にプロジェクトを届けられます。",
+      },
+
+      { type: "h", text: "SNS運用を代行、支援者さまは本来の活動に集中できる" },
+      {
+        type: "img",
+        src: "/images/posts/ai-video-cf-06.png",
+        alt: "SNS運用を代行し、オーナーがリアルな活動に集中できる様子のイメージイラスト",
+        caption: "発信はおまかせ。オーナー様は本来の活動に集中できます。",
+      },
+      {
+        type: "p",
+        text: "ZEROデザインがSNSの発信・運用を代行するため、プロジェクトのオーナー様や支援者様は、リアルな場での活動——現地でのクラウドファンディング活動や関係者へのご挨拶、リターンの準備など——に集中していただけます。",
+      },
+
+      { type: "h", text: "AI動画で、多彩なPRを実現" },
+      {
+        type: "p",
+        text: "プロジェクトの魅力に合わせて、多彩なタイプの動画を制作します。実際の制作事例を、動画とあわせてご紹介します。",
+      },
+      {
+        type: "video",
+        youtubeId: "2CNthQ-K52c",
+        title: "🎬 AIアニメーション動画",
+        caption: "共感性の高いストーリーを、アニメーションでやわらかく伝えます。",
+        vertical: false,
+      },
+      {
+        type: "video",
+        youtubeId: "0WZN2Ob8USQ",
+        title: "🏯 AI歴史ドラマ風動画",
+        caption: "歴史をドラマ風に定期発信し、文化財としての重要性を全国へPRします。",
+        vertical: false,
+      },
+      {
+        type: "video",
+        youtubeId: "IEHLoY3Koi0",
+        title: "🎵 ミュージックビデオ風PR",
+        caption: "歌にのせて楽しく事業を紹介し、記憶に残る発信をします。",
+        vertical: true,
+      },
+      {
+        type: "video",
+        youtubeId: "VKBgjPVEkJU",
+        title: "📱 リターン品PR動画",
+        caption: "リターン（返礼品）の魅力を、短尺動画で分かりやすく伝えます。",
+        vertical: true,
+      },
+      {
+        type: "video",
+        youtubeId: "PcCwY3yo0bM",
+        title: "✨ クラウドファンディングの応援者をPR",
+        caption: "応援してくださる方々を紹介し、応援の輪の広がりを可視化します。",
+        vertical: true,
+      },
+
+      { type: "h", text: "AI動画・ショート動画制作のご相談はこちら" },
+      {
+        type: "img",
+        src: "/images/posts/ai-video-cf-07.png",
+        alt: "AI動画・ショート動画制作について相談するオーナーとZEROデザインのスタッフのイメージイラスト",
+        caption: "企画から制作、SNS運用の代行まで一貫して伴走します。",
+      },
+      {
+        type: "p",
+        text: "「発信を続けたいけれど手が回らない」「先出しの費用は抑えたい」——そんなクラウドファンディングをご検討の方は、ぜひZEROデザインの「AI動画・ショート動画制作」にご相談ください。企画から制作、SNS運用の代行まで一貫して伴走します。サービスの詳細は下記「関連リンク」よりご覧いただけます。",
+      },
+    ],
+    relatedPages: [
+      { label: "サービス｜AI動画・ショート動画制作", href: "/services#ai-video" },
+      { label: "クラウドファンディングとは？", href: "/crowdfunding" },
+      { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
+    ],
+  },
   {
     slug: "shrine-temple-crowdfunding-cases",
     category: "column",
