@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!post) return {};
   const url = `${categoryMeta.news.path}/${post.slug}`;
   return {
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.excerpt,
     alternates: { canonical: url },
     openGraph: {
@@ -27,7 +27,13 @@ export async function generateMetadata({
       title: post.title,
       description: post.excerpt,
       publishedTime: post.publishedAt,
-      images: [{ url: siteConfig.ogImage, width: 1536, height: 1024 }],
+      images: [{ url: post.eyecatch ?? siteConfig.ogImage }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.eyecatch ?? siteConfig.ogImage],
     },
   };
 }
@@ -43,7 +49,13 @@ export default async function NewsArticlePage({
   return (
     <>
       <PostArticle post={post} />
-      <ArticleJsonLd slug={post.slug} title={post.title} date={post.publishedAt} desc={post.excerpt} />
+      <ArticleJsonLd
+        slug={post.slug}
+        title={post.title}
+        date={post.publishedAt}
+        desc={post.excerpt}
+        image={post.eyecatch ?? siteConfig.ogImage}
+      />
     </>
   );
 }
@@ -53,11 +65,13 @@ function ArticleJsonLd({
   title,
   date,
   desc,
+  image,
 }: {
   slug: string;
   title: string;
   date: string;
   desc: string;
+  image: string;
 }) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -68,7 +82,7 @@ function ArticleJsonLd({
     dateModified: date,
     inLanguage: "ja",
     mainEntityOfPage: `${siteConfig.url}${categoryMeta.news.path}/${slug}`,
-    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    image: `${siteConfig.url}${image}`,
     author: { "@type": "Organization", name: siteConfig.name },
     publisher: {
       "@type": "Organization",

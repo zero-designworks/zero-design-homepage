@@ -18,7 +18,7 @@ export async function generateMetadata({
   if (!post) return {};
   const url = `${categoryMeta.column.path}/${post.slug}`;
   return {
-    title: post.title,
+    title: post.seoTitle ?? post.title,
     description: post.excerpt,
     alternates: { canonical: url },
     openGraph: {
@@ -27,7 +27,13 @@ export async function generateMetadata({
       title: post.title,
       description: post.excerpt,
       publishedTime: post.publishedAt,
-      images: [{ url: siteConfig.ogImage, width: 1536, height: 1024 }],
+      images: [{ url: post.eyecatch ?? siteConfig.ogImage }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.eyecatch ?? siteConfig.ogImage],
     },
   };
 }

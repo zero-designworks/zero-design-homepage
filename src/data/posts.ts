@@ -15,8 +15,10 @@ export type Post = {
   slug: string;
   category: PostCategory;
   title: string;
+  seoTitle?: string; // <title>用（省略時は title）
   publishedAt: string; // "YYYY-MM-DD"
-  excerpt: string;
+  excerpt: string; // 一覧の要約 & メタディスクリプション
+  eyecatch?: string; // アイキャッチ画像パス
   blocks: PostBlock[];
   externalLinks?: RelatedLink[];
   relatedPages?: RelatedLink[];
@@ -49,6 +51,7 @@ export const posts: Post[] = [
     publishedAt: "2026-08-02",
     excerpt:
       "ZEROデザインは、クラージュデザイン株式会社のクラウドファンディングをキュレーションパートナーとしてサポートしています。廃材パレットを活用したペット用家具（ベッド）のプロジェクトが2026年8月12日に開始予定です。",
+    eyecatch: "/images/posts/courage-design-crowdfunding-start.jpg",
     blocks: [
       { type: "p", text: "クラージュデザイン株式会社のクラウドファンディングをサポートしています。" },
       {
@@ -84,6 +87,104 @@ export const posts: Post[] = [
     relatedPages: [
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
+    ],
+  },
+  {
+    slug: "claude-code-instagram-automation",
+    category: "column",
+    title:
+      "Claude CodeでInstagram運用を自動化｜クラウドファンディング成功を支えるSNS運用とは",
+    seoTitle:
+      "Claude CodeでInstagram運用を自動化｜クラウドファンディング成功を支えるSNS・リール動画運用",
+    publishedAt: "2026-08-02",
+    excerpt:
+      "クラウドファンディングでは公開後のSNS発信が成功のポイント。ZEROデザインではClaude Codeを活用し、Instagram投稿やリール動画制作の効率化を支援しています。クラージュデザイン株式会社様のSNS運用事例も紹介します。",
+    eyecatch: "/images/posts/claude-code-instagram-automation.png",
+    blocks: [
+      { type: "h", text: "クラウドファンディングは「公開後」のSNS発信が成功のカギ" },
+      { type: "p", text: "クラウドファンディングは、プロジェクトページを公開して終わりではありません。むしろ公開後は、" },
+      {
+        type: "ul",
+        items: [
+          "制作の裏側",
+          "活動報告",
+          "支援者への感謝",
+          "リターン紹介",
+          "イベント告知",
+          "メディア掲載情報",
+        ],
+      },
+      { type: "p", text: "などをInstagramやFacebook、Xなどで継続的に発信することが、支援拡大につながります。" },
+      { type: "p", text: "しかし実際には、" },
+      {
+        type: "ul",
+        items: [
+          "投稿を考える時間がない",
+          "デザイン制作が追いつかない",
+          "リール動画まで手が回らない",
+          "更新頻度が下がってしまう",
+        ],
+      },
+      { type: "p", text: "という課題を抱えるプロジェクトも少なくありません。" },
+      { type: "h", text: "Claude Codeを活用したSNS運用の自動化" },
+      { type: "p", text: "ZEROデザインでは、Claude Codeを活用したSNS運用の自動化に取り組んでいます。例えば、" },
+      {
+        type: "ul",
+        items: [
+          "Instagram投稿の下書き生成",
+          "キャプション作成",
+          "ハッシュタグ案の生成",
+          "投稿画像・カルーセル構成の作成",
+          "ホームページの記事からSNS投稿への展開",
+          "リール動画の台本作成",
+          "リール動画のテロップ原稿作成",
+          "AI動画制作ワークフローとの連携",
+        ],
+      },
+      { type: "p", text: "などを効率化し、運用にかかる時間を大幅に短縮しています。" },
+      { type: "p", text: "さらに、リール動画制作についてもAIを組み合わせた自動化フローを構築し、短期間で継続的に発信できる体制づくりを支援しています。" },
+      { type: "h", text: "クラージュデザイン株式会社様でもSNS運用を支援" },
+      { type: "p", text: "ZEROデザインがキュレーションパートナーとして支援しているクラージュデザイン株式会社様でも、Claude CodeなどのAIを活用し、Instagram運用の効率化に取り組んでいます。" },
+      { type: "p", text: "制作の裏側や活動報告などを継続的に発信しやすい仕組みを整えることで、クラウドファンディング期間中の情報発信をサポートしています。" },
+      { type: "p", text: "クラージュデザイン株式会社様のInstagramは、下記「リンク」よりご覧いただけます。" },
+      { type: "h", text: "AIは「量産」のためだけではなく「継続」のため" },
+      { type: "p", text: "SNSで成果を出すためには、継続して情報を届けることが重要です。AIやClaude Codeは、人の代わりに想いを発信するものではありません。" },
+      { type: "p", text: "投稿制作や動画制作などの定型作業を効率化することで、人は" },
+      {
+        type: "ul",
+        items: [
+          "プロジェクトの魅力を考える",
+          "支援者とコミュニケーションを取る",
+          "新しい企画を考える",
+        ],
+      },
+      { type: "p", text: "といった、本来注力すべき仕事に時間を使えるようになります。" },
+      { type: "h", text: "ZEROデザインではAIを活用したSNS・クラウドファンディング支援を行っています" },
+      { type: "p", text: "ZEROデザインでは、" },
+      {
+        type: "ul",
+        items: [
+          "クラウドファンディング企画・伴走支援",
+          "SNS運用支援",
+          "Instagram運用",
+          "リール動画制作",
+          "AI動画制作",
+          "Claude Codeを活用した業務効率化",
+          "ホームページ制作",
+        ],
+      },
+      { type: "p", text: "まで一貫してサポートしています。" },
+      { type: "p", text: "クラウドファンディングやSNS運用をご検討の方は、お気軽にお問い合わせください。" },
+    ],
+    externalLinks: [
+      {
+        label: "クラージュデザイン株式会社 公式Instagram",
+        href: "https://www.instagram.com/couragedesign2026/?hl=ja",
+      },
+    ],
+    relatedPages: [
+      { label: "クラウドファンディングとは？", href: "/crowdfunding" },
+      { label: "サービス（SNS動画・AI動画支援）", href: "/services" },
     ],
   },
 ];

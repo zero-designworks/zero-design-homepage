@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
@@ -33,6 +34,19 @@ export function PostArticle({ post }: { post: Post }) {
               {post.title}
             </h1>
           </header>
+
+          {post.eyecatch && (
+            <div className="relative mt-8 aspect-[16/9] w-full overflow-hidden rounded-brand border border-sumi/10 bg-kinari">
+              <Image
+                src={post.eyecatch}
+                alt={post.title}
+                fill
+                priority
+                sizes="(max-width: 768px) 92vw, 768px"
+                className="object-cover"
+              />
+            </div>
+          )}
 
           <div className="mt-8 hairline" />
 
