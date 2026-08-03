@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button, Arrow } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { LatestPosts } from "@/components/LatestPosts";
 import { siteConfig } from "@/data/siteConfig";
 import { services, reasons, flow } from "@/data/services";
 import { profile } from "@/data/profile";
@@ -405,6 +406,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ============ 最新情報（お知らせ / コラム） ============ */}
+      <div className="paper-texture">
+        <LatestPosts />
+      </div>
 
       {/* ============ 5-11. お問い合わせ導線 ============ */}
       <section className="relative overflow-hidden bg-aka py-24 text-white md:py-32">
