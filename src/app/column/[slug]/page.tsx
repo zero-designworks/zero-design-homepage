@@ -46,5 +46,35 @@ export default async function ColumnArticlePage({
   const { slug } = await params;
   const post = getPost("column", slug);
   if (!post) notFound();
-  return <PostArticle post={post} />;
+
+  const image = post.eyecatch ?? siteConfig.ogImage;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    inLanguage: "ja",
+    mainEntityOfPage: `${siteConfig.url}${categoryMeta.column.path}/${post.slug}`,
+    image: `${siteConfig.url}${image}`,
+    author: post.author
+      ? { "@type": "Person", name: post.author.name }
+      : { "@type": "Organization", name: siteConfig.name },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: { "@type": "ImageObject", url: `${siteConfig.url}/icon.svg` },
+    },
+  };
+
+  return (
+    <>
+      <PostArticle post={post} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </>
+  );
 }

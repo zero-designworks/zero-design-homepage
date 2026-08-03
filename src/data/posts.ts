@@ -257,21 +257,23 @@ export const posts: Post[] = [
     title:
       "AI動画でクラウドファンディングを加速｜公開前から“資産”になるSNS動画支援（成功報酬型）のご案内",
     seoTitle:
-      "AI動画でクラウドファンディングを加速｜成功報酬型のSNS動画支援・制作事例のご紹介【ZEROデザイン】",
+      "AI動画でクラウドファンディングを加速｜成功報酬型で約20本制作",
     publishedAt: "2026-08-02",
     excerpt:
-      "クラウドファンディングの成否を左右するSNS発信を、AI動画で支援します。公開前から週3本・合計約20本を制作し、終了後も“資産”として活用。費用はクラウドファンディング達成後の成功報酬10%で、先出しの負担がありません。AIアニメ・歴史ドラマ風・MV風など多彩な制作事例（動画）もご紹介します。",
-    eyecatch: "/images/posts/ai-video-cf-hero.png",
+      "クラウドファンディングの成否を左右するSNS発信を、AI動画で支援します。公開前から約20本を制作し、終了後も“資産”として活用。費用は達成後の成功報酬10%で先出し負担なし。制作事例もご紹介します。",
+    eyecatch: "/images/posts/ai-video-cf-hero.jpg",
     blocks: [
       {
         type: "p",
         text: "ZEROデザインは、クラウドファンディングの成否を大きく左右する「SNSでの発信」を、AI動画の力で支援するサービスを強化しています。プロジェクト公開前から継続的に動画を届け、終了後も残り続ける“資産”をつくる——その仕組みと制作事例をご紹介します。",
       },
 
+      { type: "toc", title: "この記事の目次" },
+
       { type: "h", text: "SNSでの拡散が、クラウドファンディング成功のカギ" },
       {
         type: "img",
-        src: "/images/posts/ai-video-cf-01.png",
+        src: "/images/posts/ai-video-cf-01.webp",
         alt: "スマートフォンから動画が拡散し、多くの人に想いが届く様子のイメージイラスト",
         caption: "SNSでどれだけ共感を広げられるかが、支援額を左右します。",
       },
@@ -283,7 +285,7 @@ export const posts: Post[] = [
       { type: "h", text: "「頻繁な投稿はハードルが高い」「外注すると高額」という壁" },
       {
         type: "img",
-        src: "/images/posts/ai-video-cf-02.png",
+        src: "/images/posts/ai-video-cf-02.webp",
         alt: "SNS投稿の負担と外注費用の高さに悩む様子を表したイメージイラスト",
         caption: "「大事なのは分かるけれど続けられない」という課題。",
       },
@@ -304,7 +306,7 @@ export const posts: Post[] = [
       { type: "h", text: "AI動画の自動化で、公開前から週3本・合計20本を制作" },
       {
         type: "img",
-        src: "/images/posts/ai-video-cf-03.png",
+        src: "/images/posts/ai-video-cf-03.webp",
         alt: "AIが動画を自動で量産し、カレンダーに沿って配信されるイメージイラスト",
         caption: "公開前から計画的に、週3本・合計約20本をお届け。",
       },
@@ -321,7 +323,7 @@ export const posts: Post[] = [
       { type: "h", text: "完成した動画は、クラファン後も“資産”として生き続ける" },
       {
         type: "img",
-        src: "/images/posts/ai-video-cf-04.png",
+        src: "/images/posts/ai-video-cf-04.webp",
         alt: "制作した動画が積み重なり、宝物のように輝く資産となるイメージイラスト",
         caption: "約20本の動画が、その後の集客や次の挑戦へつながります。",
       },
@@ -333,7 +335,7 @@ export const posts: Post[] = [
       { type: "h", text: "Instagram・YouTube・TikTok・Xなど、あらゆる媒体で活用" },
       {
         type: "img",
-        src: "/images/posts/ai-video-cf-05.png",
+        src: "/images/posts/ai-video-cf-05.webp",
         alt: "InstagramやYouTube、TikTok、Xなど複数のSNS媒体で動画を活用するイメージイラスト",
         caption: "媒体ごとの特性に合わせ、幅広い層へ届けます。",
       },
@@ -345,7 +347,7 @@ export const posts: Post[] = [
       { type: "h", text: "SNS運用を代行、支援者さまは本来の活動に集中できる" },
       {
         type: "img",
-        src: "/images/posts/ai-video-cf-06.png",
+        src: "/images/posts/ai-video-cf-06.webp",
         alt: "SNS運用を代行し、オーナーがリアルな活動に集中できる様子のイメージイラスト",
         caption: "発信はおまかせ。オーナー様は本来の活動に集中できます。",
       },
@@ -398,7 +400,7 @@ export const posts: Post[] = [
       { type: "h", text: "AI動画・ショート動画制作のご相談はこちら" },
       {
         type: "img",
-        src: "/images/posts/ai-video-cf-07.png",
+        src: "/images/posts/ai-video-cf-07.webp",
         alt: "AI動画・ショート動画制作について相談するオーナーとZEROデザインのスタッフのイメージイラスト",
         caption: "企画から制作、SNS運用の代行まで一貫して伴走します。",
       },
@@ -409,6 +411,10 @@ export const posts: Post[] = [
     ],
     relatedPages: [
       { label: "サービス｜AI動画・ショート動画制作", href: "/services#ai-video" },
+      {
+        label: "コラム：Claude CodeでInstagram運用を自動化する方法",
+        href: "/column/claude-code-instagram-automation",
+      },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
     ],
@@ -428,21 +434,23 @@ export const posts: Post[] = [
     title:
       "神社仏閣のクラウドファンディング成功事例｜本堂・文化財を未来へ残す資金調達とは",
     seoTitle:
-      "神社仏閣のクラウドファンディング成功事例｜CAMPFIRE活用・本堂再建の資金調達を解説【小谷寺の事例つき】",
+      "神社仏閣のクラウドファンディング成功事例｜736万円達成の秘訣",
     publishedAt: "2026-08-02",
     excerpt:
-      "老朽化した本堂・社殿の修復や文化財の保存に、いま神社仏閣のクラウドファンディングが広がっています。CAMPFIREを活用した資金調達の仕組みと、支援が集まるポイント、リターン設計を解説。ZEROデザインが伴走した「小谷寺 本堂再建プロジェクト（目標500万円に対し約736万円を達成）」の事例もご紹介します。",
-    eyecatch: "/images/posts/shrine-temple-cf-hero.png",
+      "本堂・社殿の修復や文化財保存に、神社仏閣のクラウドファンディングが広がっています。CAMPFIRE活用の仕組みと支援が集まるポイント、目標を超え約736万円を集めた小谷寺の事例を解説します。",
+    eyecatch: "/images/posts/shrine-temple-cf-hero.jpg",
     blocks: [
       {
         type: "p",
         text: "何百年もの歴史を受け継いできた神社やお寺。その多くが今、老朽化した本堂・社殿の修復、仏像や文化財の保存、伝統行事の継承といった課題に直面しています。こうした「守り継ぐための挑戦」を支える手段として、いま全国で広がっているのがクラウドファンディングです。本コラムでは、CAMPFIREを活用した神社仏閣のクラウドファンディングの仕組みと成功のポイントを、弊社ZEROデザインが実際に伴走した「小谷寺 本堂再建プロジェクト」の事例を交えてご紹介します。",
       },
 
+      { type: "toc", title: "この記事の目次" },
+
       { type: "h", text: "なぜ今、神社仏閣にクラウドファンディングが選ばれるのか" },
       {
         type: "img",
-        src: "/images/posts/shrine-temple-cf-01.png",
+        src: "/images/posts/shrine-temple-cf-01.webp",
         alt: "古い木造のお堂を全国の支援者がスマートフォンから応援するイメージイラスト",
         caption: "地域の枠を超えて、想いに共感する人々が支援できる時代へ。",
       },
@@ -467,7 +475,7 @@ export const posts: Post[] = [
       { type: "h", text: "神社仏閣のクラウドファンディングで実現できること" },
       {
         type: "img",
-        src: "/images/posts/shrine-temple-cf-02.png",
+        src: "/images/posts/shrine-temple-cf-02.webp",
         alt: "足場を組んで本堂の屋根を修復する職人と、御朱印を表すイメージイラスト",
         caption: "修復・保存から行事の復活まで、幅広い挑戦を後押しします。",
       },
@@ -496,7 +504,7 @@ export const posts: Post[] = [
       },
       {
         type: "img",
-        src: "/images/posts/shrine-temple-cf-03.png",
+        src: "/images/posts/shrine-temple-cf-03.webp",
         alt: "滋賀県長浜市・小谷寺の歴史ある本堂と湖北の山並みを描いたイメージイラスト",
         caption: "浅井三代の祈願寺・小谷寺。1300年の歴史を未来へ繋ぐ挑戦。",
       },
@@ -521,7 +529,7 @@ export const posts: Post[] = [
       { type: "h", text: "支援が集まる神社仏閣クラウドファンディング 3つのポイント" },
       {
         type: "img",
-        src: "/images/posts/shrine-temple-cf-04.png",
+        src: "/images/posts/shrine-temple-cf-04.webp",
         alt: "物語・ビジュアル・SNS発信の3要素を表したイメージイラスト",
         caption: "「伝わる設計」が、支援の輪を大きく広げます。",
       },
@@ -541,7 +549,7 @@ export const posts: Post[] = [
       { type: "h", text: "心に響くリターン（返礼品）の設計" },
       {
         type: "img",
-        src: "/images/posts/shrine-temple-cf-05.png",
+        src: "/images/posts/shrine-temple-cf-05.webp",
         alt: "限定御朱印・芳名帳への記名・特別拝観などのリターンを表すイメージイラスト",
         caption: "その寺社ならではの、特別な体験がリターンになります。",
       },
@@ -562,7 +570,7 @@ export const posts: Post[] = [
       { type: "h", text: "ZEROデザインの神社仏閣クラウドファンディング支援" },
       {
         type: "img",
-        src: "/images/posts/shrine-temple-cf-06.png",
+        src: "/images/posts/shrine-temple-cf-06.webp",
         alt: "カメラとパソコンを手に寺社の挑戦に伴走するZEROデザインのスタッフのイメージイラスト",
         caption: "企画から公開後の発信まで、ゼロから伴走します。",
       },
@@ -608,6 +616,10 @@ export const posts: Post[] = [
     ],
     relatedPages: [
       { label: "コラム：新店舗・新商品にクラウドファンディングが最適な理由", href: "/column/new-store-product-crowdfunding" },
+      {
+        label: "お知らせ：FMおおつ出演｜小谷寺クラファンの裏側を語りました",
+        href: "/news/fmotsu-give-part2-radio",
+      },
       { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
@@ -620,13 +632,15 @@ export const posts: Post[] = [
     tags: ["media", "nagahama"],
     title: "FMおおつ『GIVEの流儀 Part2』に代表・浅見和貴が出演しました",
     seoTitle:
-      "FMおおつ『GIVEの流儀 Part2』出演｜ZEROデザイン浅見和貴が小谷寺クラファン・長浜への想いを語る",
+      "FMおおつ出演｜浅見和貴が語る小谷寺クラファン736万円の裏側",
     publishedAt: "2026-01-11",
     excerpt:
-      "FMおおつのラジオ番組『GIVEの流儀 Part2』に、ZEROデザイン代表・浅見和貴が出演。小谷寺本堂再建クラウドファンディング（目標500万円に対し約736万円を達成）や、地元・長浜／湖北地域への想いを語りました。放送はApple Podcastsなどのアーカイブでもお聴きいただけます。",
-    eyecatch: "/images/posts/fmotsu-give-radio.png",
+      "FMおおつ『GIVEの流儀 Part2』にZEROデザイン代表・浅見和貴が出演。小谷寺本堂再建クラウドファンディングで約736万円を集めた経緯や、地元・長浜／湖北への想いを語りました。",
+    eyecatch: "/images/posts/fmotsu-give-radio.jpg",
     blocks: [
       { type: "p", text: "ZEROデザイン代表の浅見和貴が、FMおおつ（79.1MHz）のラジオ番組『GIVEの流儀 Part2』にゲスト出演しました。" },
+
+      { type: "toc", title: "この記事の目次" },
       { type: "callout", label: "出演番組", text: "FMおおつ『GIVEの流儀 Part2』第22回" },
       { type: "h", text: "番組『GIVEの流儀』について" },
       { type: "p", text: "『GIVEの流儀 Part2』は、FMおおつ（79.1MHz／毎週日曜 22:00〜22:30）で放送されているトーク番組です。パーソナリティは、BNI滋賀西京都北のリージョンディレクターを務める古田誠さん。提供はBNI滋賀西京都北。地域で「与える（GIVE）」を体現しながら挑戦を続ける人にスポットを当て、その活動や想いを掘り下げていく番組です。" },
@@ -668,12 +682,15 @@ export const posts: Post[] = [
     tags: ["case-study", "product-development"],
     title:
       "クラージュデザイン株式会社のクラウドファンディングが2026年8月12日に開始します",
+    seoTitle: "クラージュデザインのクラウドファンディングが8月12日開始",
     publishedAt: "2026-08-02",
     excerpt:
       "ZEROデザインは、クラージュデザイン株式会社のクラウドファンディングをキュレーションパートナーとしてサポートしています。廃材パレットを活用したペット用家具（ベッド）のプロジェクトが2026年8月12日に開始予定です。",
     eyecatch: "/images/posts/courage-design-crowdfunding-start.jpg",
     blocks: [
       { type: "p", text: "クラージュデザイン株式会社のクラウドファンディングをサポートしています。" },
+
+      { type: "toc", title: "この記事の目次" },
       {
         type: "p",
         text: "ZEROデザインは、クラウドファンディング支援・SNS動画支援を行うキュレーションパートナーとして、クラージュデザイン株式会社のプロジェクトをサポートしています。",
@@ -705,6 +722,10 @@ export const posts: Post[] = [
       },
     ],
     relatedPages: [
+      {
+        label: "コラム：Claude CodeでInstagram運用を自動化する方法",
+        href: "/column/claude-code-instagram-automation",
+      },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
     ],
@@ -717,13 +738,15 @@ export const posts: Post[] = [
     title:
       "Claude CodeでInstagram運用を自動化｜クラウドファンディング成功を支えるSNS運用とは",
     seoTitle:
-      "Claude CodeでInstagram運用を自動化｜クラウドファンディング成功を支えるSNS・リール動画運用",
+      "Claude CodeでInstagram運用を自動化｜クラファン支援",
     publishedAt: "2026-08-02",
     excerpt:
       "クラウドファンディングでは公開後のSNS発信が成功のポイント。ZEROデザインではClaude Codeを活用し、Instagram投稿やリール動画制作の効率化を支援しています。クラージュデザイン株式会社様のSNS運用事例も紹介します。",
-    eyecatch: "/images/posts/claude-code-instagram-automation.png",
+    eyecatch: "/images/posts/claude-code-instagram-automation.jpg",
     blocks: [
       { type: "h", text: "クラウドファンディングは「公開後」のSNS発信が成功のカギ" },
+
+      { type: "toc", title: "この記事の目次" },
       { type: "p", text: "クラウドファンディングは、プロジェクトページを公開して終わりではありません。むしろ公開後は、" },
       {
         type: "ul",
@@ -805,6 +828,10 @@ export const posts: Post[] = [
       },
     ],
     relatedPages: [
+      {
+        label: "お知らせ：クラージュデザインのクラウドファンディングが8月12日開始",
+        href: "/news/courage-design-crowdfunding-start",
+      },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "サービス（SNS動画・AI動画支援）", href: "/services" },
     ],
