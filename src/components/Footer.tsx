@@ -33,6 +33,11 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/category" className="text-kinari/70 transition-colors hover:text-kin">
+                  カテゴリー一覧
+                </Link>
+              </li>
             </ul>
           </nav>
 

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/siteConfig";
-import { posts, categoryMeta } from "@/data/posts";
+import { posts, categoryMeta, countPostsInCategory } from "@/data/posts";
+import { allCategories, categoryPath } from "@/data/blogCategories";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -14,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/works",
     "/column",
     "/news",
+    "/category",
     "/profile",
     "/pricing",
     "/contact",
@@ -34,5 +36,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...postEntries];
+  // カテゴリーアーカイブ（記事が1件以上あるものだけ登録）
+  const categoryEntries: MetadataRoute.Sitemap = allCategories
+    .filter((c) => countPostsInCategory(c.slug) > 0)
+    .map((c) => ({
+      url: `${siteConfig.url}${categoryPath(c.slug)}`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    }));
+
+  return [...staticEntries, ...categoryEntries, ...postEntries];
 }

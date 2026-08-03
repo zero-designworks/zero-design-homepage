@@ -1,5 +1,12 @@
 // お知らせ・コラムの記事データ。
 // ここに追記するだけで一覧・詳細ページに自動反映されます。
+//
+// 分類は2軸あります。
+//   1) セクション（PostCategory: news / column）… 掲載場所。URLの起点になります。
+//   2) ブログカテゴリー（categories）… サイト全体の分類軸。1記事に必ず1つ以上必要。
+//      タグ（tags）はカテゴリーとは別管理です。 → src/data/tags.ts
+
+import { categoryWithDescendants, type CategorySlug } from "./blogCategories";
 
 export type PostCategory = "news" | "column";
 
@@ -9,7 +16,9 @@ export type PostBlock =
   | { type: "ul"; items: string[] }
   | { type: "callout"; label: string; text: string }
   | { type: "img"; src: string; alt: string; caption?: string }
-  | { type: "video"; youtubeId: string; title: string; caption?: string; vertical?: boolean };
+  | { type: "video"; youtubeId: string; title: string; caption?: string; vertical?: boolean }
+  | { type: "toc"; title?: string }
+  | { type: "cta"; text?: string; label: string; href: string };
 
 export type RelatedLink = { label: string; href: string };
 
@@ -23,7 +32,13 @@ export type PostAuthor = {
 
 export type Post = {
   slug: string;
-  category: PostCategory;
+  category: PostCategory; // セクション（掲載場所）
+  /**
+   * ブログカテゴリー。必ず1つ以上（型で強制）。
+   * 先頭がメインカテゴリーとなり、パンくずに表示されます。
+   */
+  categories: [CategorySlug, ...CategorySlug[]];
+  tags?: string[]; // タグは別管理（src/data/tags.ts のスラッグ）
   title: string;
   seoTitle?: string; // <title>用（省略時は title）
   publishedAt: string; // "YYYY-MM-DD"
@@ -57,24 +72,27 @@ export const posts: Post[] = [
   {
     slug: "new-store-product-crowdfunding",
     category: "column",
+    categories: ["crowdfunding", "promotion"],
+    tags: ["shop-opening", "product-development", "beginner"],
     title:
       "なぜ新店舗・新商品にクラウドファンディングが最適なのか｜“お金を集めながらPRできる”という最大の強み",
-    seoTitle:
-      "新店舗・新商品にクラウドファンディングが向く理由｜資金調達とPRを同時に叶える活用法【ZEROデザイン】",
+    seoTitle: "新店舗・新商品にクラウドファンディングが最適な理由",
     publishedAt: "2026-08-03",
     excerpt:
-      "新しくお店を開く、新商品を出す——そのとき経営者は「資金」と「集客」という2つの壁に同時に直面します。クラウドファンディングは、お金を集めながらPRし、最初のファンまで獲得できる方法。新店舗・新商品との相性が良い理由を、テストマーケティングやコアファン化、CAMPFIREの全国リーチの観点から解説します。",
-    eyecatch: "/images/posts/new-cf-hero.png",
+      "新しくお店を開く・新商品を出すとき、資金と集客の壁を同時に越える鍵がクラウドファンディング。お金を集めながらPRし、最初のファンも獲得できる——新店舗・新商品との相性の良さを解説します。",
+    eyecatch: "/images/posts/new-cf-hero.webp",
     blocks: [
       {
         type: "p",
         text: "新しくお店を開店する、あるいは新商品を世に送り出す——。ワクワクする挑戦の裏側で、多くの経営者が「開業資金は足りるだろうか」「本当にお客さんは来てくれるだろうか」という不安を抱えています。この2つの悩みを“同時に”解決できる方法が、クラウドファンディングです。本コラムでは、新店舗・新商品とクラウドファンディングの相性が良い理由を、『お金を集めながらPRできる』という視点から解説します。",
       },
 
+      { type: "toc", title: "この記事の目次" },
+
       { type: "h", text: "新店舗・新商品の「最初の壁」は、資金と集客を同時に越えること" },
       {
         type: "img",
-        src: "/images/posts/new-cf-01.png",
+        src: "/images/posts/new-cf-01.webp",
         alt: "資金の壁とお客さんの壁という2つの壁を前にする新規開業者のイメージイラスト",
         caption: "新しい挑戦は「資金」と「集客」の壁を同時に越える必要があります。",
       },
@@ -90,7 +108,7 @@ export const posts: Post[] = [
       { type: "h", text: "クラウドファンディングの本質は「お金を集めながらPRできる」こと" },
       {
         type: "img",
-        src: "/images/posts/new-cf-02.png",
+        src: "/images/posts/new-cf-02.webp",
         alt: "スマートフォンのプロジェクトページから支援金と共感が同時に広がるイメージイラスト",
         caption: "資金調達とPRを、一度に・同時に行えるのが最大の強み。",
       },
@@ -114,7 +132,7 @@ export const posts: Post[] = [
       { type: "h", text: "なぜ新店舗とクラウドファンディングは相性が良いのか" },
       {
         type: "img",
-        src: "/images/posts/new-cf-03.png",
+        src: "/images/posts/new-cf-03.webp",
         alt: "開店日に、すでに常連候補のお客さんが列をつくって待っている新店舗のイメージイラスト",
         caption: "開店する頃には、すでにファンが待っている状態をつくれます。",
       },
@@ -139,7 +157,7 @@ export const posts: Post[] = [
       { type: "h", text: "なぜ新商品とクラウドファンディングは相性が良いのか" },
       {
         type: "img",
-        src: "/images/posts/new-cf-04.png",
+        src: "/images/posts/new-cf-04.webp",
         alt: "試作品を手に取る作り手と、感想を伝える支援者。在庫の山がないテストマーケティングのイメージイラスト",
         caption: "在庫リスクのない“テストマーケティング”として機能します。",
       },
@@ -161,10 +179,17 @@ export const posts: Post[] = [
         text: "「作ってから売る」のではなく「反応を確かめてから作る」。この順番の逆転が、新商品につきものの失敗リスクを大きく下げてくれます。",
       },
 
+      {
+        type: "cta",
+        text: "新店舗・新商品のクラウドファンディングを検討中の方へ。構想段階からご相談いただけます。",
+        label: "無料相談を申し込む",
+        href: "/contact",
+      },
+
       { type: "h", text: "支援者は「お客様」であり、そのまま「ファン」になる" },
       {
         type: "img",
-        src: "/images/posts/new-cf-05.png",
+        src: "/images/posts/new-cf-05.webp",
         alt: "商品やお店を囲んで応援する人々。支援者がコアファンになる様子のイメージイラスト",
         caption: "最初の“濃いファン”を、立ち上げと同時に獲得できます。",
       },
@@ -180,7 +205,7 @@ export const posts: Post[] = [
       { type: "h", text: "広告費をかけずに、全国へ認知を広げられる" },
       {
         type: "img",
-        src: "/images/posts/new-cf-06.png",
+        src: "/images/posts/new-cf-06.webp",
         alt: "スマートフォンから全国の人々へプロジェクトが届き、認知が広がるイメージイラスト",
         caption: "全国規模のユーザーへ、初期コストを抑えてリーチできます。",
       },
@@ -210,8 +235,15 @@ export const posts: Post[] = [
         type: "p",
         text: "ZEROデザインは、CAMPFIRE公式パートナーとして、企画・ストーリー設計・ページ制作・SNS発信までを一貫して伴走します。「新しく始めたいことがある」という段階からで大丈夫です。新店舗・新商品のクラウドファンディングをご検討の方は、まずはお気軽にご相談ください。",
       },
+      {
+        type: "cta",
+        text: "あなたの新しい挑戦を、ゼロから一緒に形にします。",
+        label: "無料相談・お問い合わせはこちら",
+        href: "/contact",
+      },
     ],
     relatedPages: [
+      { label: "コラム：神社仏閣のクラウドファンディング成功事例", href: "/column/shrine-temple-crowdfunding-cases" },
       { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
@@ -220,6 +252,8 @@ export const posts: Post[] = [
   {
     slug: "ai-video-crowdfunding",
     category: "news",
+    categories: ["ai-video", "crowdfunding"],
+    tags: ["case-study", "short-video", "success-fee"],
     title:
       "AI動画でクラウドファンディングを加速｜公開前から“資産”になるSNS動画支援（成功報酬型）のご案内",
     seoTitle:
@@ -389,6 +423,8 @@ export const posts: Post[] = [
   {
     slug: "shrine-temple-crowdfunding-cases",
     category: "column",
+    categories: ["shrine-temple", "crowdfunding", "heritage"],
+    tags: ["case-study", "know-how"],
     title:
       "神社仏閣のクラウドファンディング成功事例｜本堂・文化財を未来へ残す資金調達とは",
     seoTitle:
@@ -571,6 +607,7 @@ export const posts: Post[] = [
       },
     ],
     relatedPages: [
+      { label: "コラム：新店舗・新商品にクラウドファンディングが最適な理由", href: "/column/new-store-product-crowdfunding" },
       { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
@@ -579,6 +616,8 @@ export const posts: Post[] = [
   {
     slug: "fmotsu-give-part2-radio",
     category: "news",
+    categories: ["works-category", "crowdfunding", "shrine-temple"],
+    tags: ["media", "nagahama"],
     title: "FMおおつ『GIVEの流儀 Part2』に代表・浅見和貴が出演しました",
     seoTitle:
       "FMおおつ『GIVEの流儀 Part2』出演｜ZEROデザイン浅見和貴が小谷寺クラファン・長浜への想いを語る",
@@ -625,6 +664,8 @@ export const posts: Post[] = [
   {
     slug: "courage-design-crowdfunding-start",
     category: "news",
+    categories: ["crowdfunding", "works-category"],
+    tags: ["case-study", "product-development"],
     title:
       "クラージュデザイン株式会社のクラウドファンディングが2026年8月12日に開始します",
     publishedAt: "2026-08-02",
@@ -671,6 +712,8 @@ export const posts: Post[] = [
   {
     slug: "claude-code-instagram-automation",
     category: "column",
+    categories: ["claude-code", "instagram"],
+    tags: ["automation", "know-how", "short-video"],
     title:
       "Claude CodeでInstagram運用を自動化｜クラウドファンディング成功を支えるSNS運用とは",
     seoTitle:
@@ -785,4 +828,44 @@ export function getPost(category: PostCategory, slug: string): Post | undefined 
 export function formatDate(iso: string): string {
   const [y, m, d] = iso.split("-");
   return `${y}年${Number(m)}月${Number(d)}日`;
+}
+
+// ---- ブログカテゴリー / タグ ----
+
+/** 記事のURL（セクションを起点にした詳細ページ） */
+export function postPath(post: Post): string {
+  return `${categoryMeta[post.category].path}/${post.slug}`;
+}
+
+/** メインカテゴリー（パンくずに表示するもの）＝ categories の先頭 */
+export function primaryCategory(post: Post): CategorySlug {
+  return post.categories[0];
+}
+
+/**
+ * ブログカテゴリーに属する記事。
+ * 親カテゴリーを指定した場合は、子カテゴリーの記事も含めて返します。
+ */
+export function getPostsByBlogCategory(slug: CategorySlug): Post[] {
+  const targets = new Set<CategorySlug>(categoryWithDescendants(slug));
+  return posts
+    .filter((p) => p.categories.some((c) => targets.has(c)))
+    .sort(byDateDesc);
+}
+
+/** タグに属する記事 */
+export function getPostsByTag(tagSlug: string): Post[] {
+  return posts.filter((p) => p.tags?.includes(tagSlug)).sort(byDateDesc);
+}
+
+/** 実際に記事が1件以上あるタグのスラッグ一覧 */
+export function usedTagSlugs(): string[] {
+  const set = new Set<string>();
+  posts.forEach((p) => p.tags?.forEach((t) => set.add(t)));
+  return [...set];
+}
+
+/** カテゴリーごとの記事件数（親は子孫を含む） */
+export function countPostsInCategory(slug: CategorySlug): number {
+  return getPostsByBlogCategory(slug).length;
 }

@@ -2,30 +2,57 @@ import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
-import { categoryMeta, formatDate, type Post } from "@/data/posts";
+import { categoryMeta, formatDate, primaryCategory, type Post } from "@/data/posts";
+import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
+import { categoryPath, categoryTrail, getCategory } from "@/data/blogCategories";
+import { getTag } from "@/data/tags";
 
 export function PostArticle({ post }: { post: Post }) {
   const cat = categoryMeta[post.category];
+
+  // パンくず：ホーム / セクション / カテゴリー（親→子） / 記事タイトル
+  const trail = categoryTrail(primaryCategory(post));
+  const crumbs: Crumb[] = [
+    { label: cat.label, href: cat.path },
+    ...trail.map((c) => ({ label: c.label, href: categoryPath(c.slug) })),
+    { label: post.title },
+  ];
+
+  // 見出し（h）に安定したidを割り当て、目次リンクの飛び先にする
+  const headings: { text: string; id: string }[] = [];
+  const headingId = new Map<number, string>();
+  post.blocks.forEach((b, i) => {
+    if (b.type === "h") {
+      const id = `sec-${i}`;
+      headingId.set(i, id);
+      headings.push({ text: b.text, id });
+    }
+  });
   return (
     <>
       <article className="pt-28 md:pt-36">
         <div className="container-narrow">
-          {/* パンくず */}
-          <nav aria-label="パンくず" className="mb-6 text-xs text-sumi-soft/70">
-            <Link href="/" className="hover:text-aka">
-              ホーム
-            </Link>
-            <span className="mx-2">/</span>
-            <Link href={cat.path} className="hover:text-aka">
-              {cat.label}
-            </Link>
-          </nav>
+          {/* パンくず（カテゴリーを含む・構造化データ付き） */}
+          <Breadcrumb items={crumbs} />
 
           <header>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
               <span className="inline-flex items-center rounded-full bg-aka/10 px-3 py-1 text-xs font-semibold text-aka">
                 {cat.label}
               </span>
+              {post.categories.map((slug) => {
+                const c = getCategory(slug);
+                if (!c) return null;
+                return (
+                  <Link
+                    key={slug}
+                    href={categoryPath(slug)}
+                    className="inline-flex items-center rounded-full border border-sumi/15 px-3 py-1 text-xs text-sumi-soft transition-colors hover:border-aka/40 hover:text-aka"
+                  >
+                    {c.label}
+                  </Link>
+                );
+              })}
               <time dateTime={post.publishedAt} className="text-sm text-sumi-soft">
                 {formatDate(post.publishedAt)}
               </time>
@@ -55,9 +82,54 @@ export function PostArticle({ post }: { post: Post }) {
             {post.blocks.map((b, i) => {
               if (b.type === "h") {
                 return (
-                  <h2 key={i} className="pt-4 font-serif text-xl text-sumi md:text-2xl">
+                  <h2
+                    key={i}
+                    id={headingId.get(i)}
+                    className="scroll-mt-28 pt-4 font-serif text-xl text-sumi md:text-2xl"
+                  >
                     {b.text}
                   </h2>
+                );
+              }
+              if (b.type === "toc") {
+                if (headings.length === 0) return null;
+                return (
+                  <nav
+                    key={i}
+                    aria-label="目次"
+                    className="rounded-brand border border-sumi/10 bg-kinari/40 p-6 sm:p-7"
+                  >
+                    <p className="mb-4 text-sm font-semibold text-aka">
+                      {b.title ?? "目次"}
+                    </p>
+                    <ol className="space-y-2.5">
+                      {headings.map((h, n) => (
+                        <li key={h.id} className="flex gap-3 text-sm leading-relaxed">
+                          <span className="shrink-0 font-serif text-aka/70">{n + 1}.</span>
+                          <a href={`#${h.id}`} className="text-sumi hover:text-aka hover:underline">
+                            {h.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  </nav>
+                );
+              }
+              if (b.type === "cta") {
+                return (
+                  <div
+                    key={i}
+                    className="flex flex-col items-center gap-4 rounded-brand border border-aka/20 bg-aka/5 px-6 py-7 text-center sm:flex-row sm:justify-between sm:text-left"
+                  >
+                    {b.text && <p className="font-serif text-lg text-sumi">{b.text}</p>}
+                    <Link
+                      href={b.href}
+                      className="inline-flex shrink-0 items-center justify-center gap-2 rounded-brand bg-aka px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-aka/90"
+                    >
+                      {b.label}
+                      <span aria-hidden>→</span>
+                    </Link>
+                  </div>
                 );
               }
               if (b.type === "ul") {
@@ -208,6 +280,49 @@ export function PostArticle({ post }: { post: Post }) {
               </div>
             </div>
           )}
+
+          {/* カテゴリー・タグ（タグは別管理） */}
+          <div className="mt-10 space-y-5 border-t border-sumi/10 pt-8">
+            <div>
+              <p className="mb-3 text-sm font-semibold text-sumi">カテゴリー</p>
+              <div className="flex flex-wrap gap-2">
+                {post.categories.map((slug) => {
+                  const c = getCategory(slug);
+                  if (!c) return null;
+                  return (
+                    <Link
+                      key={slug}
+                      href={categoryPath(slug)}
+                      className="inline-flex items-center rounded-full border border-sumi/15 bg-white px-4 py-1.5 text-sm text-sumi-soft transition-colors hover:border-aka/40 hover:text-aka"
+                    >
+                      {c.label}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
+            {post.tags && post.tags.length > 0 && (
+              <div>
+                <p className="mb-3 text-sm font-semibold text-sumi">タグ</p>
+                <div className="flex flex-wrap gap-2">
+                  {post.tags.map((slug) => {
+                    const t = getTag(slug);
+                    if (!t) return null;
+                    return (
+                      <Link
+                        key={slug}
+                        href={`/tag/${t.slug}`}
+                        className="inline-flex items-center rounded-full bg-kinari px-3.5 py-1.5 text-xs text-sumi-soft transition-colors hover:text-aka"
+                      >
+                        #{t.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* 一覧へ戻る */}
           <div className="mt-12">
