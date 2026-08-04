@@ -4,6 +4,7 @@ import { Arrow } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { asamiAuthor, categoryMeta, formatDate, primaryCategory, type Post } from "@/data/posts";
 import { instagramEmbedUrl } from "@/data/videos";
+import { ProfileSpeech } from "@/components/ProfileSpeech";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
 import { categoryPath, categoryTrail, getCategory } from "@/data/blogCategories";
 import { getTag } from "@/data/tags";
@@ -83,6 +84,9 @@ export function PostArticle({ post }: { post: Post }) {
 
           {/* 本文 */}
           <div className="mt-10 space-y-6 leading-loose text-sumi-soft">
+            {/* 冒頭：執筆者プロフィール吹き出し */}
+            {post.introSpeech && <ProfileSpeech message={post.introSpeech} position="left" />}
+
             {post.blocks.map((b, i) => {
               if (b.type === "h") {
                 return (
@@ -240,6 +244,9 @@ export function PostArticle({ post }: { post: Post }) {
                 </p>
               );
             })}
+
+            {/* 末尾：執筆者プロフィール吹き出し */}
+            {post.closingSpeech && <ProfileSpeech message={post.closingSpeech} position="right" />}
           </div>
 
           {/* 著者プロフィール */}

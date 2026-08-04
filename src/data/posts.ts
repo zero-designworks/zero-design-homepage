@@ -49,6 +49,10 @@ export type Post = {
   externalLinks?: RelatedLink[];
   relatedPages?: RelatedLink[];
   author?: PostAuthor;
+  /** 記事冒頭に表示する、執筆者プロフィール吹き出しの文章（目安60〜120字） */
+  introSpeech?: string;
+  /** 記事末尾に表示する、執筆者プロフィール吹き出しの文章（目安80〜160字） */
+  closingSpeech?: string;
 };
 
 export const categoryMeta: Record<
@@ -91,6 +95,10 @@ export const posts: Post[] = [
     excerpt:
       "クラウドファンディングを始めたい初心者向けに、やり方を5ステップでやさしく解説。目的設定・目標金額・ストーリー・リターン・公開後の運営まで基本を紹介し、つまずかないためのプロ相談のコツもお伝えします。",
     eyecatch: "/images/posts/howto-cf-hero.webp",
+    introSpeech:
+      "こんにちは、ZEROデザインの浅見和貴です。今回は「クラウドファンディングのやり方」を、はじめての方にもわかるよう5つのステップに整理しました。私が支援の現場で見てきた、つまずきやすいポイントも交えてお話しします。",
+    closingSpeech:
+      "クラウドファンディングは、やり方を知っていても一人で進めるのは大変です。私が大切にしているのは、目標やストーリーを一緒に整理し、公開前から応援してくれる人との接点をつくること。「何から始めれば…」の段階からで大丈夫なので、迷ったら気軽に声をかけてください。",
     blocks: [
       {
         type: "p",
