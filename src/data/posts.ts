@@ -75,8 +75,8 @@ export const posts: Post[] = [
     categories: ["line", "shrine-temple"],
     tags: ["know-how", "case-study"],
     title:
-      "お寺のクラウドファンディングは「公式LINE」で終わらせない｜支援者をご開帳イベントの集客につなげる運用スキーム",
-    seoTitle: "お寺のクラウドファンディング×LINE公式活用術",
+      "お寺の集客に悩む方へ｜クラウドファンディングの支援者を公式LINEで「ご開帳・イベント集客」に変える方法",
+    seoTitle: "お寺の集客に効くクラファン×LINE活用術",
     publishedAt: "2026-08-03",
     excerpt:
       "お寺のクラウドファンディングは、集めて終わりではもったいない。公式LINEやオープンチャットで支援者を“厚い応援者”に変え、ご開帳など今後のイベント集客につなげる運用スキームを解説します。",
@@ -799,7 +799,7 @@ export const posts: Post[] = [
       },
     ],
     relatedPages: [
-      { label: "コラム：お寺のクラファンを公式LINEで未来の集客につなげる", href: "/column/temple-crowdfunding-line-community" },
+      { label: "コラム：お寺の集客にクラファン×公式LINEを生かす方法", href: "/column/temple-crowdfunding-line-community" },
       { label: "コラム：新店舗・新商品にクラウドファンディングが最適な理由", href: "/column/new-store-product-crowdfunding" },
       {
         label: "お知らせ：FMおおつ出演｜小谷寺クラファンの裏側を語りました",
