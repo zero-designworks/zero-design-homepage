@@ -25,7 +25,7 @@ export function LatestPosts() {
               最新情報
             </h2>
             <p className="mt-5 leading-relaxed text-sumi-soft">
-              ZEROデザインからのお知らせと、クラウドファンディング・SNS発信のヒントになるコラムをお届けします。
+              ZEROデザインからのお知らせと、クラウドファンディング・SNS発信のヒントになるお役立ちコラムをお届けします。
             </p>
           </div>
         </Reveal>

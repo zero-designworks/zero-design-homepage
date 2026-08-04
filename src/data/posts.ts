@@ -66,7 +66,7 @@ export const categoryMeta: Record<
       "ZEROデザインからのお知らせ・支援プロジェクトの最新情報をお届けします。",
   },
   column: {
-    label: "コラム",
+    label: "お役立ちコラム",
     path: "/column",
     description:
       "クラウドファンディングや動画・SNS発信のヒントになるコラムを掲載します。",
@@ -660,7 +660,7 @@ export const posts: Post[] = [
       },
     ],
     relatedPages: [
-      { label: "コラム：神社仏閣のクラウドファンディング成功事例", href: "/column/shrine-temple-crowdfunding-cases" },
+      { label: "お役立ちコラム：神社仏閣のクラウドファンディング成功事例", href: "/column/shrine-temple-crowdfunding-cases" },
       { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
       { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
     ],
@@ -843,7 +843,7 @@ export const posts: Post[] = [
       },
     ],
     relatedPages: [
-      { label: "コラム：神社仏閣のクラウドファンディング成功事例", href: "/column/shrine-temple-crowdfunding-cases" },
+      { label: "お役立ちコラム：神社仏閣のクラウドファンディング成功事例", href: "/column/shrine-temple-crowdfunding-cases" },
       { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
       { label: "お問い合わせ・無料相談はこちら", href: "/contact" },
@@ -1011,12 +1011,12 @@ export const posts: Post[] = [
     ],
     relatedPages: [
       {
-        label: "コラム：クラファンのSNS発信が続かない人のAI活用術",
+        label: "お役立ちコラム：クラファンのSNS発信が続かない人のAI活用術",
         href: "/column/crowdfunding-sns-ai-posts",
       },
       { label: "サービス｜AI動画・ショート動画制作", href: "/services#ai-video" },
       {
-        label: "コラム：Claude CodeでInstagram運用を自動化する方法",
+        label: "お役立ちコラム：Claude CodeでInstagram運用を自動化する方法",
         href: "/column/claude-code-instagram-automation",
       },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },
@@ -1217,8 +1217,8 @@ export const posts: Post[] = [
       },
     ],
     relatedPages: [
-      { label: "コラム：お寺の集客にクラファン×公式LINEを生かす方法", href: "/column/temple-crowdfunding-line-community" },
-      { label: "コラム：新店舗・新商品にクラウドファンディングが最適な理由", href: "/column/new-store-product-crowdfunding" },
+      { label: "お役立ちコラム：お寺の集客にクラファン×公式LINEを生かす方法", href: "/column/temple-crowdfunding-line-community" },
+      { label: "お役立ちコラム：新店舗・新商品にクラウドファンディングが最適な理由", href: "/column/new-store-product-crowdfunding" },
       {
         label: "お知らせ：FMおおつ出演｜小谷寺クラファンの裏側を語りました",
         href: "/news/fmotsu-give-part2-radio",
@@ -1326,7 +1326,7 @@ export const posts: Post[] = [
     ],
     relatedPages: [
       {
-        label: "コラム：Claude CodeでInstagram運用を自動化する方法",
+        label: "お役立ちコラム：Claude CodeでInstagram運用を自動化する方法",
         href: "/column/claude-code-instagram-automation",
       },
       { label: "クラウドファンディングとは？", href: "/crowdfunding" },

@@ -31,7 +31,7 @@ export const navItems: NavItem[] = [
   { label: "活用法", href: "/crowdfunding-uses" },
   { label: "サービス", href: "/services" },
   { label: "実績", href: "/works" },
-  { label: "コラム", href: "/column" },
+  { label: "お役立ちコラム", href: "/column" },
   { label: "お知らせ", href: "/news" },
   { label: "プロフィール", href: "/profile" },
   { label: "料金", href: "/pricing" },
