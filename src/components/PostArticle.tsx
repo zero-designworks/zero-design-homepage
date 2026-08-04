@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Arrow } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
 import { categoryMeta, formatDate, primaryCategory, type Post } from "@/data/posts";
+import { instagramEmbedUrl } from "@/data/videos";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
 import { categoryPath, categoryTrail, getCategory } from "@/data/blogCategories";
 import { getTag } from "@/data/tags";
@@ -130,6 +131,33 @@ export function PostArticle({ post }: { post: Post }) {
                       <span aria-hidden>→</span>
                     </Link>
                   </div>
+                );
+              }
+              if (b.type === "instagram") {
+                const ig = instagramEmbedUrl(b.url);
+                return (
+                  <figure key={i} className="pt-2">
+                    {b.title && (
+                      <p className="mb-3 font-serif text-lg text-sumi">{b.title}</p>
+                    )}
+                    <div className="mx-auto w-full max-w-[400px] overflow-hidden rounded-brand border border-sumi/10 bg-white">
+                      {ig && (
+                        <iframe
+                          src={ig}
+                          title={b.title ?? "Instagram投稿"}
+                          loading="lazy"
+                          scrolling="no"
+                          allowFullScreen
+                          className="h-[560px] w-full"
+                        />
+                      )}
+                    </div>
+                    {b.caption && (
+                      <figcaption className="mt-2 text-center text-xs text-sumi-soft/70">
+                        {b.caption}
+                      </figcaption>
+                    )}
+                  </figure>
                 );
               }
               if (b.type === "ul") {
