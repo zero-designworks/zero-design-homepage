@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Button";
 import { CtaBand } from "@/components/CtaBand";
-import { categoryMeta, formatDate, primaryCategory, type Post } from "@/data/posts";
+import { asamiAuthor, categoryMeta, formatDate, primaryCategory, type Post } from "@/data/posts";
 import { instagramEmbedUrl } from "@/data/videos";
 import { Breadcrumb, type Crumb } from "@/components/Breadcrumb";
 import { categoryPath, categoryTrail, getCategory } from "@/data/blogCategories";
@@ -10,6 +10,9 @@ import { getTag } from "@/data/tags";
 
 export function PostArticle({ post }: { post: Post }) {
   const cat = categoryMeta[post.category];
+
+  // 執筆者プロフィール：明示指定があればそれを、なければコラム記事に共通プロフィールを表示
+  const author = post.author ?? (post.category === "column" ? asamiAuthor : undefined);
 
   // パンくず：ホーム / セクション / カテゴリー（親→子） / 記事タイトル
   const trail = categoryTrail(primaryCategory(post));
@@ -240,12 +243,12 @@ export function PostArticle({ post }: { post: Post }) {
           </div>
 
           {/* 著者プロフィール */}
-          {post.author && (
+          {author && (
             <div className="mt-12 flex flex-col gap-5 rounded-brand border border-sumi/10 bg-kinari/40 p-6 sm:flex-row sm:items-start sm:gap-6 sm:p-8">
               <div className="relative mx-auto h-28 w-28 shrink-0 overflow-hidden rounded-full ring-1 ring-sumi/10 sm:mx-0">
                 <Image
-                  src={post.author.photo}
-                  alt={`${post.author.name}のプロフィール写真`}
+                  src={author.photo}
+                  alt={`${author.name}のプロフィール写真`}
                   fill
                   sizes="112px"
                   className="object-cover"
@@ -253,12 +256,12 @@ export function PostArticle({ post }: { post: Post }) {
               </div>
               <div className="text-center sm:text-left">
                 <p className="text-xs font-semibold text-aka">この記事を書いた人</p>
-                <h2 className="mt-1.5 font-serif text-xl text-sumi">{post.author.name}</h2>
-                <p className="mt-1 text-xs leading-relaxed text-sumi-soft">{post.author.title}</p>
-                <p className="mt-4 text-sm leading-relaxed text-sumi-soft">{post.author.bio}</p>
-                {post.author.href && (
+                <h2 className="mt-1.5 font-serif text-xl text-sumi">{author.name}</h2>
+                <p className="mt-1 text-xs leading-relaxed text-sumi-soft">{author.title}</p>
+                <p className="mt-4 text-sm leading-relaxed text-sumi-soft">{author.bio}</p>
+                {author.href && (
                   <Link
-                    href={post.author.href}
+                    href={author.href}
                     className="group mt-4 inline-flex items-center gap-2 text-sm font-semibold text-aka hover:text-aka/80"
                   >
                     プロフィール詳細を見る
