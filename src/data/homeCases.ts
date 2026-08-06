@@ -1,6 +1,8 @@
 // トップページ「支援事例」のデータ。
 // ここに1件追記するだけで、トップの支援事例セクションに自動で追加されます。
 
+import { crowdfundingProjects } from "./socialLinks";
+
 export type HomeCase = {
   id: string;
   title: string;
@@ -11,6 +13,7 @@ export type HomeCase = {
   deliverables: string[]; // 制作物（動画・チラシなど）
   result?: string; // 成果（任意）
   href: string; // 詳細を見るリンク
+  projectUrl?: string; // 画像クリック時に開くクラウドファンディングページ（外部）
 };
 
 export const homeCases: HomeCase[] = [
@@ -32,6 +35,7 @@ export const homeCases: HomeCase[] = [
     deliverables: ["AIアニメ動画", "住職インタビュー動画", "歴史PR動画", "リターン紹介動画", "チラシ"],
     result: "目標500万円 → 約736万円を達成（支援者388人）",
     href: "/column/shrine-temple-crowdfunding-cases",
+    projectUrl: crowdfundingProjects[0].href, // CAMPFIRE 小谷寺
   },
   {
     id: "courage",
@@ -50,5 +54,6 @@ export const homeCases: HomeCase[] = [
     ],
     deliverables: ["AIアニメストーリー動画", "SNSリール", "チラシ・販促物"],
     href: "/news/courage-design-crowdfunding-start",
+    projectUrl: crowdfundingProjects[1].href, // CAMPFIRE クラージュデザイン
   },
 ];

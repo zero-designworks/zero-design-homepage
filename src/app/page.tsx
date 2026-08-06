@@ -321,13 +321,37 @@ export default function Home() {
               <Reveal key={c.id} delay={(i % 2) * 100}>
                 <article className="overflow-hidden rounded-brand border border-sumi/10 bg-white md:grid md:grid-cols-[minmax(0,42%)_1fr]">
                   <div className="relative aspect-[16/10] w-full overflow-hidden bg-kinari md:aspect-auto md:h-full md:min-h-[320px]">
-                    <Image
-                      src={c.image}
-                      alt={`${c.title}のメイン画像`}
-                      fill
-                      sizes="(max-width: 768px) 92vw, 42vw"
-                      className="object-cover"
-                    />
+                    {c.projectUrl ? (
+                      // 画像クリックでクラウドファンディングのプロジェクトページへ
+                      <a
+                        href={c.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${c.title}のクラウドファンディングページを見る（外部サイト）`}
+                        className="group/img absolute inset-0 block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-aka"
+                      >
+                        <Image
+                          src={c.image}
+                          alt={`${c.title}のメイン画像`}
+                          fill
+                          sizes="(max-width: 768px) 92vw, 42vw"
+                          className="object-cover transition-transform duration-500 group-hover/img:scale-105"
+                        />
+                        <span className="absolute inset-0 bg-sumi/0 transition-colors duration-300 group-hover/img:bg-sumi/25" />
+                        <span className="absolute bottom-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3.5 py-1.5 text-xs font-semibold text-aka shadow-sm transition-opacity duration-300 md:opacity-0 md:group-hover/img:opacity-100">
+                          プロジェクトページを見る
+                          <span aria-hidden>↗</span>
+                        </span>
+                      </a>
+                    ) : (
+                      <Image
+                        src={c.image}
+                        alt={`${c.title}のメイン画像`}
+                        fill
+                        sizes="(max-width: 768px) 92vw, 42vw"
+                        className="object-cover"
+                      />
+                    )}
                   </div>
                   <div className="flex flex-col p-7 md:p-9">
                     <p className="text-sm font-medium text-aka">{c.subtitle}</p>
