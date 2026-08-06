@@ -297,7 +297,7 @@ export default function Home() {
                 src="/images/home/home-worries.webp"
                 alt={`クラウドファンディングでよくあるお悩み：${worries.join("／")}`}
                 width={1280}
-                height={853}
+                height={760}
                 sizes="(max-width: 768px) 92vw, 48rem"
                 className="h-auto w-full"
               />
