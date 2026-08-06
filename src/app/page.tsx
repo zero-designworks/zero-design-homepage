@@ -201,6 +201,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ 「ZEROデザイン」に込めた想い ============ */}
+      <section className="paper-texture py-24 md:py-32">
+        <div className="container-narrow text-center">
+          <Reveal>
+            <span className="eyebrow justify-center">About</span>
+            <h2 className="mt-4 font-serif text-2xl leading-snug text-sumi md:text-4xl">
+              「ZEROデザイン」という
+              <br className="hidden sm:block" />
+              名前に込めた想い。
+            </h2>
+          </Reveal>
+          <Reveal delay={100}>
+            <figure className="relative mx-auto mt-10 aspect-[3/2] w-full max-w-2xl overflow-hidden rounded-brand">
+              <Image
+                src="/images/generated/home-about.webp"
+                alt="ゼロからの想いが「伝わる形」へと羽ばたくイメージイラスト"
+                fill
+                sizes="(max-width: 768px) 90vw, 42rem"
+                className="object-cover"
+              />
+            </figure>
+          </Reveal>
+          <Reveal delay={160}>
+            <div className="mx-auto mt-10 max-w-2xl leading-relaxed text-sumi-soft md:text-[1.0625rem]">
+              <p>
+                「ZEROデザイン」という屋号には、
+                <strong className="font-semibold text-sumi">
+                  ゼロから新しいことに挑戦する人を全力で応援したい
+                </strong>
+                という想いを込めています。
+              </p>
+              <p className="mt-4">
+                まだ形になっていないぼんやりとしたアイデアや、言葉にできない熱い想い。私たちは、その「挑戦の原点」を丁寧にお聞きし、クラウドファンディング、映像、デザイン、SNSの力で、世の中にしっかりと「伝わる形」へと整えます。
+              </p>
+            </div>
+            <div className="mt-8">
+              <Link href="/about" className="group inline-flex items-center gap-2 font-semibold text-aka">
+                ZEROデザインについて詳しく見る
+                <Arrow />
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ============ ② ZEROデザインだけの強み（最重要） ============ */}
       <section className="py-24 md:py-32">
         <div className="container-brand">
@@ -253,16 +298,9 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-12 text-center">
             <Link href="/services" className="group inline-flex items-center gap-2 font-semibold text-aka">
               サービスの詳細を見る
-              <Arrow />
-            </Link>
-            <span className="hidden text-sumi/20 sm:inline" aria-hidden>
-              ｜
-            </span>
-            <Link href="/about" className="group inline-flex items-center gap-2 font-semibold text-aka">
-              ZEROデザインについて
               <Arrow />
             </Link>
           </div>
