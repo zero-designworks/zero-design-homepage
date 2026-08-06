@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/siteConfig";
 
 // Formspree等のエンドポイントを設定すると自動でPOST送信します。
 // 未設定の場合は、メールソフトが開く mailto フォールバックで動作します。
-const FORM_ENDPOINT = ""; // 例: "https://formspree.io/f/xxxxxxxx"
+const FORM_ENDPOINT = "https://formspree.io/f/xdenopyg";
 
 const serviceOptions = [
   "クラウドファンディング相談",
@@ -24,6 +24,8 @@ export function ContactForm() {
   const [services, setServices] = useState<string[]>([]);
   const [sent, setSent] = useState(false);
   const [agree, setAgree] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
 
   function toggleService(s: string) {
     setServices((prev) => (prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s]));
@@ -36,6 +38,8 @@ export function ContactForm() {
     services.forEach((s) => data.append("希望するサービス", s));
 
     if (FORM_ENDPOINT) {
+      setSending(true);
+      setError(false);
       try {
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
@@ -47,9 +51,14 @@ export function ContactForm() {
           form.reset();
           setServices([]);
           setAgree(false);
+        } else {
+          // 送信できなかった場合は、取りこぼさないようエラーを明示
+          setError(true);
         }
       } catch {
-        /* noop */
+        setError(true);
+      } finally {
+        setSending(false);
       }
       return;
     }
@@ -96,6 +105,18 @@ export function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-7 rounded-brand border border-sumi/10 bg-white p-6 md:p-10">
+      {/* Formspree用：受信メールの件名 */}
+      <input type="hidden" name="_subject" value="【ZEROデザイン】ホームページからのお問い合わせ" />
+      {/* Formspree用：スパム対策のハニーポット（人間には見えません） */}
+      <input
+        type="text"
+        name="_gotcha"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
+
       <div className="grid gap-6 sm:grid-cols-2">
         <Field label="お名前" required>
           <input name="name" required autoComplete="name" className={inputCls} placeholder="山田 太郎" />
@@ -173,12 +194,28 @@ export function ContactForm() {
         </span>
       </label>
 
+      {error && (
+        <div
+          role="alert"
+          className="rounded-brand border border-aka/30 bg-aka/5 px-5 py-4 text-sm leading-relaxed text-sumi-soft"
+        >
+          <p className="font-semibold text-aka">送信に失敗しました</p>
+          <p className="mt-1">
+            通信状況により送信できませんでした。お手数ですが、時間をおいて再度お試しいただくか、
+            <a href={`mailto:${siteConfig.email}`} className="font-semibold text-aka underline underline-offset-2">
+              {siteConfig.email}
+            </a>
+            へ直接ご連絡ください。
+          </p>
+        </div>
+      )}
+
       <button
         type="submit"
-        disabled={!agree}
+        disabled={!agree || sending}
         className="w-full rounded-brand bg-aka px-6 py-4 text-sm font-semibold text-white transition-colors hover:bg-aka-deep disabled:cursor-not-allowed disabled:opacity-40 sm:w-auto sm:px-12"
       >
-        この内容で相談する
+        {sending ? "送信中..." : "この内容で相談する"}
       </button>
     </form>
   );
