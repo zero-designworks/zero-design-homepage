@@ -100,13 +100,61 @@ const consultNotes = [
 ];
 
 export default function Home() {
+  const base = siteConfig.url;
+  // トップページの構造化データ（Organization / WebSite は layout.tsx で定義済み）
+  const homeJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${base}/#webpage`,
+        url: `${base}/`,
+        name: "クラウドファンディング成功を、SNS・AI動画で加速。",
+        description: siteConfig.description,
+        isPartOf: { "@id": `${base}/#website` },
+        about: { "@id": `${base}/#organization` },
+        primaryImageOfPage: `${base}/images/generated/hero.webp`,
+        inLanguage: "ja",
+      },
+      {
+        "@type": "Service",
+        "@id": `${base}/#service`,
+        name: "クラウドファンディング支援・SNS/AI動画制作",
+        serviceType: "クラウドファンディング支援",
+        provider: { "@id": `${base}/#organization` },
+        areaServed: { "@type": "Country", name: "日本" },
+        description:
+          "企画整理・リターン設計・SNS運用・AI動画制作・公開後サポートまで、クラウドファンディングを一貫して支援します。CAMPFIRE公式パートナー。",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "支援メニュー",
+          itemListElement: [
+            "クラウドファンディング企画・伴走",
+            "リターン設計",
+            "SNS運用支援",
+            "AI動画・ショート動画制作",
+            "公開後の広報サポート",
+          ].map((n) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: n },
+          })),
+        },
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
+
       {/* ============ ① ファーストビュー ============ */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/generated/hero.png"
+            src="/images/generated/hero.webp"
             alt=""
             fill
             priority
@@ -204,6 +252,20 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/services" className="group inline-flex items-center gap-2 font-semibold text-aka">
+              サービスの詳細を見る
+              <Arrow />
+            </Link>
+            <span className="hidden text-sumi/20 sm:inline" aria-hidden>
+              ｜
+            </span>
+            <Link href="/about" className="group inline-flex items-center gap-2 font-semibold text-aka">
+              ZEROデザインについて
+              <Arrow />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -282,6 +344,13 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+
+          <div className="mt-10 text-center">
+            <Button href="/works" variant="secondary" className="group">
+              制作・支援実績をもっと見る
+              <Arrow />
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -350,11 +419,15 @@ export default function Home() {
               </figcaption>
             </figure>
           </Reveal>
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href="/crowdfunding-uses" variant="secondary" className="group">
               活用法をもっと見る
               <Arrow />
             </Button>
+            <Link href="/crowdfunding" className="group inline-flex items-center gap-2 font-semibold text-aka">
+              クラウドファンディングとは？
+              <Arrow />
+            </Link>
           </div>
         </div>
       </section>
@@ -523,6 +596,20 @@ export default function Home() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 text-sm sm:flex-row">
+                <Link href="/contact" className="group inline-flex items-center gap-2 font-semibold text-aka">
+                  メールでお問い合わせ
+                  <Arrow />
+                </Link>
+                <span className="hidden text-sumi/20 sm:inline" aria-hidden>
+                  ｜
+                </span>
+                <Link href="/pricing" className="group inline-flex items-center gap-2 font-semibold text-aka">
+                  料金の目安を見る
+                  <Arrow />
+                </Link>
+              </div>
             </div>
           </Reveal>
         </div>

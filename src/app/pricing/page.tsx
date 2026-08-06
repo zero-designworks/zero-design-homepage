@@ -93,6 +93,21 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <section id="faq" className="paper-texture scroll-mt-24 py-20 md:py-28">
+        {/* 構造化データ：ページ上に表示しているFAQと一致 */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: faqs.map((f) => ({
+                "@type": "Question",
+                name: f.q,
+                acceptedAnswer: { "@type": "Answer", text: f.a },
+              })),
+            }),
+          }}
+        />
         <div className="container-brand">
           <Reveal>
             <span className="eyebrow">FAQ</span>

@@ -18,7 +18,7 @@ export const homeCases: HomeCase[] = [
     id: "kodaniji",
     title: "小谷寺 本堂再建プロジェクト",
     subtitle: "歴史・文化財を未来へつなぐクラウドファンディング",
-    image: "/images/works/cf-kodaniji.png",
+    image: "/images/works/cf-kodaniji.webp",
     overview:
       "頼れる檀家もなく、知名度もゼロからのスタート。歴史の重みと未来へのビジョンを丁寧に言語化し、AIアニメで想いを伝えました。単なるページ制作ではなく、企画・リターン設計・SNS運用・広報まで一貫してフルサポートしています。",
     supports: [
