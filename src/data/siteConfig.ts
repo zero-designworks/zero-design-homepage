@@ -15,6 +15,8 @@ export const siteConfig = {
   addressRegion: "滋賀県",
   addressLocality: "長浜市",
   email: "asami.kazuki1102@gmail.com",
+  // 60分無料相談の予約ページ（TimeRex）
+  reservationUrl: "https://timerex.net/s/asami.marketinge_09f1/2524714c/",
   telDisclaimer: "お電話でのご相談はお問い合わせ後に日程調整いたします。",
   foundingYear: "2024",
   // ▼ Google Search Console「HTMLタグ」認証のコードをここに貼るだけで有効化されます
