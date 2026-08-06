@@ -7,6 +7,11 @@ import { siteConfig } from "@/data/siteConfig";
 import { profile } from "@/data/profile";
 import { homeCases } from "@/data/homeCases";
 import { posts } from "@/data/posts";
+import { instagramEmbedUrl } from "@/data/videos";
+
+type StrengthMedia =
+  | { type: "youtube"; id: string; vertical?: boolean; caption?: string }
+  | { type: "instagram"; url: string; caption?: string };
 
 /* ===== コンテンツ定義（追加・編集しやすいようデータ化） ===== */
 
@@ -18,6 +23,7 @@ const strengths: {
   body: string;
   list?: string[];
   body2?: string;
+  media?: StrengthMedia;
 }[] = [
   {
     icon: <IconTime />,
@@ -26,6 +32,11 @@ const strengths: {
     list: ["支援者へのお礼", "イベント参加", "地域への声掛け", "メディア対応", "商品づくり"],
     body2:
       "AIを活用した効率的な制作フローで、継続的にSNS動画を制作・発信します。さらに、制作した約20本の動画はクラウドファンディング終了後も会社の“資産”として残り、InstagramやYouTubeで発信を続けられます。",
+    media: {
+      type: "instagram",
+      url: "https://www.instagram.com/p/DbnMTAfPvte/",
+      caption: "AIを活用して制作した、実際のリール動画（クラージュデザイン様）",
+    },
   },
   {
     icon: <IconFilm />,
@@ -33,12 +44,22 @@ const strengths: {
     body: "商品や人物のリアルな魅力は実写で。プロジェクト誕生の背景、創業者の想い、地域の歴史、未来へのビジョンはAIアニメで表現します。",
     body2:
       "「実写のみ」「AIアニメのみ」ではなく、実写＋AIアニメの組み合わせも制作可能。情報を伝えるだけでなく、“支援したくなる共感”を映像で届けます。",
+    media: {
+      type: "youtube",
+      id: "2CNthQ-K52c",
+      caption: "AIアニメで想いをストーリーに（クラージュデザイン様）",
+    },
   },
   {
     icon: <IconRoute />,
     title: "クラウドファンディング支援",
     body: "企画から公開後の情報発信まで、一貫して伴走します。必要な部分だけのご依頼も可能です。",
     list: ["企画整理", "リターン設計", "SNS運用", "AI動画制作", "公開後サポート"],
+    media: {
+      type: "youtube",
+      id: "HMgFuCOXQNA",
+      caption: "住職インタビュー動画（小谷寺 本堂再建プロジェクト）",
+    },
   },
   {
     icon: <IconBadge />,
@@ -53,12 +74,6 @@ const worries = [
   "SNS投稿まで手が回らない",
   "動画制作が難しい",
   "何から始めればいいか分からない",
-];
-
-const videoShowcase = [
-  { label: "実写：住職インタビュー", id: "HMgFuCOXQNA", vertical: false },
-  { label: "AIアニメ：想いをストーリーで", id: "2CNthQ-K52c", vertical: false },
-  { label: "SNSリール：リターン紹介", id: "VKBgjPVEkJU", vertical: true },
 ];
 
 const popularColumns = [
@@ -184,6 +199,7 @@ export default function Home() {
                   {s.body2 && (
                     <p className="mt-5 leading-relaxed text-sumi-soft">{s.body2}</p>
                   )}
+                  {s.media && <StrengthMediaView media={s.media} />}
                 </article>
               </Reveal>
             ))}
@@ -303,52 +319,6 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ============ ⑤ AI動画紹介 ============ */}
-      <section className="bg-sumi py-24 text-kinari md:py-28">
-        <div className="container-brand">
-          <Reveal>
-            <span className="eyebrow text-kin">Movie</span>
-            <h2 className="mt-4 font-serif text-2xl leading-snug text-white md:text-4xl">
-              AI動画・制作事例
-            </h2>
-            <p className="mt-4 max-w-2xl leading-relaxed text-kinari/75">
-              実写、AIアニメ、SNSリール——目的に合わせて、想いが伝わる動画を制作します。
-            </p>
-          </Reveal>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {videoShowcase.map((v, i) => (
-              <Reveal key={v.id} delay={(i % 3) * 80}>
-                <figure className="overflow-hidden rounded-brand bg-white/5 ring-1 ring-white/10">
-                  <div
-                    className={`relative w-full bg-black ${
-                      v.vertical ? "mx-auto aspect-[9/16] max-w-[280px]" : "aspect-video"
-                    }`}
-                  >
-                    <iframe
-                      className="absolute inset-0 h-full w-full"
-                      src={`https://www.youtube-nocookie.com/embed/${v.id}`}
-                      title={v.label}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
-                  <figcaption className="px-5 py-4 text-sm text-kinari/85">{v.label}</figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-12">
-            <Link href="/works" className="group inline-flex items-center gap-2 font-semibold text-kin">
-              制作事例をもっと見る
-              <Arrow />
-            </Link>
-          </div>
         </div>
       </section>
 
@@ -521,6 +491,54 @@ export default function Home() {
         </div>
       </section>
     </>
+  );
+}
+
+/* ===== 強みカード内の実例メディア ===== */
+
+function StrengthMediaView({ media }: { media: StrengthMedia }) {
+  if (media.type === "instagram") {
+    const ig = instagramEmbedUrl(media.url);
+    return (
+      <figure className="mt-6">
+        <div className="mx-auto w-full max-w-[300px] overflow-hidden rounded-brand border border-sumi/10 bg-white">
+          {ig && (
+            <iframe
+              src={ig}
+              title="制作事例：リール動画"
+              loading="lazy"
+              scrolling="no"
+              allowFullScreen
+              className="h-[540px] w-full"
+            />
+          )}
+        </div>
+        {media.caption && (
+          <figcaption className="mt-2 text-center text-xs text-sumi-soft/70">{media.caption}</figcaption>
+        )}
+      </figure>
+    );
+  }
+  return (
+    <figure className="mt-6">
+      <div
+        className={`relative w-full overflow-hidden rounded-brand border border-sumi/10 bg-black ${
+          media.vertical ? "mx-auto aspect-[9/16] max-w-[260px]" : "aspect-video"
+        }`}
+      >
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src={`https://www.youtube-nocookie.com/embed/${media.id}`}
+          title="制作事例：動画"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+      {media.caption && (
+        <figcaption className="mt-2 text-center text-xs text-sumi-soft/70">{media.caption}</figcaption>
+      )}
+    </figure>
   );
 }
 
