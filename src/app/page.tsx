@@ -291,18 +291,18 @@ export default function Home() {
           <Reveal>
             <SectionHeading eyebrow="Worries" title="こんなお悩み、ありませんか？" align="center" className="mb-14" />
           </Reveal>
-          <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {worries.map((w, i) => (
-              <Reveal key={w} delay={(i % 3) * 80}>
-                <div className="flex h-full items-start gap-3 rounded-brand border border-sumi/10 bg-white p-6">
-                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-kin/12 text-kin">
-                    <IconQuestion />
-                  </span>
-                  <p className="text-sm leading-relaxed text-sumi-soft">{w}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delay={80}>
+            <figure className="mx-auto max-w-3xl overflow-hidden rounded-brand border border-sumi/10 bg-kinari/40">
+              <Image
+                src="/images/home/home-worries.webp"
+                alt={`クラウドファンディングでよくあるお悩み：${worries.join("／")}`}
+                width={1280}
+                height={853}
+                sizes="(max-width: 768px) 92vw, 48rem"
+                className="h-auto w-full"
+              />
+            </figure>
+          </Reveal>
           <Reveal delay={120}>
             <div className="mt-12 text-center">
               <p className="text-sm text-sumi-soft/70" aria-hidden>
@@ -319,6 +319,43 @@ export default function Home() {
               </div>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ============ クラウドファンディングの活用事例 ============ */}
+      <section className="bg-kinari/50 py-24 md:py-32">
+        <div className="container-brand">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Use Cases"
+              title="クラウドファンディングの活用事例"
+              align="center"
+              className="mb-12"
+            >
+              <p>商品開発から地域活性化、歴史・文化の継承まで。さまざまな挑戦に活用できます。</p>
+            </SectionHeading>
+          </Reveal>
+          <Reveal delay={80}>
+            <figure className="mx-auto max-w-3xl overflow-hidden rounded-brand border border-sumi/10 bg-white">
+              <Image
+                src="/images/home/home-usecases.webp"
+                alt="クラウドファンディングの活用事例：商品開発／店舗・施設づくり／イベント開催／地域活性化／歴史・文化の継承／社会貢献活動"
+                width={1280}
+                height={853}
+                sizes="(max-width: 768px) 92vw, 48rem"
+                className="h-auto w-full"
+              />
+              <figcaption className="px-5 py-4 text-center text-sm text-sumi-soft">
+                商品開発／店舗・施設づくり／イベント開催／地域活性化／歴史・文化の継承／社会貢献活動 など
+              </figcaption>
+            </figure>
+          </Reveal>
+          <div className="mt-10 text-center">
+            <Button href="/crowdfunding-uses" variant="secondary" className="group">
+              活用法をもっと見る
+              <Arrow />
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -586,16 +623,6 @@ function IconBadge() {
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
       <path d="M12 3.5l6.5 2.3v5.2c0 4-2.7 6.9-6.5 8.2-3.8-1.3-6.5-4.2-6.5-8.2V5.8L12 3.5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
       <path d="m9 12 2.2 2.2L15 10.4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function IconQuestion() {
-  return (
-    <svg width="17" height="17" viewBox="0 0 20 20" fill="none" aria-hidden>
-      <circle cx="10" cy="10" r="8.5" stroke="currentColor" strokeWidth="1.4" />
-      <path d="M7.7 7.6a2.3 2.3 0 1 1 3 2.2c-.7.3-.9.7-.9 1.4" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-      <circle cx="9.8" cy="14" r="0.9" fill="currentColor" />
     </svg>
   );
 }
