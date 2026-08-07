@@ -29,7 +29,7 @@ export type NavItem = { label: string; href: string; short?: string };
 
 // グローバルナビ（ヘッダー）。7項目に整理しています。
 export const navItems: NavItem[] = [
-  { label: "ZEROについて", href: "/about" },
+  { label: "ZEROデザインについて", href: "/about" },
   { label: "クラウドファンディング", href: "/crowdfunding" },
   { label: "SNS・AI動画", href: "/sns-ai-video" },
   { label: "実績", href: "/works" },
