@@ -15,8 +15,9 @@ type StrengthMedia =
   | { type: "youtube"; id: string; vertical?: boolean; caption?: string }
   | { type: "instagram"; url: string; caption?: string };
 
-// トップページのタイトル。absolute指定で「｜ZEROデザイン」の自動付与を回避します。
-const homeTitle = "ZEROデザイン｜クラウドファンディング・SNS・AI動画支援";
+// トップページのタイトル。全ページ共通の「○○｜ZEROデザイン」形式に統一。
+// absolute指定でテンプレートによる二重付与を防いでいます。
+const homeTitle = "クラウドファンディング・SNS・AI動画支援｜ZEROデザイン";
 
 export const metadata: Metadata = {
   title: { absolute: homeTitle },

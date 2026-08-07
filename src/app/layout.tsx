@@ -21,7 +21,10 @@ const notoSerif = Noto_Serif_JP({
   display: "swap",
 });
 
-const titleDefault = `${siteConfig.name}｜ゼロからの挑戦に、伝える力を。`;
+// タイトルは全ページ「○○｜ZEROデザイン」で統一。
+// 各ページで title を指定すると template により自動で「｜ZEROデザイン」が付きます。
+// default は title 未指定のページ（404など）で使われます。
+const titleDefault = `ゼロからの挑戦を、伝わる形へ。｜${siteConfig.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
