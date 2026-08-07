@@ -31,7 +31,7 @@ export type NavItem = { label: string; href: string; short?: string };
 export const navItems: NavItem[] = [
   { label: "ZEROについて", href: "/about" },
   { label: "クラウドファンディング", href: "/crowdfunding" },
-  { label: "SNS・AI動画", href: "/services" },
+  { label: "SNS・AI動画", href: "/sns-ai-video" },
   { label: "実績", href: "/works" },
   { label: "お役立ちコラム", href: "/column" },
   { label: "プロフィール", href: "/profile" },
@@ -41,6 +41,7 @@ export const navItems: NavItem[] = [
 // フッター専用の追加リンク。ナビから外したページも回遊できるようにします。
 export const footerExtraItems: NavItem[] = [
   { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
+  { label: "サービス一覧", href: "/services" },
   { label: "お知らせ", href: "/news" },
   { label: "料金", href: "/pricing" },
 ];

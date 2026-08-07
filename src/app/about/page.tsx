@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { CtaBand } from "@/components/CtaBand";
+import { Arrow } from "@/components/Button";
 
 export const metadata: Metadata = {
   title: "ZEROデザインについて",
@@ -78,6 +80,64 @@ export default function AboutPage() {
               ))}
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* サービス紹介（要約＋リンク） */}
+      <section className="py-20 md:py-24">
+        <div className="container-brand">
+          <Reveal>
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="eyebrow justify-center">Services</span>
+              <h2 className="mt-4 font-serif text-2xl leading-snug text-sumi md:text-3xl">
+                ZEROデザインができること
+              </h2>
+              <p className="mt-5 leading-relaxed text-sumi-soft">
+                企画から映像、デザイン、公開後の広報まで。必要な支援をワンストップでご提供します。必要な部分だけのご依頼も可能です。
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                label: "Crowdfunding",
+                title: "クラウドファンディング支援",
+                body: "企画・ストーリー設計からリターン設計、ページ制作、公開後の広報まで一貫して伴走します。CAMPFIRE公式パートナー。",
+                href: "/crowdfunding",
+                cta: "クラウドファンディングを見る",
+              },
+              {
+                label: "Movie",
+                title: "SNS・AI動画制作",
+                body: "撮影なしでも制作できるAI動画・ショート動画。クラファン期間中の発信から、イベントPR、地域文化の発信までお任せください。",
+                href: "/sns-ai-video",
+                cta: "SNS・AI動画を見る",
+              },
+              {
+                label: "All Services",
+                title: "サービス一覧",
+                body: "クラファン支援、SNS動画支援、AI動画制作、Web・LP・デザイン制作。4つのサービスの詳細をまとめています。",
+                href: "/services",
+                cta: "サービス一覧を見る",
+              },
+            ].map((s, i) => (
+              <Reveal key={s.href} delay={(i % 3) * 80}>
+                <Link
+                  href={s.href}
+                  className="group flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-aka/25 hover:shadow-lg"
+                >
+                  <span className="text-xs font-semibold tracking-widest text-kin">{s.label}</span>
+                  <h3 className="mt-2 font-serif text-lg leading-snug text-sumi">{s.title}</h3>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-sumi-soft">{s.body}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-aka">
+                    {s.cta}
+                    <Arrow />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
