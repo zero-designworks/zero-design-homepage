@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button, Arrow } from "@/components/Button";
@@ -12,6 +13,15 @@ import { instagramEmbedUrl } from "@/data/videos";
 type StrengthMedia =
   | { type: "youtube"; id: string; vertical?: boolean; caption?: string }
   | { type: "instagram"; url: string; caption?: string };
+
+// トップページのタイトル。absolute指定で「｜ZEROデザイン」の自動付与を回避します。
+const homeTitle = "ZEROデザイン｜クラウドファンディング・SNS・AI動画支援";
+
+export const metadata: Metadata = {
+  title: { absolute: homeTitle },
+  openGraph: { title: homeTitle },
+  twitter: { title: homeTitle },
+};
 
 /* ===== コンテンツ定義（追加・編集しやすいようデータ化） ===== */
 
