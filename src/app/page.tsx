@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button, Arrow } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
+import { LatestNewsTicker } from "@/components/LatestNewsTicker";
 import { siteConfig } from "@/data/siteConfig";
 import { profile } from "@/data/profile";
 import { homeCases } from "@/data/homeCases";
@@ -206,6 +207,11 @@ export default function Home() {
               <Button href="#cases" variant="secondary">
                 支援事例を見る
               </Button>
+            </div>
+
+            {/* 最新のお知らせ（3件＋一覧へ） */}
+            <div className="mt-10 max-w-xl">
+              <LatestNewsTicker />
             </div>
           </div>
         </div>

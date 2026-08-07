@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navItems, siteConfig } from "@/data/siteConfig";
+import { navItems, footerExtraItems, siteConfig } from "@/data/siteConfig";
 import { socialLinks } from "@/data/socialLinks";
 
 export function Footer() {
@@ -26,7 +26,7 @@ export function Footer() {
           <nav className="text-sm">
             <p className="mb-4 font-semibold text-white">メニュー</p>
             <ul className="space-y-2.5">
-              {navItems.map((item) => (
+              {[...navItems, ...footerExtraItems].map((item) => (
                 <li key={item.href}>
                   <Link href={item.href} className="text-kinari/70 transition-colors hover:text-kin">
                     {item.label}

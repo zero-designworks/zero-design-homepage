@@ -27,15 +27,20 @@ export const siteConfig = {
 // short: PC横並びナビでの短縮表示（省略時は label をそのまま使用）
 export type NavItem = { label: string; href: string; short?: string };
 
+// グローバルナビ（ヘッダー）。7項目に整理しています。
 export const navItems: NavItem[] = [
-  { label: "ZEROデザインについて", href: "/about", short: "ZEROについて" },
-  { label: "クラウドファンディングとは", href: "/crowdfunding", short: "クラファンとは" },
-  { label: "活用法", href: "/crowdfunding-uses" },
-  { label: "サービス", href: "/services" },
+  { label: "ZEROについて", href: "/about" },
+  { label: "クラウドファンディング", href: "/crowdfunding" },
+  { label: "SNS・AI動画", href: "/services" },
   { label: "実績", href: "/works" },
   { label: "お役立ちコラム", href: "/column" },
-  { label: "お知らせ", href: "/news" },
   { label: "プロフィール", href: "/profile" },
-  { label: "料金", href: "/pricing" },
   { label: "お問い合わせ", href: "/contact" },
+];
+
+// フッター専用の追加リンク。ナビから外したページも回遊できるようにします。
+export const footerExtraItems: NavItem[] = [
+  { label: "クラウドファンディングの活用法", href: "/crowdfunding-uses" },
+  { label: "お知らせ", href: "/news" },
+  { label: "料金", href: "/pricing" },
 ];

@@ -182,6 +182,63 @@ export default function CrowdfundingPage() {
         </div>
       </section>
 
+      {/* 関連ページ（要約＋リンク） */}
+      <section className="py-20 md:py-24">
+        <div className="container-brand">
+          <Reveal>
+            <SectionHeading
+              eyebrow="More"
+              title="クラウドファンディングをもっと知る"
+              align="center"
+              className="mb-12"
+            >
+              <p>「自分の場合はどう活かせる？」を、活用法や事例からご覧いただけます。</p>
+            </SectionHeading>
+          </Reveal>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {[
+              {
+                label: "活用法",
+                title: "クラウドファンディングの活用法",
+                body: "商品開発、店舗づくり、イベント開催、地域活性化、神社仏閣の保存、社会貢献など。挑戦の種類ごとに、資金の使い道・リターン・発信のポイントをまとめています。",
+                href: "/crowdfunding-uses",
+                cta: "活用法を見る",
+              },
+              {
+                label: "支援の進め方",
+                title: "SNS・AI動画で発信まで支援",
+                body: "公開して終わりではありません。企画・リターン設計から、SNS運用やAI動画による情報発信まで、ZEROデザインが一貫して伴走します。",
+                href: "/services",
+                cta: "支援内容を見る",
+              },
+              {
+                label: "実績",
+                title: "支援したプロジェクト",
+                body: "目標500万円に対し約736万円を達成した小谷寺 本堂再建をはじめ、実際に伴走したプロジェクトと制作物をご紹介します。",
+                href: "/works",
+                cta: "実績を見る",
+              },
+            ].map((c, i) => (
+              <Reveal key={c.href} delay={(i % 3) * 80}>
+                <Link
+                  href={c.href}
+                  className="group flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-aka/25 hover:shadow-lg"
+                >
+                  <span className="text-xs font-semibold tracking-widest text-kin">{c.label}</span>
+                  <h3 className="mt-2 font-serif text-lg leading-snug text-sumi">{c.title}</h3>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-sumi-soft">{c.body}</p>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-aka">
+                    {c.cta}
+                    <Arrow />
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-aka py-20 text-center text-white md:py-24">
         <div className="container-brand">
