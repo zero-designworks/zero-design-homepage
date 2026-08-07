@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button, Arrow } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { LatestNewsTicker } from "@/components/LatestNewsTicker";
+import { HeroBelowBand } from "@/components/HeroBelowBand";
 import { siteConfig } from "@/data/siteConfig";
 import { profile } from "@/data/profile";
 import { homeCases } from "@/data/homeCases";
@@ -25,8 +25,6 @@ export const metadata: Metadata = {
 };
 
 /* ===== コンテンツ定義（追加・編集しやすいようデータ化） ===== */
-
-const heroBadges = ["CAMPFIREパートナー", "クラウドファンディング支援", "無料相談受付中"];
 
 const strengths: {
   icon: React.ReactNode;
@@ -161,61 +159,64 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
       />
 
-      {/* ============ ① ファーストビュー ============ */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10">
-          <Image
-            src="/images/generated/hero.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="object-cover object-right"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-kinari via-kinari/90 to-kinari/45 md:to-transparent" />
-        </div>
-
-        <div className="container-brand flex min-h-[86vh] flex-col justify-center pt-28 pb-20 md:min-h-screen">
-          <div className="max-w-2xl">
-            <span className="eyebrow">ZERO DESIGN</span>
-            <h1 className="mt-6 font-serif text-[2.1rem] font-semibold leading-[1.3] text-sumi sm:text-4xl md:text-5xl">
-              クラウドファンディング成功を、
-              <br />
-              <span className="text-aka">SNS・AI動画</span>で加速。
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-sumi-soft md:text-lg">
-              企画からSNS・AI動画による情報発信まで、一貫して支援します。
-            </p>
-
-            <ul className="mt-7 flex flex-wrap gap-2.5">
-              {heroBadges.map((b) => (
-                <li
-                  key={b}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-aka/20 bg-white/70 px-3.5 py-1.5 text-xs font-semibold text-aka backdrop-blur-sm"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-aka" aria-hidden />
-                  {b}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Button href={siteConfig.reservationUrl} external variant="primary" className="group">
-                60分無料相談を予約する
-                <Arrow />
-              </Button>
-              <Button href="#cases" variant="secondary">
-                支援事例を見る
-              </Button>
+      {/* ============ ① ファーストビュー（ビジュアル重視・情報は最小限） ============ */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-kinari/35 to-kinari/70">
+        <div className="container-brand">
+          <div className="grid min-h-[84svh] items-center gap-8 pt-24 pb-14 md:gap-12 md:pt-28 md:pb-20 lg:min-h-[88vh] lg:grid-cols-2 lg:gap-16 lg:pb-24">
+            {/* 世界観ビジュアル（スマホは上、PCは右） */}
+            <div className="order-1 mx-auto w-full max-w-[30rem] lg:order-2 lg:max-w-none">
+              <Image
+                src="/images/generated/hero-fv.webp"
+                alt="ひとりの挑戦から、やわらかな光が地域のお店・イベント・職人・神社へと広がり、応援する人々へつながっていくイメージイラスト"
+                width={1536}
+                height={1024}
+                priority
+                sizes="(max-width: 1024px) 92vw, 46vw"
+                className="h-auto w-full"
+              />
             </div>
 
-            {/* 最新のお知らせ（3件＋一覧へ） */}
-            <div className="mt-10 max-w-xl">
-              <LatestNewsTicker />
+            {/* コピー＋CTA（1つに集約） */}
+            <div className="order-2 lg:order-1">
+              <span className="eyebrow">ZERO DESIGN</span>
+
+              <h1 className="mt-5 font-serif text-[1.75rem] font-semibold leading-[1.35] text-sumi sm:text-4xl lg:text-[3.25rem] lg:leading-[1.3]">
+                挑戦は、伝わってこそ
+                <br />
+                <span className="text-aka">応援される。</span>
+              </h1>
+
+              <p className="mt-5 text-sm tracking-wide text-sumi-soft sm:text-base">
+                クラウドファンディング × SNS・AI動画
+              </p>
+              <p className="mt-2 text-sm text-sumi-soft/80 sm:text-base">
+                ゼロからの挑戦を、伝わる形へ。
+              </p>
+
+              <div className="mt-8 lg:mt-10">
+                <Button
+                  href={siteConfig.reservationUrl}
+                  external
+                  variant="primary"
+                  className="group w-full sm:w-auto sm:px-10"
+                >
+                  無料相談はこちら
+                  <Arrow />
+                </Button>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* スクロール導線 */}
+        <div className="pointer-events-none absolute bottom-5 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[0.65rem] tracking-[0.3em] text-sumi-soft/50 lg:flex">
+          <span>SCROLL</span>
+          <span className="h-10 w-px bg-gradient-to-b from-sumi-soft/40 to-transparent" />
+        </div>
       </section>
+
+      {/* ============ ファーストビュー直下：最新のお知らせ・実績への導線 ============ */}
+      <HeroBelowBand />
 
       {/* ============ 「ZEROデザイン」に込めた想い ============ */}
       <section className="paper-texture py-24 md:py-32">
