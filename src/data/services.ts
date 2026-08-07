@@ -52,7 +52,7 @@ export const services: Service[] = [
       "YouTube Shorts / Reels / TikTok",
       "複数本の量産に対応",
     ],
-    image: "/images/generated/svc-ai-video.png",
+    image: "/images/generated/svc-ai-video.webp",
     href: "/services#ai-video",
     articleLink: {
       label: "AI動画でクラウドファンディングを加速（成功報酬型・制作事例）",

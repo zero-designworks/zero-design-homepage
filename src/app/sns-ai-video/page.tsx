@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Button, Arrow } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -18,14 +19,20 @@ const whySns = [
   {
     t: "支援は「開始直後」と「終了直前」に伸びる",
     d: "クラウドファンディングの支援額はU字を描きます。公開1週間前の予告から最終日のラストスパートまで、発信を切らさないことが結果を大きく左右します。",
+    img: "/images/sns-ai/why-01.webp",
+    alt: "支援額が開始直後と終了直前に伸びるU字カーブを表したイメージイラスト",
   },
   {
     t: "ページを公開しただけでは、誰にも気づかれない",
     d: "プラットフォームに掲載するだけで支援が集まることはありません。SNSで届けてはじめて、プロジェクトの存在が知られます。",
+    img: "/images/sns-ai/why-02.webp",
+    alt: "公開しただけでは人に気づかれないプロジェクトページを表したイメージイラスト",
   },
   {
     t: "動画は「想い」まで伝えられる",
     d: "文章や写真では伝わりにくい背景や熱量も、動画なら表情や声とともに届きます。共感が生まれ、支援の後押しになります。",
+    img: "/images/sns-ai/why-03.webp",
+    alt: "カメラに向かって想いを語り、聞き手の心が動く様子のイメージイラスト",
   },
 ];
 
@@ -109,22 +116,35 @@ export default function SnsAiVideoPage() {
           </>
         }
         lead="発信が止まると、支援も止まります。AIを活用した制作フローで、公開前からラストスパートまで“止まらない発信”をつくります。"
-        image="/images/generated/svc-ai-video.png"
+        image="/images/generated/svc-ai-video.webp"
       />
 
       {/* ① AIがクラウドファンディングのSNS投稿を加速させる */}
       <section className="py-16 md:py-20">
-        <div className="container-narrow">
-          <Reveal>
-            <p className="leading-loose text-sumi-soft md:text-[1.0625rem]">
-              クラウドファンディング期間中、オーナー様は支援者へのお礼、イベント参加、地域への声掛け、メディア対応、商品づくりと、やるべきことが山積みです。そこへ毎日のSNS投稿と動画制作まで重なると、発信は必ずどこかで止まってしまいます。
-            </p>
-            <p className="mt-5 leading-loose text-sumi-soft md:text-[1.0625rem]">
-              ZEROデザインは、AIを活用した効率的な制作フローで、投稿文・画像・ショート動画をまとめて制作します。人が時間をかけていた作業を圧縮することで、
-              <strong className="font-semibold text-sumi">発信を止めずに走りきれる体制</strong>
-              をつくります。あなたは、本当に大切な活動に集中してください。
-            </p>
-          </Reveal>
+        <div className="container-brand">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <Reveal>
+              <figure className="relative aspect-[3/2] w-full overflow-hidden rounded-brand border border-sumi/10 bg-kinari/40">
+                <Image
+                  src="/images/sns-ai/accelerate.webp"
+                  alt="AIが制作したショート動画を受け取り、本来の活動に集中できるようになった事業者のイメージイラスト"
+                  fill
+                  sizes="(max-width: 1024px) 92vw, 46vw"
+                  className="object-cover"
+                />
+              </figure>
+            </Reveal>
+            <Reveal delay={120}>
+              <p className="leading-loose text-sumi-soft md:text-[1.0625rem]">
+                クラウドファンディング期間中、オーナー様は支援者へのお礼、イベント参加、地域への声掛け、メディア対応、商品づくりと、やるべきことが山積みです。そこへ毎日のSNS投稿と動画制作まで重なると、発信は必ずどこかで止まってしまいます。
+              </p>
+              <p className="mt-5 leading-loose text-sumi-soft md:text-[1.0625rem]">
+                ZEROデザインは、AIを活用した効率的な制作フローで、投稿文・画像・ショート動画をまとめて制作します。人が時間をかけていた作業を圧縮することで、
+                <strong className="font-semibold text-sumi">発信を止めずに走りきれる体制</strong>
+                をつくります。あなたは、本当に大切な活動に集中してください。
+              </p>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -144,10 +164,21 @@ export default function SnsAiVideoPage() {
           <div className="grid gap-6 md:grid-cols-3">
             {whySns.map((w, i) => (
               <Reveal key={w.t} delay={(i % 3) * 80}>
-                <div className="flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-7">
-                  <span className="font-serif text-3xl font-semibold text-kin/50">0{i + 1}</span>
-                  <h3 className="mt-3 font-serif text-lg leading-snug text-sumi">{w.t}</h3>
-                  <p className="mt-4 text-sm leading-relaxed text-sumi-soft">{w.d}</p>
+                <div className="flex h-full flex-col overflow-hidden rounded-brand border border-sumi/10 bg-white">
+                  <div className="relative aspect-[3/2] w-full bg-kinari/40">
+                    <Image
+                      src={w.img}
+                      alt={w.alt}
+                      fill
+                      sizes="(max-width: 768px) 92vw, 30vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-7">
+                    <span className="font-serif text-3xl font-semibold text-kin/50">0{i + 1}</span>
+                    <h3 className="mt-3 font-serif text-lg leading-snug text-sumi">{w.t}</h3>
+                    <p className="mt-4 text-sm leading-relaxed text-sumi-soft">{w.d}</p>
+                  </div>
                 </div>
               </Reveal>
             ))}
@@ -172,6 +203,15 @@ export default function SnsAiVideoPage() {
           <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
             <Reveal>
               <div className="rounded-brand border border-sumi/10 bg-white p-7 md:p-9">
+                <figure className="relative mb-7 aspect-[3/2] w-full overflow-hidden rounded-brand bg-kinari/40">
+                  <Image
+                    src="/images/sns-ai/short20.webp"
+                    alt="制作したショート動画が積み重なり、クラウドファンディング後も資産として残ることを表したイメージイラスト"
+                    fill
+                    sizes="(max-width: 1024px) 92vw, 50vw"
+                    className="object-cover"
+                  />
+                </figure>
                 <h3 className="font-serif text-xl text-sumi">制作する動画の例</h3>
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {shortVideoPlan.map((s) => (
