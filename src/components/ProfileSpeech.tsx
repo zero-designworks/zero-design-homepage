@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Sentences } from "@/components/RichText";
 
 export type ProfileSpeechProps = {
   /** 吹き出しに表示する文章（記事ごとに変更） */
@@ -67,7 +68,9 @@ export function ProfileSpeech({
               : "left-0 -translate-x-1/2 border-l border-t"
           }`}
         />
-        <p className="text-[15px] leading-relaxed text-sumi-soft">{message}</p>
+        <p className="text-[15px] leading-loose text-sumi-soft">
+          <Sentences text={message} />
+        </p>
       </div>
     </figure>
   );
