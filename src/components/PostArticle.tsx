@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "@/components/Button";
@@ -83,7 +84,7 @@ export function PostArticle({ post }: { post: Post }) {
           <div className="mt-8 hairline" />
 
           {/* 本文 */}
-          <div className="mt-10 space-y-6 leading-loose text-sumi-soft">
+          <div className="mt-10 space-y-7 leading-loose text-sumi-soft md:space-y-8">
             {/* 冒頭：執筆者プロフィール吹き出し */}
             {post.introSpeech && <ProfileSpeech message={post.introSpeech} position="left" />}
 
@@ -93,7 +94,7 @@ export function PostArticle({ post }: { post: Post }) {
                   <h2
                     key={i}
                     id={headingId.get(i)}
-                    className="scroll-mt-28 pt-4 font-serif text-xl text-sumi md:text-2xl"
+                    className="scroll-mt-28 border-l-4 border-aka pt-2 pl-4 font-serif text-xl leading-snug text-sumi md:pl-5 md:text-2xl"
                   >
                     {b.text}
                   </h2>
@@ -169,11 +170,16 @@ export function PostArticle({ post }: { post: Post }) {
               }
               if (b.type === "ul") {
                 return (
-                  <ul key={i} className="space-y-3">
+                  <ul
+                    key={i}
+                    className="space-y-5 rounded-brand border border-sumi/8 bg-kinari/25 px-5 py-6 sm:px-7"
+                  >
                     {b.items.map((it) => (
-                      <li key={it} className="flex items-start gap-3">
-                        <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-aka" />
-                        <span>{it}</span>
+                      <li key={it} className="flex items-start gap-3.5">
+                        <span className="mt-3 h-2 w-2 shrink-0 rounded-full bg-aka" />
+                        <span>
+                          <RichText text={it} />
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -240,7 +246,7 @@ export function PostArticle({ post }: { post: Post }) {
               }
               return (
                 <p key={i} className="text-sumi-soft">
-                  {b.text}
+                  <RichText text={b.text} />
                 </p>
               );
             })}
@@ -375,6 +381,27 @@ export function PostArticle({ post }: { post: Post }) {
       <div className="mt-20">
         <CtaBand />
       </div>
+    </>
+  );
+}
+
+/**
+ * 本文中の **強調したい言葉** を赤字で表示します。
+ * 記事データ（posts.ts）の text / items で使えます。
+ */
+function RichText({ text }: { text: string }) {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return (
+    <>
+      {parts.map((s, i) =>
+        s.startsWith("**") && s.endsWith("**") ? (
+          <strong key={i} className="font-semibold text-aka">
+            {s.slice(2, -2)}
+          </strong>
+        ) : (
+          <Fragment key={i}>{s}</Fragment>
+        )
+      )}
     </>
   );
 }
