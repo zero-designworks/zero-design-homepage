@@ -15,6 +15,7 @@ export type CategorySlug =
   | "readyfor"
   | "return-design"
   | "promotion"
+  | "startup-product"
   // AI活用
   | "ai"
   | "chatgpt"
@@ -84,6 +85,12 @@ export const blogCategories: BlogCategory[] = [
         label: "集客・広報",
         description:
           "公開前の準備から公開中の発信まで。支援を伸ばすための集客・広報の実践方法を紹介します。",
+      },
+      {
+        slug: "startup-product",
+        label: "創業・新商品",
+        description:
+          "開業・新店舗づくりや新商品の立ち上げにクラウドファンディングを活かす方法。資金調達と同時にPRし、最初のファンを集める進め方を解説します。",
       },
     ],
   },

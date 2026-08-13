@@ -1791,7 +1791,7 @@ export const posts: Post[] = [
   {
     slug: "new-store-product-crowdfunding",
     category: "column",
-    categories: ["crowdfunding", "promotion"],
+    categories: ["startup-product", "crowdfunding", "promotion"],
     tags: ["shop-opening", "product-development", "beginner"],
     title:
       "なぜ新店舗・新商品にクラウドファンディングが最適なのか｜“お金を集めながらPRできる”という最大の強み",
