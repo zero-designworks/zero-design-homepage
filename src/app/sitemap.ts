@@ -6,11 +6,14 @@ import { allCategories, categoryPath } from "@/data/blogCategories";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
+  // 固定ページ。新しくページを追加したら、ここにも必ず1行足してください。
+  // （/privacy・/legal は robots.ts で検索エンジンに非公開のため、あえて載せていません）
   const staticRoutes = [
     "",
     "/about",
     "/crowdfunding",
     "/crowdfunding-uses",
+    "/sns-ai-video",
     "/services",
     "/works",
     "/column",
