@@ -36,6 +36,23 @@ Next.js 15 + TypeScript + Tailwind CSS v4。本番: https://zerodesign-works.jp
 - 保存先 `public/images/posts/`
 - **すべての画像に alt を設定する**
 
+### 記事用画像の生成（Gemini）
+
+記事のイラストは `scripts/gemini-image.mjs` で生成する。**モデルは `gemini-3.1-flash-image`**（スクリプトの既定値）。
+
+```bash
+node scripts/gemini-image.mjs "プロンプト" ファイル名          # 本文用（WebP・幅1600）
+node scripts/gemini-image.mjs "プロンプト" ファイル名 --hero   # アイキャッチ（JPEG・幅1200）
+OUT_DIR=public/images/posts node scripts/gemini-image.mjs ...  # 保存先を変える
+```
+
+- 16:9へ自動トリミング＋200KB以下へ自動圧縮まで行う
+- **`gemini-3.1-flash-lite-image` は使わない。** 安く速いが、日本語の文字を勝手に描き込み、
+  かつ崩れた文字になるため作り直しになる
+- プロンプトには必ず「文字は入れない」を含める
+- 生成後は**必ず目視で確認**する（意図しない文字・不自然な描写がないか）
+- 既存記事の作風に合わせる：やわらかな水彩＋細い墨線、生成り色の背景、深い赤を差し色
+
 ## 注意事項
 
 - `npm run dev` の実行中に `npm run build` を走らせると `.next` が壊れる。ビルド前に開発サーバーを止めること
