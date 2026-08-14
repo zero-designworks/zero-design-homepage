@@ -1,0 +1,1655 @@
+{
+  "meta": {
+    "version": 1,
+    "updatedAt": "2026-08-07",
+    "site": "https://zerodesign-works.jp",
+    "description": "ZEROデザインのSEO記事ネタ管理ファイル。新規記事・リライト候補を一元管理します。運用ルールは同ディレクトリの README.md を参照。",
+    "statuses": {
+      "idea": "記事候補（未着手）",
+      "planned": "執筆予定（優先度が確定し、公開予定日を設定済み）",
+      "writing": "作成中",
+      "ready": "公開準備完了（本文完成・未公開）",
+      "published": "公開済み",
+      "update": "既存記事のリライト候補（新規記事は作らない）"
+    },
+    "scoring": {
+      "formula": "priorityScore = inquiryPotential*3 + seoPotential*2 + (6 - competition)",
+      "max": 30,
+      "note": "問い合わせ直結度を最重視。競合が強いほど減点。同点の場合はZEROデザインの専門性・独自性が高い方を上位に。"
+    },
+    "publishedPostsSnapshot": {
+      "countedAt": "2026-08-07",
+      "total": 21,
+      "column": 18,
+      "news": 3,
+      "note": "重複判定の基準。記事を追加したら src/data/posts.ts を再確認すること。"
+    }
+  },
+  "ideas": [
+    {
+      "id": "IDEA-001",
+      "title": "クラウドファンディングの目標金額はどう決める？失敗しない設定方法と考え方",
+      "mainKeyword": "クラウドファンディング 目標金額 決め方",
+      "relatedKeywords": [
+        "クラファン 目標金額 相場",
+        "目標金額 低めに設定",
+        "クラウドファンディング 手数料 込み 計算"
+      ],
+      "categories": [
+        "crowdfunding"
+      ],
+      "searchIntent": "これから起案する人が、いくらに設定すべきか判断できずに検索。相場・計算方法・低め設定の是非を知りたい。",
+      "targetReader": "クラファンを検討中で、金額設定で手が止まっている個人・事業者",
+      "purpose": "起案直前の最重要判断を助け、『相談してから決めたい』という動機をつくる",
+      "serviceRelevance": "クラウドファンディング伴走支援の入口。金額設計は初回相談で必ず扱うテーマ",
+      "inquiryPotential": 5,
+      "seoPotential": 5,
+      "competition": 4,
+      "priorityScore": 27,
+      "priority": 3,
+      "outline": [
+        "結論：目標金額は「必要額」ではなく「達成できる額」から逆算する",
+        "目標金額に含めるべき費用（手数料・返礼品原価・送料・制作費）",
+        "All-or-Nothing方式で低めに設定すべき理由",
+        "ネクストゴールで積み上げる考え方",
+        "【事例】小谷寺：目標500万円→約736万円を達成した設計",
+        "よくある失敗：必要額をそのまま目標にしてしまう",
+        "FAQ（達成できなかったら／後から変更できるか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/how-to-crowdfunding-beginner",
+        "/column/temple-crowdfunding-tax-and-fees"
+      ],
+      "internalLinkCandidates": [
+        "/crowdfunding",
+        "/column/how-to-crowdfunding-beginner",
+        "/pricing",
+        "/contact"
+      ],
+      "ctaCandidate": "目標金額の設計から無料相談（/contact）",
+      "status": "ready",
+      "plannedPublishDate": "2026-08-07",
+      "publishedAt": null,
+      "url": "/column/crowdfunding-goal-amount",
+      "notes": "既存『やり方5ステップ』は全体の流れ。本記事は金額設定に特化して差別化する。 ／ 本文執筆・ビルド確認済み（未push）。公開後は status を published にし publishedAt を記録すること。"
+    },
+    {
+      "id": "IDEA-002",
+      "title": "クラウドファンディングが失敗する7つの理由と、避けるための準備",
+      "mainKeyword": "クラウドファンディング 失敗",
+      "relatedKeywords": [
+        "クラファン 失敗例",
+        "クラウドファンディング 集まらない",
+        "クラファン 達成率"
+      ],
+      "categories": [
+        "crowdfunding"
+      ],
+      "searchIntent": "やってみたいが失敗が怖い層が、リスクと回避策を知りたい。",
+      "targetReader": "実施を迷っている個人・中小事業者・寺社",
+      "purpose": "不安を具体的に解消し、『専門家と組めば回避できる』と伝えて相談につなげる",
+      "serviceRelevance": "伴走支援の必要性を最も自然に訴求できるテーマ",
+      "inquiryPotential": 5,
+      "seoPotential": 5,
+      "competition": 4,
+      "priorityScore": 27,
+      "priority": 4,
+      "outline": [
+        "結論：失敗の大半は「公開後」ではなく「公開前」に決まっている",
+        "理由1 公開前の告知期間がない",
+        "理由2 目標金額が高すぎる",
+        "理由3 リターンが支援したくならない",
+        "理由4 ストーリーが伝わらない",
+        "理由5 公開中に発信が止まる",
+        "理由6 身内・既存客への声かけをしていない",
+        "理由7 終了後のフォローがない",
+        "FAQ（失敗したらお金はどうなる／再挑戦できるか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/how-to-crowdfunding-beginner",
+        "/column/crowdfunding-sns-ai-posts"
+      ],
+      "internalLinkCandidates": [
+        "/crowdfunding",
+        "/sns-ai-video",
+        "/works",
+        "/contact"
+      ],
+      "ctaCandidate": "失敗しないための無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "断定的な統計はソースが取れない限り書かない。実体験ベースで記述する。"
+    },
+    {
+      "id": "IDEA-003",
+      "title": "文化財の保存・修復にクラウドファンディングを活用する方法｜補助金だけでは足りない費用をどう集めるか",
+      "mainKeyword": "文化財 クラウドファンディング",
+      "relatedKeywords": [
+        "文化財 修復 費用",
+        "重要文化財 保存 資金",
+        "文化財 寄付 集め方"
+      ],
+      "categories": [
+        "heritage",
+        "history",
+        "crowdfunding"
+      ],
+      "searchIntent": "文化財の維持・修復費に困っている管理者が、補助金以外の資金調達手段を探している。",
+      "targetReader": "寺社・保存会・文化財所有者・自治体文化財担当",
+      "purpose": "ZEROデザインの最重要専門領域で、指名検索・相談に直結させる",
+      "serviceRelevance": "小谷寺の実績があり、最も強みが出るテーマ。競合も少ない",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 2,
+      "priorityScore": 27,
+      "priority": 1,
+      "outline": [
+        "結論：文化財は「価値が伝われば」全国から支援が集まる",
+        "補助金だけでは足りない現実（自己負担分をどう埋めるか）",
+        "クラウドファンディングが向いている文化財・向かない文化財",
+        "価値を伝えるストーリー設計（何を守るのか／失われたら何が失われるのか）",
+        "リターンの考え方（拝観・記名・限定御朱印など）",
+        "【事例】小谷寺 本堂再建プロジェクト",
+        "FAQ（税金・会計処理／所有者以外でも実施できるか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/shrine-temple-crowdfunding-cases",
+        "/column/castle-crowdfunding",
+        "/column/temple-crowdfunding-tax-and-fees"
+      ],
+      "internalLinkCandidates": [
+        "/category/history/heritage",
+        "/crowdfunding-uses",
+        "/works",
+        "/contact"
+      ],
+      "ctaCandidate": "文化財プロジェクトの無料相談（/contact）",
+      "status": "ready",
+      "plannedPublishDate": "2026-08-07",
+      "publishedAt": null,
+      "url": "/column/heritage-crowdfunding",
+      "notes": "heritageカテゴリーの中心記事。既存の神社仏閣記事とは「文化財という対象」で切り分ける。 ／ 本文執筆・ビルド確認済み（未push）。公開後は status を published にし publishedAt を記録すること。"
+    },
+    {
+      "id": "IDEA-004",
+      "title": "AI動画でプロジェクトの想いを伝える方法｜撮影なしでも心を動かす映像のつくり方",
+      "mainKeyword": "AI動画 クラウドファンディング",
+      "relatedKeywords": [
+        "AI動画 作り方",
+        "撮影なし 動画制作",
+        "AIアニメーション PR"
+      ],
+      "categories": [
+        "ai-video",
+        "ai",
+        "crowdfunding"
+      ],
+      "searchIntent": "動画を作りたいが予算・撮影のハードルが高い人が、AIでどこまでできるか知りたい。",
+      "targetReader": "動画制作の予算がない起案者、人前で話すのが苦手な事業者",
+      "purpose": "ZEROデザインの独自技術を具体的に見せ、SNS動画支援の相談につなげる",
+      "serviceRelevance": "AI動画・ショート動画制作サービスの中核。制作実績の動画を埋め込める",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 2,
+      "priorityScore": 27,
+      "priority": 2,
+      "outline": [
+        "結論：撮影できなくても、写真と資料があれば想いは伝えられる",
+        "AI動画でできること・できないこと",
+        "想いが伝わる動画の構成（課題→背景→未来→お願い）",
+        "AIアニメで「かつての姿」を再現する手法",
+        "AIナレーション・テロップの使いどころ",
+        "【実例】制作した動画を掲載（小谷寺・クラージュデザイン）",
+        "FAQ（費用／納期／素材は何が必要か）"
+      ],
+      "relatedExistingPosts": [
+        "/news/ai-video-crowdfunding",
+        "/column/crowdfunding-sns-ai-posts",
+        "/column/crowdfunding-youtube-long-video"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/works",
+        "/services",
+        "/contact"
+      ],
+      "ctaCandidate": "AI動画制作の無料相談（/contact）",
+      "status": "ready",
+      "plannedPublishDate": "2026-08-07",
+      "publishedAt": null,
+      "url": "/column/ai-video-storytelling",
+      "notes": "既存 /news/ai-video-crowdfunding はサービス告知。本記事は「作り方」のノウハウ記事として差別化する。 ／ 本文執筆・ビルド確認済み（未push）。公開後は status を published にし publishedAt を記録すること。"
+    },
+    {
+      "id": "IDEA-005",
+      "title": "CAMPFIRE・Makuake・Readyforの違いを比較｜プロジェクトに合うのはどれ？",
+      "mainKeyword": "クラウドファンディング サイト 比較",
+      "relatedKeywords": [
+        "CAMPFIRE Makuake 違い",
+        "Readyfor 手数料",
+        "クラファン おすすめ サイト"
+      ],
+      "categories": [
+        "crowdfunding",
+        "campfire",
+        "makuake",
+        "readyfor"
+      ],
+      "searchIntent": "実施を決めた人が、どのプラットフォームを使うか比較検討している。",
+      "targetReader": "起案を決めたがサイト選びで迷っている個人・事業者・団体",
+      "purpose": "検討フェーズの最終段階で接触し、選定相談から伴走支援へつなげる",
+      "serviceRelevance": "CAMPFIRE公式パートナーとしての立場を自然に訴求できる",
+      "inquiryPotential": 5,
+      "seoPotential": 5,
+      "competition": 5,
+      "priorityScore": 26,
+      "priority": 8,
+      "outline": [
+        "結論：目的（商品／社会貢献／地域）でサイトは決まる",
+        "3社の特徴を一覧比較",
+        "手数料の考え方（※各社公式の最新情報を必ず確認して記載）",
+        "購入型・寄付型の使い分け",
+        "審査・掲載までの流れの違い",
+        "迷ったときの判断基準3つ",
+        "FAQ（途中で変更できるか／複数同時はできるか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/how-to-crowdfunding-beginner"
+      ],
+      "internalLinkCandidates": [
+        "/category/crowdfunding/campfire",
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "どのサイトが合うか無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "【重要】手数料・条件は変動する。必ず各社公式ページで最新値を確認し、確認日を明記する。推測で書かない。"
+    },
+    {
+      "id": "IDEA-006",
+      "title": "クラウドファンディングは公開前のSNS発信で決まる｜いつ・何を出せばいいか",
+      "mainKeyword": "クラウドファンディング 公開前 SNS",
+      "relatedKeywords": [
+        "クラファン 事前告知",
+        "クラファン 初速",
+        "クラウドファンディング 準備期間"
+      ],
+      "categories": [
+        "promotion",
+        "crowdfunding",
+        "sns"
+      ],
+      "searchIntent": "公開を控えた起案者が、事前にどんな準備をすべきか知りたい。",
+      "targetReader": "公開日が決まっている、または準備中の起案者",
+      "purpose": "SNS動画支援の必要性を最も直接的に伝える",
+      "serviceRelevance": "クラファンSNS動画支援サービスの中核テーマ",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 26,
+      "priority": 5,
+      "outline": [
+        "結論：公開日に支援が集まるかは、公開前1か月で決まっている",
+        "なぜ初速が重要なのか（人は「応援されているもの」を応援する）",
+        "公開1か月前：アカウント整備と世界観づくり",
+        "公開2週間前：プロジェクトの背景を伝える",
+        "公開1週間前：カウントダウンと個別のお声がけ",
+        "公開当日：誰に、どの順番で伝えるか",
+        "発信が続かないときの解決策",
+        "FAQ（フォロワーが少なくても大丈夫か）"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-sns-ai-posts",
+        "/column/claude-code-instagram-automation"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/services",
+        "/column/crowdfunding-sns-ai-posts",
+        "/contact"
+      ],
+      "ctaCandidate": "SNS発信の丸ごと支援を相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "既存 crowdfunding-sns-ai-posts は『投稿が作れない人のAI活用』。本記事は『なぜ・いつ・何を』のロードマップで差別化。相互リンクすること。"
+    },
+    {
+      "id": "IDEA-007",
+      "title": "クラウドファンディングでリール動画を活用する方法｜伸びる構成と投稿のコツ",
+      "mainKeyword": "クラウドファンディング リール",
+      "relatedKeywords": [
+        "Instagram リール 作り方",
+        "リール 構成 テンプレ",
+        "クラファン 動画 集客"
+      ],
+      "categories": [
+        "instagram",
+        "sns",
+        "crowdfunding"
+      ],
+      "searchIntent": "リールで告知したいが、何をどう作れば見てもらえるか分からない。",
+      "targetReader": "Instagramで発信中／発信予定の起案者",
+      "purpose": "動画制作を外注する価値を伝え、SNS動画支援につなげる",
+      "serviceRelevance": "リール制作は主要サービス。実制作物を見せられる",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 26,
+      "priority": 6,
+      "outline": [
+        "結論：最初の2秒で「自分ごと」にできるかがすべて",
+        "クラファンで効くリールの型5パターン",
+        "冒頭2秒のフックのつくり方",
+        "テロップ・音・尺の基本",
+        "投稿頻度と時期別の出し分け",
+        "【実例】実際に制作したリール",
+        "FAQ（顔出しは必要か／素材が少なくても作れるか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/claude-code-instagram-automation",
+        "/column/crowdfunding-youtube-long-video"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/works",
+        "/category/sns/instagram",
+        "/contact"
+      ],
+      "ctaCandidate": "リール制作の無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "既存YouTube記事はロング動画。本記事はショート特化で棲み分け。"
+    },
+    {
+      "id": "IDEA-008",
+      "title": "支援したくなるクラウドファンディングページの書き方｜ストーリー構成の型",
+      "mainKeyword": "クラウドファンディング ページ 書き方",
+      "relatedKeywords": [
+        "クラファン 文章 例文",
+        "クラウドファンディング ストーリー",
+        "共感される 書き方"
+      ],
+      "categories": [
+        "crowdfunding",
+        "promotion"
+      ],
+      "searchIntent": "ページを書き始めたが、何をどの順で書けばいいか分からない。",
+      "targetReader": "ページ制作中の起案者、文章に自信がない人",
+      "purpose": "ページ制作代行の需要を掘り起こす",
+      "serviceRelevance": "クラファンページ制作は主要サービスの一つ",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 4,
+      "priorityScore": 25,
+      "priority": 9,
+      "outline": [
+        "結論：商品説明ではなく「なぜやるのか」から書く",
+        "支援される構成7ブロック（冒頭／自己紹介／背景／課題／解決／使い道／お願い）",
+        "冒頭で離脱させない書き出しの型",
+        "資金の使い道は具体的に書く",
+        "写真・動画をどこに置くか",
+        "やりがちなNG表現",
+        "FAQ（文章量の目安／プロに頼むべきか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/how-to-crowdfunding-beginner",
+        "/column/new-store-product-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/services",
+        "/crowdfunding",
+        "/works",
+        "/contact"
+      ],
+      "ctaCandidate": "ページ制作・原稿作成の相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-009",
+      "title": "地域活性化にクラウドファンディングを活用するメリット｜まちづくりの資金調達",
+      "mainKeyword": "地域活性化 クラウドファンディング",
+      "relatedKeywords": [
+        "まちづくり 資金調達",
+        "地方創生 クラファン",
+        "地域 プロジェクト 資金"
+      ],
+      "categories": [
+        "local",
+        "regional-revitalization",
+        "crowdfunding"
+      ],
+      "searchIntent": "地域の課題解決や活性化に取り組む人が、資金と仲間を集める方法を探している。",
+      "targetReader": "自治体・商工会・まちづくり団体・地域おこし協力隊",
+      "purpose": "地域活性化カテゴリーの中心記事（ハブ）として、関連記事へ内部リンクを集約する",
+      "serviceRelevance": "地域プロジェクトはZEROデザインの重点領域",
+      "inquiryPotential": 4,
+      "seoPotential": 5,
+      "competition": 3,
+      "priorityScore": 25,
+      "priority": 10,
+      "outline": [
+        "結論：地域活性化のクラファンは「資金」より「関係人口」が本命",
+        "地域活性化にクラファンが向いている理由3つ",
+        "活用できる分野（イベント／商店街／観光／空き家／特産品）",
+        "地域外の応援者をどう見つけるか",
+        "行政の補助金との組み合わせ方",
+        "【事例】地域プロジェクトの進め方",
+        "FAQ（団体でなくても実施できるか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/marche-crowdfunding",
+        "/column/castle-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/category/local",
+        "/crowdfunding-uses",
+        "/column/marche-crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "地域プロジェクトの無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "地域活性化カテゴリーのハブ記事。今後の地域系記事はすべてここから内部リンクする。"
+    },
+    {
+      "id": "IDEA-010",
+      "title": "伝統工芸をクラウドファンディングで広める方法｜後継者不足を「応援」に変える",
+      "mainKeyword": "伝統工芸 クラウドファンディング",
+      "relatedKeywords": [
+        "工芸品 販売 資金",
+        "職人 後継者 支援",
+        "伝統産業 ブランディング"
+      ],
+      "categories": [
+        "local",
+        "crowdfunding",
+        "regional-revitalization"
+      ],
+      "searchIntent": "工房・職人・産地組合が、販路開拓や後継者育成の資金を探している。",
+      "targetReader": "伝統工芸の作り手、産地組合、地域ブランド担当",
+      "purpose": "競合の少ない専門領域で上位を取り、指名相談を獲得する",
+      "serviceRelevance": "『本物を作る不器用な作り手を応援する』という理念に最も合致",
+      "inquiryPotential": 4,
+      "seoPotential": 4,
+      "competition": 2,
+      "priorityScore": 24,
+      "priority": 12,
+      "outline": [
+        "結論：技術ではなく「作り手の物語」を売る",
+        "伝統工芸がクラファンと相性が良い理由",
+        "職人の想いを言葉にする取材のコツ",
+        "リターン設計（現品／体験／名入れ／工房見学）",
+        "写真・動画で「手の仕事」を見せる",
+        "産地全体で取り組む場合の進め方",
+        "FAQ（少量生産でも実施できるか）"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-test-marketing",
+        "/column/new-store-product-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/crowdfunding-uses",
+        "/category/local",
+        "/services",
+        "/contact"
+      ],
+      "ctaCandidate": "工房・産地の無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-011",
+      "title": "All-in と All-or-Nothing の違い｜どちらを選ぶべきか判断基準",
+      "mainKeyword": "クラウドファンディング All-in All-or-Nothing 違い",
+      "relatedKeywords": [
+        "実行確約型 達成後支援型",
+        "クラファン 方式 選び方"
+      ],
+      "categories": [
+        "crowdfunding"
+      ],
+      "searchIntent": "起案設定の段階で方式選択に迷っている。",
+      "targetReader": "起案準備中の人",
+      "purpose": "細かいが必ず通る疑問を押さえ、専門性を示す",
+      "serviceRelevance": "初回相談で必ず説明する内容",
+      "inquiryPotential": 4,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 23,
+      "priority": 13,
+      "outline": [
+        "結論：多くの場合はAll-or-Nothingが有利",
+        "2方式の仕組み",
+        "メリット・デメリット比較",
+        "ケース別の選び方",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/how-to-crowdfunding-beginner"
+      ],
+      "internalLinkCandidates": [
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "方式選びから相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "各社の呼称が異なる。公式表記を確認して記載する。"
+    },
+    {
+      "id": "IDEA-012",
+      "title": "クラウドファンディングにかかる費用の全体像｜手数料・原価・送料の考え方",
+      "mainKeyword": "クラウドファンディング 費用",
+      "relatedKeywords": [
+        "クラファン 手数料 いくら",
+        "クラウドファンディング 経費",
+        "リターン 原価率"
+      ],
+      "categories": [
+        "crowdfunding",
+        "return-design"
+      ],
+      "searchIntent": "手元にいくら残るのか、費用構造を知りたい。",
+      "targetReader": "実施を検討中の事業者",
+      "purpose": "お金の不安を解消し、資金計画の相談につなげる",
+      "serviceRelevance": "資金計画は伴走支援の重要項目",
+      "inquiryPotential": 4,
+      "seoPotential": 4,
+      "competition": 4,
+      "priorityScore": 22,
+      "priority": 19,
+      "outline": [
+        "結論：集めた額がそのまま残るわけではない",
+        "費用の内訳",
+        "リターン原価の目安",
+        "送料の落とし穴",
+        "手元に残る額の試算例",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/temple-crowdfunding-tax-and-fees"
+      ],
+      "internalLinkCandidates": [
+        "/pricing",
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "資金計画の無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "既存記事は寺社特化。本記事は一般事業者向けに書き分ける。手数料率は必ず出典確認。"
+    },
+    {
+      "id": "IDEA-013",
+      "title": "公開直後72時間で決まる｜クラウドファンディングの初速のつくり方",
+      "mainKeyword": "クラウドファンディング 初速",
+      "relatedKeywords": [
+        "クラファン 公開初日",
+        "支援 集まらない 最初",
+        "クラファン 拡散"
+      ],
+      "categories": [
+        "promotion",
+        "crowdfunding"
+      ],
+      "searchIntent": "公開直後に支援が伸びず焦っている、または事前に対策を知りたい。",
+      "targetReader": "公開直前・公開直後の起案者",
+      "purpose": "緊急度の高い層に接触し、期間中支援の相談につなげる",
+      "serviceRelevance": "公開中の伴走支援に直結",
+      "inquiryPotential": 5,
+      "seoPotential": 3,
+      "competition": 3,
+      "priorityScore": 24,
+      "priority": 11,
+      "outline": [
+        "結論：初日の支援は「事前にお願いしておいた人」から生まれる",
+        "なぜ72時間が重要か",
+        "公開前にやる個別連絡",
+        "公開当日のSNS導線",
+        "伸び悩んだときの立て直し",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-sns-ai-posts"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "公開中の伴走支援を相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-014",
+      "title": "支援が伸びる活動報告の書き方｜何を・どのくらいの頻度で伝えるか",
+      "mainKeyword": "クラウドファンディング 活動報告",
+      "relatedKeywords": [
+        "活動報告 例文",
+        "クラファン 更新 頻度",
+        "支援者 お礼 文章"
+      ],
+      "categories": [
+        "promotion",
+        "crowdfunding"
+      ],
+      "searchIntent": "公開中に何を投稿すればいいか分からない。",
+      "targetReader": "実施中の起案者",
+      "purpose": "実施中の負担を可視化し、代行ニーズを喚起する",
+      "serviceRelevance": "活動報告制作は支援メニューに含まれる",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 3,
+      "priorityScore": 21,
+      "priority": 20,
+      "outline": [
+        "結論：報告は「進捗」ではなく「物語の続き」",
+        "活動報告のネタ12個",
+        "頻度の目安",
+        "書き方テンプレート",
+        "支援者が増える報告の共通点",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-sns-ai-posts"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/contact"
+      ],
+      "ctaCandidate": "活動報告の代行を相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-015",
+      "title": "ネクストゴールの決め方と伝え方｜達成後にもう一段伸ばす",
+      "mainKeyword": "クラウドファンディング ネクストゴール",
+      "relatedKeywords": [
+        "ネクストゴール 設定",
+        "セカンドゴール 例",
+        "目標達成後 クラファン"
+      ],
+      "categories": [
+        "crowdfunding",
+        "promotion"
+      ],
+      "searchIntent": "目標達成が見えてきた人が、次の設定を検討している。",
+      "targetReader": "達成間近・達成済みの起案者",
+      "purpose": "実施中の相談接点をつくる",
+      "serviceRelevance": "伴走支援の実務項目",
+      "inquiryPotential": 3,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 19,
+      "priority": 25,
+      "outline": [
+        "結論：金額ではなく「使い道」を先に決める",
+        "設定タイミング",
+        "金額の決め方",
+        "支援者への伝え方",
+        "やってはいけない設定",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/how-to-crowdfunding-beginner"
+      ],
+      "internalLinkCandidates": [
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "公開中のご相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-016",
+      "title": "クラウドファンディング終了後にやること｜リターン発送とファンの育て方",
+      "mainKeyword": "クラウドファンディング 終了後",
+      "relatedKeywords": [
+        "リターン 発送 遅れ",
+        "クラファン後 フォロー",
+        "支援者 リピーター化"
+      ],
+      "categories": [
+        "crowdfunding",
+        "return-design"
+      ],
+      "searchIntent": "終了後の実務と、支援者との関係継続の方法を知りたい。",
+      "targetReader": "終了直後の起案者",
+      "purpose": "継続支援（SNS運用）の提案につなげる",
+      "serviceRelevance": "終了後の継続広報プランに直結",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 22,
+      "priority": 15,
+      "outline": [
+        "結論：終了後3か月が「ファンになるか」の分かれ道",
+        "発送までのスケジュール管理",
+        "遅延時の連絡の仕方",
+        "お礼の伝え方",
+        "支援者をLINE・SNSでつなぎ続ける",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/temple-crowdfunding-line-community",
+        "/column/temple-shrine-crowdfunding-returns"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/category/sns/line",
+        "/contact"
+      ],
+      "ctaCandidate": "終了後の継続広報を相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-017",
+      "title": "補助金・助成金とクラウドファンディングの違い｜併用して自己負担を減らす方法",
+      "mainKeyword": "補助金 クラウドファンディング 違い",
+      "relatedKeywords": [
+        "補助金 自己負担 資金調達",
+        "助成金 併用 クラファン",
+        "創業補助金 クラファン"
+      ],
+      "categories": [
+        "crowdfunding",
+        "startup-product"
+      ],
+      "searchIntent": "補助金を検討中の事業者が、他の選択肢や組み合わせを知りたい。",
+      "targetReader": "創業予定者・中小事業者・支援機関",
+      "purpose": "資金調達を検討する層の入口を広げる",
+      "serviceRelevance": "創業支援・事業者相談の入口",
+      "inquiryPotential": 4,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 23,
+      "priority": 14,
+      "outline": [
+        "結論：補助金は「後払い」、クラファンは「先に集まる」",
+        "3つの違い（時期・審査・PR効果）",
+        "併用パターン",
+        "併用時の注意点",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-for-business-consultants",
+        "/column/pre-launch-crowdfunding-startup"
+      ],
+      "internalLinkCandidates": [
+        "/crowdfunding",
+        "/category/crowdfunding/startup-product",
+        "/contact"
+      ],
+      "ctaCandidate": "資金調達の無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "制度の詳細は年度で変わる。断定を避け、一般論＋公式確認を促す書き方にする。"
+    },
+    {
+      "id": "IDEA-018",
+      "title": "飲食店・カフェの開業資金をクラウドファンディングで集める方法",
+      "mainKeyword": "飲食店 開業 クラウドファンディング",
+      "relatedKeywords": [
+        "カフェ 開業資金",
+        "店舗 クラファン 事例",
+        "飲食店 資金調達"
+      ],
+      "categories": [
+        "startup-product",
+        "crowdfunding"
+      ],
+      "searchIntent": "開業を予定する人が、融資以外の資金調達と集客を同時に実現したい。",
+      "targetReader": "飲食店・カフェの開業予定者",
+      "purpose": "業種特化で検索意図に的確に応え、開業前相談を獲得する",
+      "serviceRelevance": "新店舗支援の実務経験を活かせる",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 26,
+      "priority": 7,
+      "outline": [
+        "結論：開店前に「常連候補」をつくれるのが最大の価値",
+        "融資との組み合わせ",
+        "リターン設計（前売り食事券・命名権・体験）",
+        "地域のお客様への声のかけ方",
+        "注意点（食品の返礼・許認可）",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/new-store-product-crowdfunding",
+        "/column/pre-launch-crowdfunding-startup"
+      ],
+      "internalLinkCandidates": [
+        "/category/crowdfunding/startup-product",
+        "/crowdfunding-uses",
+        "/contact"
+      ],
+      "ctaCandidate": "開業前の無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "既存 new-store-product-crowdfunding は総論。本記事は飲食業に特化して差別化。"
+    },
+    {
+      "id": "IDEA-019",
+      "title": "新サービス・新規事業の認知拡大にクラウドファンディングを使う方法",
+      "mainKeyword": "新規事業 クラウドファンディング",
+      "relatedKeywords": [
+        "新サービス 認知拡大",
+        "BtoB クラファン",
+        "事業立ち上げ PR"
+      ],
+      "categories": [
+        "startup-product",
+        "crowdfunding",
+        "promotion"
+      ],
+      "searchIntent": "新規事業の立ち上げで、広告費をかけずに認知を得たい。",
+      "targetReader": "新規事業担当者・法人経営者",
+      "purpose": "法人案件の獲得",
+      "serviceRelevance": "法人向け支援の入口",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 3,
+      "priorityScore": 21,
+      "priority": 21,
+      "outline": [
+        "結論：クラファンは「広告費をかけない発表会」",
+        "モノがないサービスでも実施できるか",
+        "サービス型のリターン設計",
+        "メディア露出につなげる",
+        "社内の合意形成",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-test-marketing",
+        "/column/crowdfunding-for-business-consultants"
+      ],
+      "internalLinkCandidates": [
+        "/category/crowdfunding/startup-product",
+        "/services",
+        "/contact"
+      ],
+      "ctaCandidate": "法人向け無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "既存テストマーケ記事と重複しないよう『認知拡大・PR』に焦点を絞る。"
+    },
+    {
+      "id": "IDEA-020",
+      "title": "祭り・伝統行事を未来へつなぐクラウドファンディング",
+      "mainKeyword": "祭り クラウドファンディング",
+      "relatedKeywords": [
+        "伝統行事 存続 資金",
+        "神輿 修復 費用",
+        "祭り 担い手不足"
+      ],
+      "categories": [
+        "heritage",
+        "history",
+        "shrine-temple"
+      ],
+      "searchIntent": "祭りの存続や用具の修復に必要な資金を集めたい。",
+      "targetReader": "氏子会・保存会・自治会・観光協会",
+      "purpose": "歴史文化領域のロングテールを押さえる",
+      "serviceRelevance": "寺社・地域文化の支援実績を活かせる",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 22,
+      "priority": 16,
+      "outline": [
+        "結論：祭りは「参加できるリターン」が強い",
+        "祭りの資金課題",
+        "地域外のファンをつくる",
+        "リターン設計（法被・桟敷席・担ぎ手体験）",
+        "合意形成の進め方",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/shrine-temple-crowdfunding-cases",
+        "/column/temple-crowdfunding-danka-ujiko"
+      ],
+      "internalLinkCandidates": [
+        "/category/history",
+        "/crowdfunding-uses",
+        "/contact"
+      ],
+      "ctaCandidate": "祭り・行事の無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-021",
+      "title": "戦国武将ゆかりの地を活かしたクラウドファンディング｜歴史ファンを動かす企画",
+      "mainKeyword": "戦国武将 クラウドファンディング",
+      "relatedKeywords": [
+        "御城印 リターン",
+        "history ファン 集客",
+        "武将 ゆかりの地 観光"
+      ],
+      "categories": [
+        "samurai",
+        "history",
+        "tourism"
+      ],
+      "searchIntent": "史跡やゆかりの地を活用した企画で、全国の歴史ファンを集めたい。",
+      "targetReader": "史跡管理者・観光協会・地域団体",
+      "purpose": "競合が少ない独自領域を押さえる",
+      "serviceRelevance": "長浜（浅井家・お市の方）での実績と親和性が高い",
+      "inquiryPotential": 3,
+      "seoPotential": 3,
+      "competition": 1,
+      "priorityScore": 20,
+      "priority": 24,
+      "outline": [
+        "結論：歴史ファンは「物語」に支援する",
+        "なぜ歴史テーマは全国から支援が集まるのか",
+        "史実の扱い方（考証と出典）",
+        "リターン（御城印・限定御朱印・現地ツアー）",
+        "【事例】小谷寺・お市の方の発信",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/castle-crowdfunding",
+        "/column/shrine-temple-crowdfunding-cases"
+      ],
+      "internalLinkCandidates": [
+        "/category/history/castle",
+        "/works",
+        "/contact"
+      ],
+      "ctaCandidate": "歴史プロジェクトの無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "史実は必ず出典を確認。諸説ある事項は「諸説あり」と明記する。"
+    },
+    {
+      "id": "IDEA-022",
+      "title": "商店街の活性化にクラウドファンディングを活用する方法",
+      "mainKeyword": "商店街 クラウドファンディング",
+      "relatedKeywords": [
+        "商店街 活性化 事例",
+        "シャッター街 再生",
+        "商店街 イベント 資金"
+      ],
+      "categories": [
+        "shopping-street",
+        "local",
+        "regional-revitalization"
+      ],
+      "searchIntent": "商店街組合や個店が、共同企画や設備更新の資金を探している。",
+      "targetReader": "商店街振興組合・個店オーナー・商工会",
+      "purpose": "記事0件カテゴリーを立ち上げ、地域案件を獲得する",
+      "serviceRelevance": "地域活性化支援の実務領域",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 22,
+      "priority": 17,
+      "outline": [
+        "結論：一店舗より「商店街まるごと」が強い",
+        "商店街ならではの資金課題",
+        "共同プロジェクトの合意形成",
+        "リターン（共通商品券・食べ歩き券）",
+        "巻き込み方",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/marche-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/category/local",
+        "/crowdfunding-uses",
+        "/contact"
+      ],
+      "ctaCandidate": "商店街プロジェクトの相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-023",
+      "title": "観光・体験コンテンツづくりにクラウドファンディングを使う方法",
+      "mainKeyword": "観光 クラウドファンディング",
+      "relatedKeywords": [
+        "体験型 観光 資金",
+        "着地型観光 立ち上げ",
+        "観光協会 クラファン"
+      ],
+      "categories": [
+        "tourism",
+        "local"
+      ],
+      "searchIntent": "観光資源を活かした新しい体験づくりの資金と集客を同時に得たい。",
+      "targetReader": "観光協会・宿泊事業者・体験プログラム運営者",
+      "purpose": "記事0件カテゴリーの立ち上げ",
+      "serviceRelevance": "地域・歴史文化と組み合わせやすい",
+      "inquiryPotential": 3,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 19,
+      "priority": 26,
+      "outline": [
+        "結論：観光は「来る前」からファンをつくれる",
+        "体験コンテンツと相性が良い理由",
+        "リターン＝先行体験チケット",
+        "遠方の人にどう届けるか",
+        "リピーター化",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/marche-crowdfunding",
+        "/column/castle-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/category/local",
+        "/crowdfunding-uses",
+        "/contact"
+      ],
+      "ctaCandidate": "観光プロジェクトの相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-024",
+      "title": "空き家・古民家の再生にクラウドファンディングを活用する",
+      "mainKeyword": "空き家 クラウドファンディング",
+      "relatedKeywords": [
+        "古民家 再生 資金",
+        "空き家 活用 事例",
+        "移住 拠点づくり"
+      ],
+      "categories": [
+        "local",
+        "regional-revitalization"
+      ],
+      "searchIntent": "空き家を活用した拠点づくりの資金と仲間を集めたい。",
+      "targetReader": "移住者・地域おこし協力隊・不動産活用事業者",
+      "purpose": "地域カテゴリーの厚みを増す",
+      "serviceRelevance": "地域活性化の代表的テーマ",
+      "inquiryPotential": 3,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 19,
+      "priority": 27,
+      "outline": [
+        "結論：建物ではなく「そこで生まれる暮らし」を伝える",
+        "空き家活用の資金課題",
+        "改修費の見せ方",
+        "リターン（宿泊券・DIY参加権・命名権）",
+        "地域住民の理解を得る",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/marche-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/category/local",
+        "/crowdfunding-uses",
+        "/contact"
+      ],
+      "ctaCandidate": "空き家活用の相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-025",
+      "title": "地域ブランド・特産品を全国へ届けるクラウドファンディング活用法",
+      "mainKeyword": "地域ブランド クラウドファンディング",
+      "relatedKeywords": [
+        "特産品 販路開拓",
+        "6次産業化 資金",
+        "地場産品 PR"
+      ],
+      "categories": [
+        "local",
+        "regional-revitalization",
+        "startup-product"
+      ],
+      "searchIntent": "地元の産品を地域外へ広げたい生産者・加工事業者。",
+      "targetReader": "農林水産事業者・食品加工業・6次産業化に取り組む生産者",
+      "purpose": "商品開発層と地域層の交点を押さえる",
+      "serviceRelevance": "商品開発支援・テストマーケ支援と直結",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 3,
+      "priorityScore": 21,
+      "priority": 22,
+      "outline": [
+        "結論：「珍しさ」ではなく「背景」で選ばれる",
+        "地域産品がクラファンで伸びる条件",
+        "価格設定と原価",
+        "配送・保存の実務",
+        "リピート購入につなげる",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-test-marketing",
+        "/column/new-store-product-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/category/local",
+        "/category/crowdfunding/startup-product",
+        "/contact"
+      ],
+      "ctaCandidate": "特産品プロジェクトの相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-026",
+      "title": "ふるさと納税型（GCF）と購入型クラウドファンディングの違い",
+      "mainKeyword": "ガバメントクラウドファンディング 違い",
+      "relatedKeywords": [
+        "GCF ふるさと納税",
+        "自治体 クラウドファンディング",
+        "寄付型 購入型 違い"
+      ],
+      "categories": [
+        "crowdfunding",
+        "local"
+      ],
+      "searchIntent": "自治体・公共性の高い団体が、どの方式を選ぶべきか比較したい。",
+      "targetReader": "自治体職員・公益団体・地域団体",
+      "purpose": "自治体案件への接点をつくる",
+      "serviceRelevance": "地域・文化財案件で相談されやすい論点",
+      "inquiryPotential": 3,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 19,
+      "priority": 28,
+      "outline": [
+        "結論：実施主体と税制で選択が決まる",
+        "GCFの仕組み",
+        "購入型との違い（税控除・返礼・自由度）",
+        "併用の可否",
+        "どちらが向いているか",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/temple-crowdfunding-tax-and-fees"
+      ],
+      "internalLinkCandidates": [
+        "/crowdfunding",
+        "/category/local",
+        "/contact"
+      ],
+      "ctaCandidate": "自治体・団体向け相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "税制は必ず公式（総務省・各自治体）を確認。断定を避ける。"
+    },
+    {
+      "id": "IDEA-027",
+      "title": "撮影なしでPR動画をつくる方法｜写真と資料だけで想いを伝える",
+      "mainKeyword": "撮影なし 動画制作",
+      "relatedKeywords": [
+        "写真 だけ 動画",
+        "動画 素材がない",
+        "低予算 PR動画"
+      ],
+      "categories": [
+        "ai-video",
+        "ai"
+      ],
+      "searchIntent": "動画を作りたいが撮影の予算・時間・人手がない。",
+      "targetReader": "小規模事業者・寺社・地域団体",
+      "purpose": "AI動画サービスへの導線をつくる",
+      "serviceRelevance": "『撮影なしで制作可能』は主要な差別化要素",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 22,
+      "priority": 18,
+      "outline": [
+        "結論：必要なのはカメラではなく「素材と物語」",
+        "用意する素材リスト",
+        "写真だけで動きをつくる手法",
+        "AIナレーションの活用",
+        "【実例】制作事例",
+        "FAQ（素材が古い写真でも可能か）"
+      ],
+      "relatedExistingPosts": [
+        "/news/ai-video-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/works",
+        "/contact"
+      ],
+      "ctaCandidate": "動画制作の無料相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "IDEA-004（AI動画で想いを伝える）と近い。004は「表現・構成」、本記事は「素材がない人の解決」に絞る。片方を先に公開してから重複を再判定すること。"
+    },
+    {
+      "id": "IDEA-028",
+      "title": "クラウドファンディング期間中のSNS投稿カレンダー｜何をいつ出すか",
+      "mainKeyword": "クラウドファンディング SNS 投稿 内容",
+      "relatedKeywords": [
+        "クラファン 発信 ネタ",
+        "投稿 スケジュール",
+        "SNS 運用 計画"
+      ],
+      "categories": [
+        "promotion",
+        "sns",
+        "crowdfunding"
+      ],
+      "searchIntent": "期間中の発信ネタが尽きて困っている。",
+      "targetReader": "実施中の起案者・広報担当",
+      "purpose": "運用代行の必要性を具体化する",
+      "serviceRelevance": "SNS動画支援の実務そのもの",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 3,
+      "priorityScore": 21,
+      "priority": 23,
+      "outline": [
+        "結論：ネタは「期間×目的」で機械的に決められる",
+        "公開前／序盤／中盤／終盤の出し分け",
+        "投稿ネタ20個リスト",
+        "頻度と時間帯",
+        "続けられない人の対処",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-sns-ai-posts",
+        "/column/claude-code-instagram-automation"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/category/sns",
+        "/contact"
+      ],
+      "ctaCandidate": "SNS運用の丸ごと支援（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "既存2記事と近接。実務カレンダー（時期別の出し分け表）を主役にして差別化する。"
+    },
+    {
+      "id": "IDEA-029",
+      "title": "ショート動画の台本の作り方｜クラウドファンディング向けテンプレート",
+      "mainKeyword": "ショート動画 台本 作り方",
+      "relatedKeywords": [
+        "リール 構成 テンプレート",
+        "ショート 動画 シナリオ",
+        "動画 台本 例"
+      ],
+      "categories": [
+        "ai-video",
+        "instagram",
+        "sns"
+      ],
+      "searchIntent": "動画を自作したいが構成が分からない。",
+      "targetReader": "自分で動画を作りたい起案者・広報担当",
+      "purpose": "実用価値で信頼を得て、外注の選択肢を提示する",
+      "serviceRelevance": "台本制作は制作フローの一部",
+      "inquiryPotential": 3,
+      "seoPotential": 3,
+      "competition": 3,
+      "priorityScore": 18,
+      "priority": 29,
+      "outline": [
+        "結論：台本は「フック→共感→情報→行動」の4行で足りる",
+        "型のテンプレート",
+        "秒数配分",
+        "テロップの書き方",
+        "AIに台本を書かせるときの指示例",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/claude-code-instagram-automation"
+      ],
+      "internalLinkCandidates": [
+        "/sns-ai-video",
+        "/category/ai/ai-video",
+        "/contact"
+      ],
+      "ctaCandidate": "動画制作を任せる（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": null
+    },
+    {
+      "id": "IDEA-030",
+      "title": "クラウドファンディング用Instagramアカウントの立ち上げ方と初期設計",
+      "mainKeyword": "クラウドファンディング Instagram 運用",
+      "relatedKeywords": [
+        "インスタ 開設 ビジネス",
+        "プロフィール 設計",
+        "フォロワー 増やし方 初期"
+      ],
+      "categories": [
+        "instagram",
+        "sns",
+        "promotion"
+      ],
+      "searchIntent": "クラファンに向けてアカウントを整えたい、または新規開設したい。",
+      "targetReader": "SNS未経験・アカウントを持っていない起案者",
+      "purpose": "最も初期の層に接触し、公開前支援へつなげる",
+      "serviceRelevance": "SNS運用支援の入口",
+      "inquiryPotential": 3,
+      "seoPotential": 3,
+      "competition": 4,
+      "priorityScore": 17,
+      "priority": 30,
+      "outline": [
+        "結論：フォロワー数より「誰に向けたアカウントか」",
+        "開設時に決める3つ",
+        "プロフィールの書き方",
+        "最初に投稿する9本",
+        "クラファンへの導線設計",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/claude-code-instagram-automation"
+      ],
+      "internalLinkCandidates": [
+        "/category/sns/instagram",
+        "/sns-ai-video",
+        "/contact"
+      ],
+      "ctaCandidate": "SNS立ち上げから相談（/contact）",
+      "status": "idea",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": null,
+      "notes": "競合が多い一般テーマ。優先度は低め。クラファン特化の切り口を徹底する。"
+    },
+    {
+      "id": "UPD-001",
+      "title": "【リライト】神社・寺院のクラウドファンディングの「始め方」を既存記事に統合",
+      "mainKeyword": "神社 クラウドファンディング 始め方",
+      "relatedKeywords": [
+        "寺院 修繕費 クラウドファンディング",
+        "お寺 資金集め 方法"
+      ],
+      "categories": [
+        "shrine-temple",
+        "crowdfunding"
+      ],
+      "searchIntent": "寺社関係者が、実際の手順を最初から知りたい。",
+      "targetReader": "住職・宮司・総代・保存会",
+      "purpose": "新規記事を作らず既存記事を強化し、カニバリを防ぐ",
+      "serviceRelevance": "最重要領域。既存記事の順位を上げる方が効果的",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 2,
+      "priorityScore": 27,
+      "priority": 0,
+      "outline": [
+        "既存 /column/shrine-temple-crowdfunding-cases に『始め方（手順）』のH2を追加",
+        "手順1 目的と必要額を整理する",
+        "手順2 関係者（檀家・氏子・総代）の合意を得る → 既存記事へ内部リンク",
+        "手順3 プラットフォームを選ぶ",
+        "手順4 ページとリターンを設計する → 既存リターン記事へ内部リンク",
+        "手順5 公開前の発信準備",
+        "FAQを追加"
+      ],
+      "relatedExistingPosts": [
+        "/column/shrine-temple-crowdfunding-cases",
+        "/column/temple-crowdfunding-danka-ujiko",
+        "/column/temple-shrine-crowdfunding-returns",
+        "/column/temple-crowdfunding-tax-and-fees"
+      ],
+      "internalLinkCandidates": [
+        "/category/history/shrine-temple",
+        "/contact"
+      ],
+      "ctaCandidate": "寺社の無料相談（/contact）",
+      "status": "update",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": "/column/shrine-temple-crowdfunding-cases",
+      "notes": "【カニバリ回避】寺社テーマは既に4本ある。『始め方』で新規記事を作ると自社競合になるため、既存の事例記事を『事例＋始め方』の網羅記事に育てる。"
+    },
+    {
+      "id": "UPD-002",
+      "title": "【リライト】新商品テストマーケティング記事に事例・FAQを追加",
+      "mainKeyword": "新商品 テストマーケティング クラウドファンディング",
+      "relatedKeywords": [
+        "量産前 需要検証",
+        "商品 売れるか 確かめる"
+      ],
+      "categories": [
+        "startup-product",
+        "crowdfunding"
+      ],
+      "searchIntent": "量産前に需要を確かめたい商品開発者。",
+      "targetReader": "メーカー・商品開発担当・作り手",
+      "purpose": "既に専用記事があるため、新規は作らず強化する",
+      "serviceRelevance": "商品開発支援の中核",
+      "inquiryPotential": 4,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 23,
+      "priority": 0,
+      "outline": [
+        "具体的な検証指標（支援数・単価・コメント）を追加",
+        "FAQセクションを追加",
+        "IDEA-025（地域ブランド）公開後に相互リンク"
+      ],
+      "relatedExistingPosts": [
+        "/column/crowdfunding-test-marketing"
+      ],
+      "internalLinkCandidates": [
+        "/category/crowdfunding/startup-product",
+        "/contact"
+      ],
+      "ctaCandidate": "商品開発の無料相談（/contact）",
+      "status": "update",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": "/column/crowdfunding-test-marketing",
+      "notes": "【カニバリ回避】ご提案の『新商品のテストマーケティングにクラファンを使う方法』は既に公開済み。新規作成しない。"
+    },
+    {
+      "id": "UPD-003",
+      "title": "【リライト】Claude Code×SNS自動化記事に具体的な手順・出力例を追加",
+      "mainKeyword": "Claude Code SNS 自動化",
+      "relatedKeywords": [
+        "AI SNS 投稿 効率化",
+        "Claude Code 業務効率化"
+      ],
+      "categories": [
+        "claude-code",
+        "ai",
+        "instagram"
+      ],
+      "searchIntent": "AIでSNS運用を効率化する具体的な方法を知りたい。",
+      "targetReader": "自社でSNS運用する事業者・制作者",
+      "purpose": "既存記事があるため強化で対応",
+      "serviceRelevance": "独自性が最も高い技術領域",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 22,
+      "priority": 0,
+      "outline": [
+        "実際のワークフロー図を追加",
+        "指示（プロンプト）の例を追加",
+        "FAQを追加",
+        "IDEA-029（台本の作り方）公開後に相互リンク"
+      ],
+      "relatedExistingPosts": [
+        "/column/claude-code-instagram-automation"
+      ],
+      "internalLinkCandidates": [
+        "/category/ai/claude-code",
+        "/sns-ai-video",
+        "/contact"
+      ],
+      "ctaCandidate": "AI活用の無料相談（/contact）",
+      "status": "update",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": "/column/claude-code-instagram-automation",
+      "notes": "【カニバリ回避】ご提案の『Claude Codeを活用したSNS投稿の効率化』は既に公開済み。新規作成しない。"
+    },
+    {
+      "id": "UPD-004",
+      "title": "【リライト】マルシェ記事を「地域イベント全般」に拡張",
+      "mainKeyword": "地域イベント クラウドファンディング",
+      "relatedKeywords": [
+        "イベント 開催資金",
+        "お祭り 資金集め",
+        "上映会 資金"
+      ],
+      "categories": [
+        "marche",
+        "local",
+        "regional-revitalization"
+      ],
+      "searchIntent": "地域イベントの開催資金を集めたい。",
+      "targetReader": "イベント主催者・実行委員会",
+      "purpose": "既存記事の対象範囲を広げ、検索の受け皿を拡大する",
+      "serviceRelevance": "地域イベント支援",
+      "inquiryPotential": 4,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 22,
+      "priority": 0,
+      "outline": [
+        "マルシェ以外のイベント類型（上映会・音楽祭・スポーツ）を追記",
+        "IDEA-020（祭り）公開後は棲み分けを再確認",
+        "FAQ追加"
+      ],
+      "relatedExistingPosts": [
+        "/column/marche-crowdfunding"
+      ],
+      "internalLinkCandidates": [
+        "/category/local",
+        "/crowdfunding-uses",
+        "/contact"
+      ],
+      "ctaCandidate": "イベント資金の無料相談（/contact）",
+      "status": "update",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": "/column/marche-crowdfunding",
+      "notes": "【カニバリ回避】ご提案の『地域イベントの資金集め』は既存マルシェ記事と検索意図が重なるため、新規ではなく拡張で対応。"
+    },
+    {
+      "id": "UPD-005",
+      "title": "【リライト】創業・新商品記事群の内部リンクを整理（ハブ化）",
+      "mainKeyword": "創業 クラウドファンディング",
+      "relatedKeywords": [
+        "開業 資金調達",
+        "新商品 クラウドファンディング"
+      ],
+      "categories": [
+        "startup-product",
+        "crowdfunding"
+      ],
+      "searchIntent": "創業・新商品でクラファンを検討する層。",
+      "targetReader": "創業予定者・商品開発者",
+      "purpose": "既に4本ある創業系記事の関係を整理し、回遊と評価集中を図る",
+      "serviceRelevance": "創業支援の主要導線",
+      "inquiryPotential": 4,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 23,
+      "priority": 0,
+      "outline": [
+        "/column/new-store-product-crowdfunding を創業系のハブ記事と位置づける",
+        "ハブ→各詳細記事（テストマーケ／開業前検証／診断士連携／IDEA-018 飲食店）へ内部リンクを整理",
+        "各詳細記事からハブへの導線を追加"
+      ],
+      "relatedExistingPosts": [
+        "/column/new-store-product-crowdfunding",
+        "/column/crowdfunding-test-marketing",
+        "/column/pre-launch-crowdfunding-startup",
+        "/column/crowdfunding-for-business-consultants"
+      ],
+      "internalLinkCandidates": [
+        "/category/crowdfunding/startup-product"
+      ],
+      "ctaCandidate": "創業の無料相談（/contact）",
+      "status": "update",
+      "plannedPublishDate": null,
+      "publishedAt": null,
+      "url": "/column/new-store-product-crowdfunding",
+      "notes": "【カニバリ回避】ご提案の『創業時にクラファンを活用するメリット』は既存4本と重なるため、新規ではなくハブ整理で対応。"
+    }
+  ],
+  "searchConsole": {
+    "enabled": false,
+    "csvDir": "content/seo/search-console/",
+    "lastImportedAt": null,
+    "note": "Search ConsoleのCSVをこのディレクトリに置くと分析対象になります。手順と分析観点は README.md を参照。",
+    "expectedFiles": [
+      "queries.csv （検索キーワード：クエリ／クリック数／表示回数／CTR／掲載順位）",
+      "pages.csv （ページ：URL／クリック数／表示回数／CTR／掲載順位）"
+    ],
+    "findings": []
+  }
+}
