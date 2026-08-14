@@ -67,11 +67,11 @@
         "/contact"
       ],
       "ctaCandidate": "目標金額の設計から無料相談（/contact）",
-      "status": "ready",
+      "status": "published",
       "plannedPublishDate": "2026-08-07",
-      "publishedAt": null,
-      "url": "/column/crowdfunding-goal-amount",
-      "notes": "既存『やり方5ステップ』は全体の流れ。本記事は金額設定に特化して差別化する。 ／ 本文執筆・ビルド確認済み（未push）。公開後は status を published にし publishedAt を記録すること。"
+      "publishedAt": "2026-08-07",
+      "url": "https://zerodesign-works.jp/column/crowdfunding-goal-amount",
+      "notes": "既存『やり方5ステップ』は全体の流れ。本記事は金額設定に特化して差別化する。 ／ 本文執筆・ビルド確認済み・公開済み。"
     },
     {
       "id": "IDEA-002",
@@ -166,11 +166,11 @@
         "/contact"
       ],
       "ctaCandidate": "文化財プロジェクトの無料相談（/contact）",
-      "status": "ready",
+      "status": "published",
       "plannedPublishDate": "2026-08-07",
-      "publishedAt": null,
-      "url": "/column/heritage-crowdfunding",
-      "notes": "heritageカテゴリーの中心記事。既存の神社仏閣記事とは「文化財という対象」で切り分ける。 ／ 本文執筆・ビルド確認済み（未push）。公開後は status を published にし publishedAt を記録すること。"
+      "publishedAt": "2026-08-07",
+      "url": "https://zerodesign-works.jp/column/heritage-crowdfunding",
+      "notes": "heritageカテゴリーの中心記事。既存の神社仏閣記事とは「文化財という対象」で切り分ける。 ／ 本文執筆・ビルド確認済み・公開済み。"
     },
     {
       "id": "IDEA-004",
@@ -216,11 +216,11 @@
         "/contact"
       ],
       "ctaCandidate": "AI動画制作の無料相談（/contact）",
-      "status": "ready",
+      "status": "published",
       "plannedPublishDate": "2026-08-07",
-      "publishedAt": null,
-      "url": "/column/ai-video-storytelling",
-      "notes": "既存 /news/ai-video-crowdfunding はサービス告知。本記事は「作り方」のノウハウ記事として差別化する。 ／ 本文執筆・ビルド確認済み（未push）。公開後は status を published にし publishedAt を記録すること。"
+      "publishedAt": "2026-08-07",
+      "url": "https://zerodesign-works.jp/column/ai-video-storytelling",
+      "notes": "既存 /news/ai-video-crowdfunding はサービス告知。本記事は「作り方」のノウハウ記事として差別化する。 ／ 本文執筆・ビルド確認済み・公開済み。"
     },
     {
       "id": "IDEA-005",
