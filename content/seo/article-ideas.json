@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": 1,
-    "updatedAt": "2026-08-07",
+    "updatedAt": "2026-08-09",
     "site": "https://zerodesign-works.jp",
     "description": "ZEROデザインのSEO記事ネタ管理ファイル。新規記事・リライト候補を一元管理します。運用ルールは同ディレクトリの README.md を参照。",
     "statuses": {
@@ -18,9 +18,9 @@
       "note": "問い合わせ直結度を最重視。競合が強いほど減点。同点の場合はZEROデザインの専門性・独自性が高い方を上位に。"
     },
     "publishedPostsSnapshot": {
-      "countedAt": "2026-08-07",
-      "total": 21,
-      "column": 18,
+      "countedAt": "2026-08-09",
+      "total": 24,
+      "column": 21,
       "news": 3,
       "note": "重複判定の基準。記事を追加したら src/data/posts.ts を再確認すること。"
     }
@@ -419,7 +419,7 @@
     },
     {
       "id": "IDEA-009",
-      "title": "地域活性化にクラウドファンディングを活用するメリット｜まちづくりの資金調達",
+      "title": "「予算がない」で止まっていませんか？｜地域活性化の資金をクラウドファンディングで集める方法",
       "mainKeyword": "地域活性化 クラウドファンディング",
       "relatedKeywords": [
         "まちづくり 資金調達",
@@ -460,11 +460,11 @@
         "/contact"
       ],
       "ctaCandidate": "地域プロジェクトの無料相談（/contact）",
-      "status": "idea",
-      "plannedPublishDate": null,
-      "publishedAt": null,
-      "url": null,
-      "notes": "地域活性化カテゴリーのハブ記事。今後の地域系記事はすべてここから内部リンクする。"
+      "status": "published",
+      "plannedPublishDate": "2026-08-09",
+      "publishedAt": "2026-08-09",
+      "url": "https://zerodesign-works.jp/column/local-revitalization-crowdfunding",
+      "notes": "地域活性化カテゴリーのハブ記事。今後の地域系記事はすべてここから内部リンクする。 ／ お困りごと訴求のタイトルで執筆・公開。地域活性化カテゴリーの記事群として相互リンク済み。"
     },
     {
       "id": "IDEA-010",
@@ -920,7 +920,7 @@
     },
     {
       "id": "IDEA-020",
-      "title": "祭り・伝統行事を未来へつなぐクラウドファンディング",
+      "title": "「担い手も予算も足りない」地域のお祭りを続けるために｜伝統行事の資金をどう集めるか",
       "mainKeyword": "祭り クラウドファンディング",
       "relatedKeywords": [
         "伝統行事 存続 資金",
@@ -959,11 +959,11 @@
         "/contact"
       ],
       "ctaCandidate": "祭り・行事の無料相談（/contact）",
-      "status": "idea",
-      "plannedPublishDate": null,
-      "publishedAt": null,
-      "url": null,
-      "notes": null
+      "status": "published",
+      "plannedPublishDate": "2026-08-09",
+      "publishedAt": "2026-08-09",
+      "url": "https://zerodesign-works.jp/column/festival-crowdfunding",
+      "notes": "お困りごと訴求のタイトルで執筆・公開。地域活性化カテゴリーの記事群として相互リンク済み。"
     },
     {
       "id": "IDEA-021",
@@ -1014,7 +1014,7 @@
     },
     {
       "id": "IDEA-022",
-      "title": "商店街の活性化にクラウドファンディングを活用する方法",
+      "title": "「シャッター街を何とかしたい」商店街の資金づくり｜1店舗より“みんなで”が成功する理由",
       "mainKeyword": "商店街 クラウドファンディング",
       "relatedKeywords": [
         "商店街 活性化 事例",
@@ -1052,11 +1052,11 @@
         "/contact"
       ],
       "ctaCandidate": "商店街プロジェクトの相談（/contact）",
-      "status": "idea",
-      "plannedPublishDate": null,
-      "publishedAt": null,
-      "url": null,
-      "notes": null
+      "status": "published",
+      "plannedPublishDate": "2026-08-09",
+      "publishedAt": "2026-08-09",
+      "url": "https://zerodesign-works.jp/column/shopping-street-crowdfunding",
+      "notes": "お困りごと訴求のタイトルで執筆・公開。地域活性化カテゴリーの記事群として相互リンク済み。"
     },
     {
       "id": "IDEA-023",
