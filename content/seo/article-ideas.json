@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": 1,
-    "updatedAt": "2026-08-09",
+    "updatedAt": "2026-08-10",
     "site": "https://zerodesign-works.jp",
     "description": "ZEROデザインのSEO記事ネタ管理ファイル。新規記事・リライト候補を一元管理します。運用ルールは同ディレクトリの README.md を参照。",
     "statuses": {
@@ -18,9 +18,9 @@
       "note": "問い合わせ直結度を最重視。競合が強いほど減点。同点の場合はZEROデザインの専門性・独自性が高い方を上位に。"
     },
     "publishedPostsSnapshot": {
-      "countedAt": "2026-08-09",
-      "total": 24,
-      "column": 21,
+      "countedAt": "2026-08-10",
+      "total": 25,
+      "column": 22,
       "news": 3,
       "note": "重複判定の基準。記事を追加したら src/data/posts.ts を再確認すること。"
     }
@@ -272,7 +272,7 @@
     },
     {
       "id": "IDEA-006",
-      "title": "クラウドファンディングは公開前のSNS発信で決まる｜いつ・何を出せばいいか",
+      "title": "クラウドファンディングは「公開前」で決まる｜1か月前から何を発信すればいいか",
       "mainKeyword": "クラウドファンディング 公開前 SNS",
       "relatedKeywords": [
         "クラファン 事前告知",
@@ -314,11 +314,11 @@
         "/contact"
       ],
       "ctaCandidate": "SNS発信の丸ごと支援を相談（/contact）",
-      "status": "idea",
-      "plannedPublishDate": null,
-      "publishedAt": null,
-      "url": null,
-      "notes": "既存 crowdfunding-sns-ai-posts は『投稿が作れない人のAI活用』。本記事は『なぜ・いつ・何を』のロードマップで差別化。相互リンクすること。"
+      "status": "published",
+      "plannedPublishDate": "2026-08-10",
+      "publishedAt": "2026-08-10",
+      "url": "https://zerodesign-works.jp/column/pre-launch-sns",
+      "notes": "既存 crowdfunding-sns-ai-posts は『投稿が作れない人のAI活用』。本記事は『なぜ・いつ・何を』のロードマップで差別化。相互リンクすること。 ／ スコープを「公開前1か月〜公開当日」に限定し、公開後の発信は既存のSNS×AI記事へ内部リンクで誘導して棲み分け。"
     },
     {
       "id": "IDEA-007",
