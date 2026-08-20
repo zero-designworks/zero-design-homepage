@@ -19,8 +19,8 @@
     },
     "publishedPostsSnapshot": {
       "countedAt": "2026-08-10",
-      "total": 25,
-      "column": 22,
+      "total": 26,
+      "column": 23,
       "news": 3,
       "note": "重複判定の基準。記事を追加したら src/data/posts.ts を再確認すること。"
     }
@@ -363,11 +363,11 @@
         "/contact"
       ],
       "ctaCandidate": "リール制作の無料相談（/contact）",
-      "status": "idea",
-      "plannedPublishDate": null,
-      "publishedAt": null,
-      "url": null,
-      "notes": "既存YouTube記事はロング動画。本記事はショート特化で棲み分け。"
+      "status": "published",
+      "plannedPublishDate": "2026-08-10",
+      "publishedAt": "2026-08-10",
+      "url": "https://zerodesign-works.jp/column/crowdfunding-reels",
+      "notes": "既存YouTube記事はロング動画。本記事はショート特化で棲み分け。 ／ 既存のAI動画記事は「AIで作る方法」、YouTube記事は「ロング動画」。本記事はリールの中身（型・冒頭・尺）に特化して棲み分け。"
     },
     {
       "id": "IDEA-008",
