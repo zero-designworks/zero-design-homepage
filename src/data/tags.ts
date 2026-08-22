@@ -20,6 +20,7 @@ export const tags: Tag[] = [
   { slug: "short-video", label: "ショート動画" },
   { slug: "automation", label: "業務効率化" },
   { slug: "success-fee", label: "成功報酬型" },
+  { slug: "event", label: "イベント・講演" },
 ];
 
 export function getTag(slug: string): Tag | undefined {

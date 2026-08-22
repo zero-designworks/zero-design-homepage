@@ -21,12 +21,13 @@ const rows = marks.map((m, i) => {
   const seg = src.slice(m.index, i + 1 < marks.length ? marks[i + 1].index : src.length);
   const count = (re) => (seg.match(re) || []).length;
   const h = count(/type: "h"/g);
-  const visual = count(/type: "img"/g) + count(/type: "video"/g) + count(/type: "instagram"/g);
+  const video = count(/type: "video"/g) + count(/type: "mp4"/g);
+  const visual = count(/type: "img"/g) + video + count(/type: "instagram"/g);
   return {
     slug,
     h,
     img: count(/type: "img"/g),
-    video: count(/type: "video"/g),
+    video,
     insta: count(/type: "instagram"/g),
     visual,
     lack: Math.max(0, h - visual),

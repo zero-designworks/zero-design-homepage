@@ -233,6 +233,36 @@ export function PostArticle({ post }: { post: Post }) {
                   </figure>
                 );
               }
+              if (b.type === "mp4") {
+                return (
+                  <figure key={i} className="pt-2">
+                    {b.title && (
+                      <p className="mb-3 font-serif text-lg text-sumi">{b.title}</p>
+                    )}
+                    <div
+                      className={`relative mx-auto w-full overflow-hidden rounded-brand border border-sumi/10 bg-sumi ${
+                        b.vertical ? "aspect-[9/16] max-w-[360px]" : "aspect-video"
+                      }`}
+                    >
+                      <video
+                        src={b.src}
+                        poster={b.poster}
+                        controls
+                        playsInline
+                        preload="metadata"
+                        className="absolute inset-0 h-full w-full object-contain"
+                      >
+                        お使いのブラウザは動画の再生に対応していません。
+                      </video>
+                    </div>
+                    {b.caption && (
+                      <figcaption className="mt-2 text-center text-xs text-sumi-soft/70">
+                        {b.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                );
+              }
               if (b.type === "callout") {
                 return (
                   <div
