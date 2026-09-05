@@ -1479,6 +1479,58 @@
       "notes": "readyforカテゴリー初の記事。IDEA-005（3社比較）とはカニバらない想定＝本記事はReadyfor×寺院の深掘り、IDEA-005は選定比較。手数料は2026-09時点の公式サイト（ベーシック14%＋税／サポート・コンサルは14%〜＋税）で確認済み。あわせて /column/temple-crowdfunding-tax-and-fees の旧プラン名（シンプル12%／フルサポート17%）を最新表記へ修正済み。"
     },
     {
+      "id": "IDEA-032",
+      "title": "「うちの寺には特別なものがないから」は誤解です｜無名のお寺でも修繕費が集まる理由と、地方寺院の実例",
+      "mainKeyword": "お寺 クラウドファンディング 特徴がない",
+      "relatedKeywords": [
+        "小さな寺 修繕費 集め方",
+        "無名 寺院 クラウドファンディング 事例",
+        "檀家 減少 修繕費",
+        "本堂 修理 費用 集める"
+      ],
+      "categories": [
+        "shrine-temple",
+        "crowdfunding",
+        "heritage"
+      ],
+      "searchIntent": "修繕費を集めたいが、自分の寺には知名度も文化財もないため無理だと思い込んでいる住職が、可能性を確かめたい。",
+      "targetReader": "指定文化財も観光資源もない、地方の中小規模寺院の住職・寺族・総代",
+      "purpose": "最も多い心理的ブレーキを外し、無料相談への一歩目にする（問い合わせ直結度が非常に高い）",
+      "serviceRelevance": "寺社クラファン伴走支援の入口記事。小谷寺（388人・約736万円）の実績で「掘り起こし」の価値を示せる",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 2,
+      "priorityScore": 27,
+      "priority": 3,
+      "outline": [
+        "結論：支援は知名度ではなく「誰かにとって大切かどうか」で集まる",
+        "データ：慧日寺・法嚴寺・大安禅寺・善楽寺・楊谷寺・本昌寺の実数（150〜250人で300万〜800万円）",
+        "誤解①国宝・重文がないと集まらない（寺院7.6万に対し重文建造物2,605件）",
+        "誤解②観光客が来ないと無理（支援は第1〜4層の順に広がる）",
+        "誤解③SNSのフォロワーがいないと無理（初動は名簿と手紙）",
+        "誤解④中途半端な金額では恥ずかしい（部分・第一歩に絞る）",
+        "「特徴がない」の正体＝価値の未言語化（掘り起こす10の質問／効く5つの切り口）",
+        "集まりにくいのはこういうとき（正直に）",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/shrine-temple-crowdfunding-cases",
+        "/column/readyfor-temple-crowdfunding",
+        "/column/temple-crowdfunding-danka-ujiko"
+      ],
+      "internalLinkCandidates": [
+        "/category/history/shrine-temple",
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "「うちの寺でもできるのか」の無料お見立て（/contact）",
+      "status": "published",
+      "plannedPublishDate": "2026-09-05",
+      "publishedAt": "2026-09-05",
+      "url": "https://zerodesign-works.jp/column/temple-crowdfunding-no-famous-asset",
+      "notes": "既存の寺社記事（事例／檀家説明／税金／リターン／Readyfor）はいずれも『やると決めた後』の記事。本記事はその手前の心理的ブレーキを外す入口記事として差別化。事例数値はReadyfor各プロジェクトページ、文化財・寺院数は文化庁の公開データで確認済み。"
+    },
+    {
       "id": "UPD-001",
       "title": "【リライト】神社・寺院のクラウドファンディングの「始め方」を既存記事に統合",
       "mainKeyword": "神社 クラウドファンディング 始め方",
