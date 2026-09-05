@@ -1426,6 +1426,59 @@
       "notes": "競合が多い一般テーマ。優先度は低め。クラファン特化の切り口を徹底する。"
     },
     {
+      "id": "IDEA-031",
+      "title": "Readyforはお寺のクラウドファンディングと相性がいい｜理由・寺院の事例・コンサルティングプランまで解説",
+      "mainKeyword": "Readyfor お寺 クラウドファンディング",
+      "relatedKeywords": [
+        "Readyfor 寺院 事例",
+        "Readyfor コンサルティングプラン",
+        "Readyfor 手数料",
+        "寺 修復 クラウドファンディング"
+      ],
+      "categories": [
+        "readyfor",
+        "shrine-temple",
+        "crowdfunding"
+      ],
+      "searchIntent": "お寺の修復費を集めたい寺院関係者が、Readyforが自分たちに向いているか、費用とサポート内容を確かめたい。",
+      "targetReader": "本堂・文化財の修復資金を検討している住職・総代・寺務担当者",
+      "purpose": "プラットフォーム検討フェーズで接触し、選定相談から伴走支援へつなげる",
+      "serviceRelevance": "寺社クラファン伴走支援の主要導線。小谷寺（CAMPFIRE・約736万円）の実績を差別化材料にできる",
+      "inquiryPotential": 5,
+      "seoPotential": 4,
+      "competition": 3,
+      "priorityScore": 26,
+      "priority": 5,
+      "outline": [
+        "結論：リターンで釣らずに集めたいお寺はReadyforを候補に",
+        "Readyforの基本3点（掲載無料・All in/All or Nothing・入金時期）",
+        "相性がいい5つの理由（寄付色／文化領域の専門チーム／支援単価／文化庁連携／常設寄付）",
+        "実際の寺院プロジェクト事例（法隆寺・光明寺・中尊寺・神護寺・萬福寺・楊谷寺）",
+        "目標未達の事例（阿日寺）とAll-in方式の考え方",
+        "料金プラン3つとコンサルティングプランの中身・選び方",
+        "公開3か月前からの準備スケジュールと寺院側で用意するもの",
+        "Readyforが向かないケースとCAMPFIREとの使い分け",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/shrine-temple-crowdfunding-cases",
+        "/column/temple-crowdfunding-tax-and-fees",
+        "/column/temple-shrine-crowdfunding-returns"
+      ],
+      "internalLinkCandidates": [
+        "/category/crowdfunding/readyfor",
+        "/category/history/shrine-temple",
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "どのプラットフォームが合うか無料相談（/contact）",
+      "status": "published",
+      "plannedPublishDate": "2026-09-05",
+      "publishedAt": "2026-09-05",
+      "url": "https://zerodesign-works.jp/column/readyfor-temple-crowdfunding",
+      "notes": "readyforカテゴリー初の記事。IDEA-005（3社比較）とはカニバらない想定＝本記事はReadyfor×寺院の深掘り、IDEA-005は選定比較。手数料は2026-09時点の公式サイト（ベーシック14%＋税／サポート・コンサルは14%〜＋税）で確認済み。あわせて /column/temple-crowdfunding-tax-and-fees の旧プラン名（シンプル12%／フルサポート17%）を最新表記へ修正済み。"
+    },
+    {
       "id": "UPD-001",
       "title": "【リライト】神社・寺院のクラウドファンディングの「始め方」を既存記事に統合",
       "mainKeyword": "神社 クラウドファンディング 始め方",
