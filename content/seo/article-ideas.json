@@ -1531,6 +1531,58 @@
       "notes": "既存の寺社記事（事例／檀家説明／税金／リターン／Readyfor）はいずれも『やると決めた後』の記事。本記事はその手前の心理的ブレーキを外す入口記事として差別化。事例数値はReadyfor各プロジェクトページ、文化財・寺院数は文化庁の公開データで確認済み。"
     },
     {
+      "id": "IDEA-033",
+      "title": "オープニングスタッフと一緒にクラウドファンディングをやる意味｜開店前に「仲間」と「お客様」が育つ",
+      "mainKeyword": "オープニングスタッフ クラウドファンディング",
+      "relatedKeywords": [
+        "開店前 集客 方法",
+        "新規開業 スタッフ 連帯感",
+        "飲食店 開業 クラウドファンディング",
+        "オープン初日 客が来ない"
+      ],
+      "categories": [
+        "startup-product",
+        "crowdfunding",
+        "promotion"
+      ],
+      "searchIntent": "開業準備中のオーナーが、採用したスタッフとどう店を立ち上げるか、開店初日の集客をどう作るかを探している。",
+      "targetReader": "開業予定のオーナー（飲食・美容・小売など）とオープニングスタッフを採用済み／採用予定の事業者",
+      "purpose": "資金調達目的でない層にクラファンの価値を伝え、開業支援の相談につなげる",
+      "serviceRelevance": "創業・新店舗の伴走支援。企画〜ページ制作〜SNS発信まで一貫支援の訴求に直結",
+      "inquiryPotential": 5,
+      "seoPotential": 3,
+      "competition": 2,
+      "priorityScore": 25,
+      "priority": 6,
+      "outline": [
+        "結論：クラファンは資金集めではなく、開店前に仲間と客を育てる装置",
+        "開店初日の本当の怖さ（誰も来ない／来すぎて崩れる／足並みが揃わない）",
+        "意味①スタッフに当事者意識が生まれる（活動報告・応援コメント・成功体験）",
+        "意味②開店前からお客様がいる状態（前売り・顧客リスト・2〜3か月目の谷）",
+        "意味③スタッフの縁が束になる（5人×20人＝100人の初速）",
+        "巻き込みの進め方（公開4週間前からのタイムライン）",
+        "スタッフが主役になるリターンの作り方（無料券の出しすぎ注意）",
+        "やってはいけない3つ（ノルマ化・SNS強制・時間と報酬の曖昧さ）",
+        "FAQ"
+      ],
+      "relatedExistingPosts": [
+        "/column/pre-launch-crowdfunding-startup",
+        "/column/new-store-product-crowdfunding",
+        "/column/pre-launch-sns"
+      ],
+      "internalLinkCandidates": [
+        "/category/crowdfunding/startup-product",
+        "/crowdfunding",
+        "/contact"
+      ],
+      "ctaCandidate": "スタッフとの分担設計から無料相談（/contact）",
+      "status": "published",
+      "plannedPublishDate": "2026-09-19",
+      "publishedAt": "2026-09-19",
+      "url": "https://zerodesign-works.jp/column/opening-staff-crowdfunding",
+      "notes": "既存の創業系4本はいずれも『資金・市場検証・PR』の切り口。本記事は唯一『人（スタッフ）と開店初日の客』の切り口で差別化。統計は確認できたものだけに絞り、離職率などの数値は使わない方針で執筆。UPD-005（創業系ハブ化）の対象記事に本記事も加えること。"
+    },
+    {
       "id": "UPD-001",
       "title": "【リライト】神社・寺院のクラウドファンディングの「始め方」を既存記事に統合",
       "mainKeyword": "神社 クラウドファンディング 始め方",
