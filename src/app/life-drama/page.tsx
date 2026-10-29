@@ -66,7 +66,15 @@ export default function LifeDramaPage() {
       <section className="relative overflow-hidden bg-sumi pt-24 pb-16 text-kinari md:pt-32 md:pb-24">
         <div className="container-brand">
           {/* ファーストビューは Reveal で遅延させず、即表示する */}
-          <div className="relative mx-auto aspect-video w-full max-w-6xl overflow-hidden rounded-brand bg-black ring-1 ring-kin/30">
+          <div className="mx-auto max-w-4xl text-center">
+            <h1 className="font-serif text-[1.55rem] font-semibold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              あなたの人生ストーリーで
+              <br />
+              出会った瞬間ファンにする
+            </h1>
+          </div>
+
+          <div className="relative mx-auto mt-8 aspect-video w-[80%] overflow-hidden rounded-brand bg-black ring-1 ring-kin/30 md:mt-10">
             <HeroVideo
               src="/videos/life-drama/hero-digest.mp4"
               poster="/videos/life-drama/hero-digest-poster.jpg"
@@ -74,15 +82,8 @@ export default function LifeDramaPage() {
             />
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl text-center md:mt-14">
-            <span className="eyebrow justify-center text-kin">Life Drama Anime</span>
-            <h1 className="mt-5 font-serif text-[1.55rem] font-semibold leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-              あなたの人生ストーリーで
-              <br />
-              出会った瞬間ファンにする
-            </h1>
-            <p className="mt-5 font-serif text-lg text-kin md:text-2xl">あなたの人生を、大河ドラマに。</p>
-            <p className="mx-auto mt-6 max-w-2xl leading-loose text-kinari/85 md:text-lg">
+          <div className="mx-auto mt-10 max-w-4xl text-center md:mt-12">
+            <p className="mx-auto max-w-2xl leading-loose text-kinari/85 md:text-lg">
               コーチ・コンサル・士業・講師など「想いはあるのに伝わらない」方の人生を、
               60分の聴き取りから大河ドラマ風のAIアニメに。
               <strong className="font-semibold text-white">撮影なし・顔出し不要。写真と資料を送るだけ。</strong>
