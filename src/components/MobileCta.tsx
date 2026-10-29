@@ -1,7 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // スマホ画面下部の固定CTA（仕様書 17）
+// 専用の固定CTAを持つLP（/life-drama）では表示しない
+const hiddenOn = ["/life-drama"];
+
 export function MobileCta() {
+  const pathname = usePathname();
+  if (hiddenOn.some((p) => pathname === p || pathname.startsWith(`${p}/`))) return null;
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-px border-t border-sumi/10 bg-sumi/10 lg:hidden">
       <Link

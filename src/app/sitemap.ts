@@ -14,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/crowdfunding",
     "/crowdfunding-uses",
     "/sns-ai-video",
+    "/life-drama",
+    "/life-drama/session",
     "/services",
     "/works",
     "/column",
