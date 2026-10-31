@@ -12,7 +12,7 @@ const OG_IMAGE = "/images/life-drama/og-life-drama.jpg";
 export const metadata: Metadata = {
   title: "『人生ストーリー発見』セッション（60分・3,000円）",
   description:
-    "前半30分のヒアリング、後半30分のストーリー作成で、1分で伝わるPRアニメのストーリーをつくる個別セッション。名刺アニメの設計図になるあらすじをお渡しします。撮影なし・顔出し不要・オンライン可。お申し込みはFacebookのメッセージから。",
+    "事前アンケート、30分のヒアリング、30分のストーリー作成で、1分で伝わるPRアニメのストーリーをつくる個別セッション。名刺アニメの設計図になるあらすじをお渡しします。撮影なし・顔出し不要・オンライン可。お申し込みはFacebookのメッセージから。",
   alternates: { canonical: "/life-drama/session" },
   openGraph: {
     title: "『人生ストーリー発見』セッション（60分・3,000円）｜ZEROデザイン",
@@ -127,24 +127,27 @@ export default function LifeDramaSessionPage() {
         </div>
       </section>
 
-      {/* ───── 60分の流れ（前半30分ヒアリング／後半30分ストーリー作成） ───── */}
+      {/* ───── セッションの流れ（事前アンケート → ヒアリング → 1分ストーリー作成 → 動画作成に進むか） ───── */}
       <section className="bg-kinari/60 py-16 md:py-24">
         <div className="container-brand">
           <Reveal>
-            <SectionHeading eyebrow="60 min" title="セッションの流れ" align="center" className="mb-12">
+            <SectionHeading eyebrow="Flow" title="セッションの流れ" align="center" className="mb-12">
               <p>
-                60分を、前半のヒアリングと後半のストーリー作成に分けて進めます。聴き取った内容を物語の形に整えるのが、私の仕事です。
+                当日の60分は、ヒアリング30分とストーリー作成30分。聴き取った内容を物語の形に整えるのが、私の仕事です。
               </p>
             </SectionHeading>
           </Reveal>
-          <ol className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
+          <ol className="mx-auto grid max-w-6xl gap-5 md:grid-cols-2 lg:grid-cols-4">
             {sessionDetail.flow.map((f, i) => (
-              <Reveal key={f.no} delay={(i % 2) * 80} as="li">
-                <div className="flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-7">
-                  <span className="inline-flex w-fit rounded-full bg-aka/10 px-3 py-1 text-xs font-semibold tracking-widest text-aka">
-                    {f.no}
-                  </span>
-                  <h3 className="mt-3 font-serif text-2xl text-sumi">{f.title}</h3>
+              <Reveal key={f.no} delay={(i % 4) * 80} as="li">
+                <div className="flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-6">
+                  <div className="flex items-baseline justify-between">
+                    <span className="font-serif text-2xl font-semibold text-kin/60">{f.no}</span>
+                    <span className="rounded-full bg-aka/10 px-3 py-1 text-xs font-semibold tracking-widest text-aka">
+                      {f.tag}
+                    </span>
+                  </div>
+                  <h3 className="mt-3 font-serif text-xl leading-snug text-sumi">{f.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-sumi-soft">{f.body}</p>
                   <ul className="mt-5 space-y-2.5">
                     {f.points.map((pt) => (
