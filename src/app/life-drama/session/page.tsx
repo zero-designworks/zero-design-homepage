@@ -133,7 +133,7 @@ export default function LifeDramaSessionPage() {
           <Reveal>
             <SectionHeading eyebrow="Flow" title="セッションの流れ" align="center" className="mb-12">
               <p>
-                当日の60分は、ヒアリング30分とストーリー作成30分。聴き取った内容を物語の形に整えるのが、私の仕事です。
+                当日の60分は、ヒアリング30分とストーリー作成30分。聴き取った内容を、1分で伝わる形に整えるのが、私の仕事です。
               </p>
             </SectionHeading>
           </Reveal>
@@ -171,13 +171,13 @@ export default function LifeDramaSessionPage() {
             <figure className="relative aspect-[1200/670] w-full overflow-hidden rounded-brand border border-sumi/10 bg-kinari/40">
               <Image
                 src="/images/life-drama/hearing-emaki.webp"
-                alt="向かい合って人生を聴き取り、その内容が1分のアニメのあらすじになっていくイラスト"
+                alt="向かい合って内容を整理し、それが1分のアニメの構成になっていくイラスト"
                 fill
                 sizes="(max-width: 1024px) 92vw, 46vw"
                 className="object-cover"
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-sumi/85 to-transparent px-5 pb-4 pt-10 text-xs text-kinari/90">
-                30分の聴き取りと30分のストーリー作成で、1分アニメのあらすじになる
+                30分のヒアリングと30分のストーリー作成で、1分アニメの構成になる
               </figcaption>
             </figure>
           </Reveal>
