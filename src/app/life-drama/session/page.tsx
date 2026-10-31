@@ -12,12 +12,12 @@ const OG_IMAGE = "/images/life-drama/og-life-drama.jpg";
 export const metadata: Metadata = {
   title: "『人生ストーリー発見』セッション（60分・3,000円）",
   description:
-    "60分で、あなたの人生の「見せ場」を見つける個別セッション。原点・挫折・転機・使命を聴き取り、大河ドラマ風アニメの設計図になる「あらすじ」をお渡しします。撮影なし・顔出し不要・オンライン可。お申し込みはFacebookのメッセージから。",
+    "前半30分のヒアリング、後半30分のストーリー作成で、1分で伝わるPRアニメのストーリーをつくる個別セッション。名刺アニメの設計図になるあらすじをお渡しします。撮影なし・顔出し不要・オンライン可。お申し込みはFacebookのメッセージから。",
   alternates: { canonical: "/life-drama/session" },
   openGraph: {
     title: "『人生ストーリー発見』セッション（60分・3,000円）｜ZEROデザイン",
     description:
-      "60分の聴き取りで、あなたの人生のあらすじ（一代記の設計図）が手元に残ります。合わなければセッションで終わって構いません。",
+      "30分のヒアリングと30分のストーリー作成で、1分で伝わるPRアニメのストーリーが手元に残ります。合わなければセッションで終わって構いません。",
     url: "/life-drama/session",
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "『人生ストーリー発見』セッション" }],
   },
@@ -43,7 +43,7 @@ export default function LifeDramaSessionPage() {
     "@context": "https://schema.org",
     "@type": "Service",
     name: lifeDramaOffer.name,
-    serviceType: "個別セッション（人生ストーリーの聴き取り）",
+    serviceType: "個別セッション（1分PRアニメのヒアリングとストーリー作成）",
     provider: { "@id": `${siteConfig.url}/#organization` },
     areaServed: "JP",
     url: `${siteConfig.url}/life-drama/session`,
@@ -75,7 +75,7 @@ export default function LifeDramaSessionPage() {
           <h1 className="mt-5 max-w-3xl font-serif text-[1.45rem] font-semibold leading-tight text-sumi sm:text-3xl md:text-5xl">
             {lifeDramaOffer.name}
           </h1>
-          <p className="mt-4 font-serif text-lg text-aka md:text-2xl">60分で、あなたの人生の「見せ場」を見つける。</p>
+          <p className="mt-4 font-serif text-lg text-aka md:text-2xl">60分で、1分で伝わるPRアニメのストーリーをつくる。</p>
           <p className="mt-6 max-w-2xl leading-loose text-sumi-soft md:text-lg">{sessionDetail.lead}</p>
 
           <dl className="mt-8 grid max-w-2xl grid-cols-3 gap-3 text-center">
@@ -127,23 +127,33 @@ export default function LifeDramaSessionPage() {
         </div>
       </section>
 
-      {/* ───── 60分の流れ ───── */}
+      {/* ───── 60分の流れ（前半30分ヒアリング／後半30分ストーリー作成） ───── */}
       <section className="bg-kinari/60 py-16 md:py-24">
         <div className="container-brand">
           <Reveal>
             <SectionHeading eyebrow="60 min" title="セッションの流れ" align="center" className="mb-12">
               <p>
-                こちらから順に質問します。うまく話せなくて大丈夫です。聴き取った内容を物語の形に整えるのが、私の仕事です。
+                60分を、前半のヒアリングと後半のストーリー作成に分けて進めます。聴き取った内容を物語の形に整えるのが、私の仕事です。
               </p>
             </SectionHeading>
           </Reveal>
-          <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <ol className="mx-auto grid max-w-4xl gap-5 md:grid-cols-2">
             {sessionDetail.flow.map((f, i) => (
-              <Reveal key={f.no} delay={(i % 4) * 80} as="li">
-                <div className="flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-6">
-                  <span className="font-serif text-3xl font-semibold text-kin/60">{f.no}</span>
-                  <h3 className="mt-2 font-serif text-xl text-sumi">{f.title}</h3>
+              <Reveal key={f.no} delay={(i % 2) * 80} as="li">
+                <div className="flex h-full flex-col rounded-brand border border-sumi/10 bg-white p-7">
+                  <span className="inline-flex w-fit rounded-full bg-aka/10 px-3 py-1 text-xs font-semibold tracking-widest text-aka">
+                    {f.no}
+                  </span>
+                  <h3 className="mt-3 font-serif text-2xl text-sumi">{f.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-sumi-soft">{f.body}</p>
+                  <ul className="mt-5 space-y-2.5">
+                    {f.points.map((pt) => (
+                      <li key={pt} className="flex items-start gap-2.5 text-sm leading-relaxed text-sumi-soft">
+                        <Check />
+                        <span>{pt}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </Reveal>
             ))}
@@ -158,13 +168,13 @@ export default function LifeDramaSessionPage() {
             <figure className="relative aspect-[1200/670] w-full overflow-hidden rounded-brand border border-sumi/10 bg-kinari/40">
               <Image
                 src="/images/life-drama/hearing-emaki.webp"
-                alt="向かい合って人生を聴き取り、その内容が絵巻のあらすじになっていくアニメ風イラスト"
+                alt="向かい合って人生を聴き取り、その内容が1分のアニメのあらすじになっていくイラスト"
                 fill
                 sizes="(max-width: 1024px) 92vw, 46vw"
                 className="object-cover"
               />
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-sumi/85 to-transparent px-5 pb-4 pt-10 text-xs text-kinari/90">
-                60分の聴き取りが、一代記の絵巻（あらすじ）になる
+                30分の聴き取りと30分のストーリー作成で、1分アニメのあらすじになる
               </figcaption>
             </figure>
           </Reveal>
